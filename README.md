@@ -3,5 +3,7 @@
 Currently under development.
 Intended for helping divers to easily make Air decompression table.
 
-#Dependency
+* Dependency
+```
 Tested under .NET Framework 4.6.1
+```
