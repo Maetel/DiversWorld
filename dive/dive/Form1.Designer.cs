@@ -859,7 +859,7 @@
             this.textBox52.ReadOnly = true;
             this.textBox52.Size = new System.Drawing.Size(246, 21);
             this.textBox52.TabIndex = 73;
-            this.textBox52.Text = "상승시간 (40FSW ~ 해면)";
+            this.textBox52.Text = "상승시간";
             // 
             // TB_R140_CLOCKTIME
             // 
@@ -1941,6 +1941,7 @@
             this.textBox6.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox6.Location = new System.Drawing.Point(594, 13);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(56, 21);
             this.textBox6.TabIndex = 167;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1951,6 +1952,7 @@
             this.textBox8.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox8.Location = new System.Drawing.Point(594, 40);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(56, 21);
             this.textBox8.TabIndex = 168;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
