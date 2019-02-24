@@ -12,10 +12,10 @@ using System.Windows.Forms;
 namespace dive
 {
     
-    public partial class Form1 : Form
+    public partial class DW_Main_Window : Form
     {
         #region Init
-        public Form1()
+        public DW_Main_Window()
         {
             InitializeComponent();
             initVars();

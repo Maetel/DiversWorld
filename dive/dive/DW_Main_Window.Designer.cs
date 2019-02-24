@@ -1,6 +1,6 @@
 ﻿namespace dive
 {
-    partial class Form1
+    partial class DW_Main_Window
     {
         /// <summary>
         /// Required designer variable.
