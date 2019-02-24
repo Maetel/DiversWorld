@@ -185,23 +185,26 @@
             this.BT_Initialize = new System.Windows.Forms.Button();
             this.L_Data_Loaded = new System.Windows.Forms.Label();
             this.BT_Reload_Data_File = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox1.Controls.Add(this.RB_GAS_SurD);
             this.groupBox1.Controls.Add(this.RB_GAS_AIRO2);
             this.groupBox1.Controls.Add(this.RB_GAS_AIR);
-            this.groupBox1.Location = new System.Drawing.Point(365, 613);
+            this.groupBox1.Location = new System.Drawing.Point(491, 613);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(151, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "공기";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // RB_GAS_SurD
             // 
@@ -280,7 +283,7 @@
             this.textBox2.Location = new System.Drawing.Point(124, 68);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(118, 26);
+            this.textBox2.Size = new System.Drawing.Size(244, 26);
             this.textBox2.TabIndex = 21;
             this.textBox2.Text = "감압시간";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -289,7 +292,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox3.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(241, 68);
+            this.textBox3.Location = new System.Drawing.Point(367, 68);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(109, 26);
@@ -301,7 +304,7 @@
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox4.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(349, 68);
+            this.textBox4.Location = new System.Drawing.Point(475, 68);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(246, 26);
@@ -313,7 +316,7 @@
             // 
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox5.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(594, 68);
+            this.textBox5.Location = new System.Drawing.Point(720, 68);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(127, 26);
@@ -325,7 +328,7 @@
             // 
             this.TB_Desc_Time.BackColor = System.Drawing.Color.White;
             this.TB_Desc_Time.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Desc_Time.Location = new System.Drawing.Point(594, 93);
+            this.TB_Desc_Time.Location = new System.Drawing.Point(720, 93);
             this.TB_Desc_Time.Name = "TB_Desc_Time";
             this.TB_Desc_Time.ReadOnly = true;
             this.TB_Desc_Time.Size = new System.Drawing.Size(127, 21);
@@ -336,7 +339,7 @@
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox7.Location = new System.Drawing.Point(349, 93);
+            this.textBox7.Location = new System.Drawing.Point(475, 93);
             this.textBox7.Margin = new System.Windows.Forms.Padding(5);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
@@ -348,7 +351,7 @@
             // 
             this.TB_LS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_LS.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_LS.Location = new System.Drawing.Point(241, 93);
+            this.TB_LS.Location = new System.Drawing.Point(367, 93);
             this.TB_LS.Name = "TB_LS";
             this.TB_LS.Size = new System.Drawing.Size(109, 21);
             this.TB_LS.TabIndex = 27;
@@ -362,7 +365,7 @@
             this.textBox9.Location = new System.Drawing.Point(124, 93);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(118, 21);
+            this.textBox9.Size = new System.Drawing.Size(244, 21);
             this.textBox9.TabIndex = 26;
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -382,7 +385,7 @@
             // 
             this.TB_StageDepth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_StageDepth.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_StageDepth.Location = new System.Drawing.Point(594, 113);
+            this.TB_StageDepth.Location = new System.Drawing.Point(720, 113);
             this.TB_StageDepth.Name = "TB_StageDepth";
             this.TB_StageDepth.Size = new System.Drawing.Size(127, 21);
             this.TB_StageDepth.TabIndex = 34;
@@ -393,7 +396,7 @@
             // 
             this.textBox12.BackColor = System.Drawing.Color.White;
             this.textBox12.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox12.Location = new System.Drawing.Point(349, 113);
+            this.textBox12.Location = new System.Drawing.Point(475, 113);
             this.textBox12.Margin = new System.Windows.Forms.Padding(5);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
@@ -405,13 +408,12 @@
             // 
             this.TB_RB.BackColor = System.Drawing.Color.White;
             this.TB_RB.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_RB.Location = new System.Drawing.Point(241, 113);
+            this.TB_RB.Location = new System.Drawing.Point(367, 113);
             this.TB_RB.Name = "TB_RB";
             this.TB_RB.ReadOnly = true;
             this.TB_RB.Size = new System.Drawing.Size(109, 21);
             this.TB_RB.TabIndex = 32;
             this.TB_RB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_RB.TextChanged += new System.EventHandler(this.TB_RB_TextChanged);
             // 
             // textBox14
             // 
@@ -420,7 +422,7 @@
             this.textBox14.Location = new System.Drawing.Point(124, 113);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(118, 21);
+            this.textBox14.Size = new System.Drawing.Size(244, 21);
             this.textBox14.TabIndex = 31;
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -440,7 +442,7 @@
             // 
             this.TB_MaxDepth.BackColor = System.Drawing.Color.White;
             this.TB_MaxDepth.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_MaxDepth.Location = new System.Drawing.Point(594, 133);
+            this.TB_MaxDepth.Location = new System.Drawing.Point(720, 133);
             this.TB_MaxDepth.Name = "TB_MaxDepth";
             this.TB_MaxDepth.ReadOnly = true;
             this.TB_MaxDepth.Size = new System.Drawing.Size(127, 21);
@@ -451,7 +453,7 @@
             // 
             this.textBox17.BackColor = System.Drawing.Color.White;
             this.textBox17.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox17.Location = new System.Drawing.Point(349, 133);
+            this.textBox17.Location = new System.Drawing.Point(475, 133);
             this.textBox17.Margin = new System.Windows.Forms.Padding(5);
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
@@ -463,7 +465,7 @@
             // 
             this.TB_LB.BackColor = System.Drawing.Color.White;
             this.TB_LB.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_LB.Location = new System.Drawing.Point(241, 133);
+            this.TB_LB.Location = new System.Drawing.Point(367, 133);
             this.TB_LB.Name = "TB_LB";
             this.TB_LB.ReadOnly = true;
             this.TB_LB.Size = new System.Drawing.Size(109, 21);
@@ -477,7 +479,7 @@
             this.textBox19.Location = new System.Drawing.Point(124, 133);
             this.textBox19.Name = "textBox19";
             this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(118, 21);
+            this.textBox19.Size = new System.Drawing.Size(244, 21);
             this.textBox19.TabIndex = 36;
             this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -497,7 +499,7 @@
             // 
             this.TB_TBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_TBT.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_TBT.Location = new System.Drawing.Point(594, 153);
+            this.TB_TBT.Location = new System.Drawing.Point(720, 153);
             this.TB_TBT.Name = "TB_TBT";
             this.TB_TBT.Size = new System.Drawing.Size(127, 21);
             this.TB_TBT.TabIndex = 44;
@@ -508,7 +510,7 @@
             // 
             this.textBox22.BackColor = System.Drawing.Color.White;
             this.textBox22.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox22.Location = new System.Drawing.Point(349, 153);
+            this.textBox22.Location = new System.Drawing.Point(475, 153);
             this.textBox22.Margin = new System.Windows.Forms.Padding(5);
             this.textBox22.Name = "textBox22";
             this.textBox22.ReadOnly = true;
@@ -520,7 +522,7 @@
             // 
             this.TB_R1st.BackColor = System.Drawing.Color.White;
             this.TB_R1st.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R1st.Location = new System.Drawing.Point(241, 153);
+            this.TB_R1st.Location = new System.Drawing.Point(367, 153);
             this.TB_R1st.Name = "TB_R1st";
             this.TB_R1st.ReadOnly = true;
             this.TB_R1st.Size = new System.Drawing.Size(109, 21);
@@ -534,7 +536,7 @@
             this.textBox24.Location = new System.Drawing.Point(124, 153);
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(118, 21);
+            this.textBox24.Size = new System.Drawing.Size(244, 21);
             this.textBox24.TabIndex = 41;
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -554,7 +556,7 @@
             // 
             this.TB_DCompTable.BackColor = System.Drawing.Color.White;
             this.TB_DCompTable.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DCompTable.Location = new System.Drawing.Point(594, 173);
+            this.TB_DCompTable.Location = new System.Drawing.Point(720, 173);
             this.TB_DCompTable.Name = "TB_DCompTable";
             this.TB_DCompTable.ReadOnly = true;
             this.TB_DCompTable.Size = new System.Drawing.Size(127, 21);
@@ -565,7 +567,7 @@
             // 
             this.textBox27.BackColor = System.Drawing.Color.White;
             this.textBox27.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox27.Location = new System.Drawing.Point(349, 173);
+            this.textBox27.Location = new System.Drawing.Point(475, 173);
             this.textBox27.Margin = new System.Windows.Forms.Padding(5);
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
@@ -577,7 +579,7 @@
             // 
             this.TB_R190_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R190_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R190_CLOCKTIME.Location = new System.Drawing.Point(241, 173);
+            this.TB_R190_CLOCKTIME.Location = new System.Drawing.Point(367, 173);
             this.TB_R190_CLOCKTIME.Name = "TB_R190_CLOCKTIME";
             this.TB_R190_CLOCKTIME.ReadOnly = true;
             this.TB_R190_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -591,7 +593,7 @@
             this.TB_R190_Interval.Location = new System.Drawing.Point(124, 173);
             this.TB_R190_Interval.Name = "TB_R190_Interval";
             this.TB_R190_Interval.ReadOnly = true;
-            this.TB_R190_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R190_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R190_Interval.TabIndex = 46;
             this.TB_R190_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -611,7 +613,7 @@
             // 
             this.TB_Time_To_R1st_Actual.BackColor = System.Drawing.Color.White;
             this.TB_Time_To_R1st_Actual.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Time_To_R1st_Actual.Location = new System.Drawing.Point(594, 193);
+            this.TB_Time_To_R1st_Actual.Location = new System.Drawing.Point(720, 193);
             this.TB_Time_To_R1st_Actual.Name = "TB_Time_To_R1st_Actual";
             this.TB_Time_To_R1st_Actual.ReadOnly = true;
             this.TB_Time_To_R1st_Actual.Size = new System.Drawing.Size(127, 21);
@@ -622,7 +624,7 @@
             // 
             this.textBox32.BackColor = System.Drawing.Color.White;
             this.textBox32.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox32.Location = new System.Drawing.Point(349, 193);
+            this.textBox32.Location = new System.Drawing.Point(475, 193);
             this.textBox32.Margin = new System.Windows.Forms.Padding(5);
             this.textBox32.Name = "textBox32";
             this.textBox32.ReadOnly = true;
@@ -634,7 +636,7 @@
             // 
             this.TB_R180_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R180_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R180_CLOCKTIME.Location = new System.Drawing.Point(241, 193);
+            this.TB_R180_CLOCKTIME.Location = new System.Drawing.Point(367, 193);
             this.TB_R180_CLOCKTIME.Name = "TB_R180_CLOCKTIME";
             this.TB_R180_CLOCKTIME.ReadOnly = true;
             this.TB_R180_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -648,7 +650,7 @@
             this.TB_R180_Interval.Location = new System.Drawing.Point(124, 193);
             this.TB_R180_Interval.Name = "TB_R180_Interval";
             this.TB_R180_Interval.ReadOnly = true;
-            this.TB_R180_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R180_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R180_Interval.TabIndex = 51;
             this.TB_R180_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -668,7 +670,7 @@
             // 
             this.TB_Time_To_R1st_Planned.BackColor = System.Drawing.Color.White;
             this.TB_Time_To_R1st_Planned.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Time_To_R1st_Planned.Location = new System.Drawing.Point(594, 213);
+            this.TB_Time_To_R1st_Planned.Location = new System.Drawing.Point(720, 213);
             this.TB_Time_To_R1st_Planned.Name = "TB_Time_To_R1st_Planned";
             this.TB_Time_To_R1st_Planned.ReadOnly = true;
             this.TB_Time_To_R1st_Planned.Size = new System.Drawing.Size(127, 21);
@@ -679,7 +681,7 @@
             // 
             this.textBox37.BackColor = System.Drawing.Color.White;
             this.textBox37.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox37.Location = new System.Drawing.Point(349, 213);
+            this.textBox37.Location = new System.Drawing.Point(475, 213);
             this.textBox37.Margin = new System.Windows.Forms.Padding(5);
             this.textBox37.Name = "textBox37";
             this.textBox37.ReadOnly = true;
@@ -691,7 +693,7 @@
             // 
             this.TB_R170_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R170_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R170_CLOCKTIME.Location = new System.Drawing.Point(241, 213);
+            this.TB_R170_CLOCKTIME.Location = new System.Drawing.Point(367, 213);
             this.TB_R170_CLOCKTIME.Name = "TB_R170_CLOCKTIME";
             this.TB_R170_CLOCKTIME.ReadOnly = true;
             this.TB_R170_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -705,7 +707,7 @@
             this.TB_R170_Interval.Location = new System.Drawing.Point(124, 213);
             this.TB_R170_Interval.Name = "TB_R170_Interval";
             this.TB_R170_Interval.ReadOnly = true;
-            this.TB_R170_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R170_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R170_Interval.TabIndex = 56;
             this.TB_R170_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -725,7 +727,7 @@
             // 
             this.TB_Time_To_R1st_Delayed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_Time_To_R1st_Delayed.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Time_To_R1st_Delayed.Location = new System.Drawing.Point(594, 233);
+            this.TB_Time_To_R1st_Delayed.Location = new System.Drawing.Point(720, 233);
             this.TB_Time_To_R1st_Delayed.Name = "TB_Time_To_R1st_Delayed";
             this.TB_Time_To_R1st_Delayed.Size = new System.Drawing.Size(127, 21);
             this.TB_Time_To_R1st_Delayed.TabIndex = 64;
@@ -737,7 +739,7 @@
             // 
             this.textBox42.BackColor = System.Drawing.Color.White;
             this.textBox42.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox42.Location = new System.Drawing.Point(349, 233);
+            this.textBox42.Location = new System.Drawing.Point(475, 233);
             this.textBox42.Margin = new System.Windows.Forms.Padding(5);
             this.textBox42.Name = "textBox42";
             this.textBox42.ReadOnly = true;
@@ -749,7 +751,7 @@
             // 
             this.TB_R160_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R160_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R160_CLOCKTIME.Location = new System.Drawing.Point(241, 233);
+            this.TB_R160_CLOCKTIME.Location = new System.Drawing.Point(367, 233);
             this.TB_R160_CLOCKTIME.Name = "TB_R160_CLOCKTIME";
             this.TB_R160_CLOCKTIME.ReadOnly = true;
             this.TB_R160_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -763,7 +765,7 @@
             this.TB_R160_Interval.Location = new System.Drawing.Point(124, 233);
             this.TB_R160_Interval.Name = "TB_R160_Interval";
             this.TB_R160_Interval.ReadOnly = true;
-            this.TB_R160_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R160_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R160_Interval.TabIndex = 61;
             this.TB_R160_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -783,7 +785,7 @@
             // 
             this.TB_Travel_Shift_Vent_Time.BackColor = System.Drawing.Color.White;
             this.TB_Travel_Shift_Vent_Time.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Travel_Shift_Vent_Time.Location = new System.Drawing.Point(594, 253);
+            this.TB_Travel_Shift_Vent_Time.Location = new System.Drawing.Point(720, 253);
             this.TB_Travel_Shift_Vent_Time.Name = "TB_Travel_Shift_Vent_Time";
             this.TB_Travel_Shift_Vent_Time.ReadOnly = true;
             this.TB_Travel_Shift_Vent_Time.Size = new System.Drawing.Size(127, 21);
@@ -794,7 +796,7 @@
             // 
             this.textBox47.BackColor = System.Drawing.Color.White;
             this.textBox47.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox47.Location = new System.Drawing.Point(349, 253);
+            this.textBox47.Location = new System.Drawing.Point(475, 253);
             this.textBox47.Margin = new System.Windows.Forms.Padding(5);
             this.textBox47.Name = "textBox47";
             this.textBox47.ReadOnly = true;
@@ -806,7 +808,7 @@
             // 
             this.TB_R150_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R150_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R150_CLOCKTIME.Location = new System.Drawing.Point(241, 253);
+            this.TB_R150_CLOCKTIME.Location = new System.Drawing.Point(367, 253);
             this.TB_R150_CLOCKTIME.Name = "TB_R150_CLOCKTIME";
             this.TB_R150_CLOCKTIME.ReadOnly = true;
             this.TB_R150_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -820,7 +822,7 @@
             this.TB_R150_Interval.Location = new System.Drawing.Point(124, 253);
             this.TB_R150_Interval.Name = "TB_R150_Interval";
             this.TB_R150_Interval.ReadOnly = true;
-            this.TB_R150_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R150_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R150_Interval.TabIndex = 66;
             this.TB_R150_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -840,7 +842,7 @@
             // 
             this.TB_Ascent_Time_Water.BackColor = System.Drawing.Color.White;
             this.TB_Ascent_Time_Water.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Ascent_Time_Water.Location = new System.Drawing.Point(594, 273);
+            this.TB_Ascent_Time_Water.Location = new System.Drawing.Point(720, 273);
             this.TB_Ascent_Time_Water.Name = "TB_Ascent_Time_Water";
             this.TB_Ascent_Time_Water.ReadOnly = true;
             this.TB_Ascent_Time_Water.Size = new System.Drawing.Size(127, 21);
@@ -851,7 +853,7 @@
             // 
             this.textBox52.BackColor = System.Drawing.Color.White;
             this.textBox52.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox52.Location = new System.Drawing.Point(349, 273);
+            this.textBox52.Location = new System.Drawing.Point(475, 273);
             this.textBox52.Margin = new System.Windows.Forms.Padding(5);
             this.textBox52.Name = "textBox52";
             this.textBox52.ReadOnly = true;
@@ -863,7 +865,7 @@
             // 
             this.TB_R140_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R140_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R140_CLOCKTIME.Location = new System.Drawing.Point(241, 273);
+            this.TB_R140_CLOCKTIME.Location = new System.Drawing.Point(367, 273);
             this.TB_R140_CLOCKTIME.Name = "TB_R140_CLOCKTIME";
             this.TB_R140_CLOCKTIME.ReadOnly = true;
             this.TB_R140_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -877,7 +879,7 @@
             this.TB_R140_Interval.Location = new System.Drawing.Point(124, 273);
             this.TB_R140_Interval.Name = "TB_R140_Interval";
             this.TB_R140_Interval.ReadOnly = true;
-            this.TB_R140_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R140_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R140_Interval.TabIndex = 71;
             this.TB_R140_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -897,7 +899,7 @@
             // 
             this.TB_Undress_Time.BackColor = System.Drawing.Color.White;
             this.TB_Undress_Time.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Undress_Time.Location = new System.Drawing.Point(594, 293);
+            this.TB_Undress_Time.Location = new System.Drawing.Point(720, 293);
             this.TB_Undress_Time.Name = "TB_Undress_Time";
             this.TB_Undress_Time.ReadOnly = true;
             this.TB_Undress_Time.Size = new System.Drawing.Size(127, 21);
@@ -908,7 +910,7 @@
             // 
             this.textBox57.BackColor = System.Drawing.Color.White;
             this.textBox57.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox57.Location = new System.Drawing.Point(349, 293);
+            this.textBox57.Location = new System.Drawing.Point(475, 293);
             this.textBox57.Margin = new System.Windows.Forms.Padding(5);
             this.textBox57.Name = "textBox57";
             this.textBox57.ReadOnly = true;
@@ -920,7 +922,7 @@
             // 
             this.TB_R130_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R130_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R130_CLOCKTIME.Location = new System.Drawing.Point(241, 293);
+            this.TB_R130_CLOCKTIME.Location = new System.Drawing.Point(367, 293);
             this.TB_R130_CLOCKTIME.Name = "TB_R130_CLOCKTIME";
             this.TB_R130_CLOCKTIME.ReadOnly = true;
             this.TB_R130_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -934,7 +936,7 @@
             this.TB_R130_Interval.Location = new System.Drawing.Point(124, 293);
             this.TB_R130_Interval.Name = "TB_R130_Interval";
             this.TB_R130_Interval.ReadOnly = true;
-            this.TB_R130_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R130_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R130_Interval.TabIndex = 76;
             this.TB_R130_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -954,7 +956,7 @@
             // 
             this.TB_Desc_Chamber_SurD.BackColor = System.Drawing.Color.White;
             this.TB_Desc_Chamber_SurD.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Desc_Chamber_SurD.Location = new System.Drawing.Point(594, 313);
+            this.TB_Desc_Chamber_SurD.Location = new System.Drawing.Point(720, 313);
             this.TB_Desc_Chamber_SurD.Name = "TB_Desc_Chamber_SurD";
             this.TB_Desc_Chamber_SurD.ReadOnly = true;
             this.TB_Desc_Chamber_SurD.Size = new System.Drawing.Size(127, 21);
@@ -965,7 +967,7 @@
             // 
             this.textBox62.BackColor = System.Drawing.Color.White;
             this.textBox62.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox62.Location = new System.Drawing.Point(349, 313);
+            this.textBox62.Location = new System.Drawing.Point(475, 313);
             this.textBox62.Margin = new System.Windows.Forms.Padding(5);
             this.textBox62.Name = "textBox62";
             this.textBox62.ReadOnly = true;
@@ -977,7 +979,7 @@
             // 
             this.TB_R120_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R120_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R120_CLOCKTIME.Location = new System.Drawing.Point(241, 313);
+            this.TB_R120_CLOCKTIME.Location = new System.Drawing.Point(367, 313);
             this.TB_R120_CLOCKTIME.Name = "TB_R120_CLOCKTIME";
             this.TB_R120_CLOCKTIME.ReadOnly = true;
             this.TB_R120_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -991,7 +993,7 @@
             this.TB_R120_Interval.Location = new System.Drawing.Point(124, 313);
             this.TB_R120_Interval.Name = "TB_R120_Interval";
             this.TB_R120_Interval.ReadOnly = true;
-            this.TB_R120_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R120_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R120_Interval.TabIndex = 81;
             this.TB_R120_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1011,7 +1013,7 @@
             // 
             this.TB_Total_SurD_Interval.BackColor = System.Drawing.Color.White;
             this.TB_Total_SurD_Interval.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Total_SurD_Interval.Location = new System.Drawing.Point(594, 333);
+            this.TB_Total_SurD_Interval.Location = new System.Drawing.Point(720, 333);
             this.TB_Total_SurD_Interval.Name = "TB_Total_SurD_Interval";
             this.TB_Total_SurD_Interval.ReadOnly = true;
             this.TB_Total_SurD_Interval.Size = new System.Drawing.Size(127, 21);
@@ -1022,7 +1024,7 @@
             // 
             this.textBox67.BackColor = System.Drawing.Color.White;
             this.textBox67.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox67.Location = new System.Drawing.Point(349, 333);
+            this.textBox67.Location = new System.Drawing.Point(475, 333);
             this.textBox67.Margin = new System.Windows.Forms.Padding(5);
             this.textBox67.Name = "textBox67";
             this.textBox67.ReadOnly = true;
@@ -1034,7 +1036,7 @@
             // 
             this.TB_R110_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R110_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R110_CLOCKTIME.Location = new System.Drawing.Point(241, 333);
+            this.TB_R110_CLOCKTIME.Location = new System.Drawing.Point(367, 333);
             this.TB_R110_CLOCKTIME.Name = "TB_R110_CLOCKTIME";
             this.TB_R110_CLOCKTIME.ReadOnly = true;
             this.TB_R110_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1048,7 +1050,7 @@
             this.TB_R110_Interval.Location = new System.Drawing.Point(124, 333);
             this.TB_R110_Interval.Name = "TB_R110_Interval";
             this.TB_R110_Interval.ReadOnly = true;
-            this.TB_R110_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R110_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R110_Interval.TabIndex = 86;
             this.TB_R110_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1068,7 +1070,7 @@
             // 
             this.TB_Ascent_Time_Chamber.BackColor = System.Drawing.Color.White;
             this.TB_Ascent_Time_Chamber.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Ascent_Time_Chamber.Location = new System.Drawing.Point(594, 353);
+            this.TB_Ascent_Time_Chamber.Location = new System.Drawing.Point(720, 353);
             this.TB_Ascent_Time_Chamber.Name = "TB_Ascent_Time_Chamber";
             this.TB_Ascent_Time_Chamber.ReadOnly = true;
             this.TB_Ascent_Time_Chamber.Size = new System.Drawing.Size(127, 21);
@@ -1079,7 +1081,7 @@
             // 
             this.textBox72.BackColor = System.Drawing.Color.White;
             this.textBox72.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox72.Location = new System.Drawing.Point(349, 353);
+            this.textBox72.Location = new System.Drawing.Point(475, 353);
             this.textBox72.Margin = new System.Windows.Forms.Padding(5);
             this.textBox72.Name = "textBox72";
             this.textBox72.ReadOnly = true;
@@ -1091,7 +1093,7 @@
             // 
             this.TB_R100_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R100_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R100_CLOCKTIME.Location = new System.Drawing.Point(241, 353);
+            this.TB_R100_CLOCKTIME.Location = new System.Drawing.Point(367, 353);
             this.TB_R100_CLOCKTIME.Name = "TB_R100_CLOCKTIME";
             this.TB_R100_CLOCKTIME.ReadOnly = true;
             this.TB_R100_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1105,7 +1107,7 @@
             this.TB_R100_Interval.Location = new System.Drawing.Point(124, 353);
             this.TB_R100_Interval.Name = "TB_R100_Interval";
             this.TB_R100_Interval.ReadOnly = true;
-            this.TB_R100_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R100_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R100_Interval.TabIndex = 91;
             this.TB_R100_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1125,7 +1127,7 @@
             // 
             this.textBox76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox76.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox76.Location = new System.Drawing.Point(349, 373);
+            this.textBox76.Location = new System.Drawing.Point(475, 373);
             this.textBox76.Name = "textBox76";
             this.textBox76.ReadOnly = true;
             this.textBox76.Size = new System.Drawing.Size(372, 21);
@@ -1137,7 +1139,7 @@
             // 
             this.textBox77.BackColor = System.Drawing.Color.White;
             this.textBox77.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox77.Location = new System.Drawing.Point(241, 553);
+            this.textBox77.Location = new System.Drawing.Point(367, 553);
             this.textBox77.Name = "textBox77";
             this.textBox77.ReadOnly = true;
             this.textBox77.Size = new System.Drawing.Size(109, 21);
@@ -1151,7 +1153,7 @@
             this.textBox78.Location = new System.Drawing.Point(124, 553);
             this.textBox78.Name = "textBox78";
             this.textBox78.ReadOnly = true;
-            this.textBox78.Size = new System.Drawing.Size(118, 21);
+            this.textBox78.Size = new System.Drawing.Size(244, 21);
             this.textBox78.TabIndex = 124;
             this.textBox78.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1171,7 +1173,7 @@
             // 
             this.TB_RS.BackColor = System.Drawing.Color.White;
             this.TB_RS.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_RS.Location = new System.Drawing.Point(241, 533);
+            this.TB_RS.Location = new System.Drawing.Point(367, 533);
             this.TB_RS.Name = "TB_RS";
             this.TB_RS.ReadOnly = true;
             this.TB_RS.Size = new System.Drawing.Size(109, 21);
@@ -1185,7 +1187,7 @@
             this.textBox81.Location = new System.Drawing.Point(124, 533);
             this.textBox81.Name = "textBox81";
             this.textBox81.ReadOnly = true;
-            this.textBox81.Size = new System.Drawing.Size(118, 21);
+            this.textBox81.Size = new System.Drawing.Size(244, 21);
             this.textBox81.TabIndex = 121;
             this.textBox81.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1205,7 +1207,7 @@
             // 
             this.TB_R20_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R20_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R20_CLOCKTIME.Location = new System.Drawing.Point(241, 513);
+            this.TB_R20_CLOCKTIME.Location = new System.Drawing.Point(367, 513);
             this.TB_R20_CLOCKTIME.Name = "TB_R20_CLOCKTIME";
             this.TB_R20_CLOCKTIME.ReadOnly = true;
             this.TB_R20_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1219,7 +1221,7 @@
             this.TB_R20_Interval.Location = new System.Drawing.Point(124, 513);
             this.TB_R20_Interval.Name = "TB_R20_Interval";
             this.TB_R20_Interval.ReadOnly = true;
-            this.TB_R20_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R20_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R20_Interval.TabIndex = 118;
             this.TB_R20_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1239,7 +1241,7 @@
             // 
             this.TB_R30_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R30_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R30_CLOCKTIME.Location = new System.Drawing.Point(241, 493);
+            this.TB_R30_CLOCKTIME.Location = new System.Drawing.Point(367, 493);
             this.TB_R30_CLOCKTIME.Name = "TB_R30_CLOCKTIME";
             this.TB_R30_CLOCKTIME.ReadOnly = true;
             this.TB_R30_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1253,7 +1255,7 @@
             this.TB_R30_Interval.Location = new System.Drawing.Point(124, 493);
             this.TB_R30_Interval.Name = "TB_R30_Interval";
             this.TB_R30_Interval.ReadOnly = true;
-            this.TB_R30_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R30_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R30_Interval.TabIndex = 115;
             this.TB_R30_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1273,7 +1275,7 @@
             // 
             this.TB_R40_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R40_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R40_CLOCKTIME.Location = new System.Drawing.Point(241, 473);
+            this.TB_R40_CLOCKTIME.Location = new System.Drawing.Point(367, 473);
             this.TB_R40_CLOCKTIME.Name = "TB_R40_CLOCKTIME";
             this.TB_R40_CLOCKTIME.ReadOnly = true;
             this.TB_R40_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1287,7 +1289,7 @@
             this.TB_R40_Interval.Location = new System.Drawing.Point(124, 473);
             this.TB_R40_Interval.Name = "TB_R40_Interval";
             this.TB_R40_Interval.ReadOnly = true;
-            this.TB_R40_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R40_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R40_Interval.TabIndex = 112;
             this.TB_R40_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1307,7 +1309,7 @@
             // 
             this.TB_R50_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R50_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R50_CLOCKTIME.Location = new System.Drawing.Point(241, 453);
+            this.TB_R50_CLOCKTIME.Location = new System.Drawing.Point(367, 453);
             this.TB_R50_CLOCKTIME.Name = "TB_R50_CLOCKTIME";
             this.TB_R50_CLOCKTIME.ReadOnly = true;
             this.TB_R50_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1321,7 +1323,7 @@
             this.TB_R50_Interval.Location = new System.Drawing.Point(124, 453);
             this.TB_R50_Interval.Name = "TB_R50_Interval";
             this.TB_R50_Interval.ReadOnly = true;
-            this.TB_R50_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R50_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R50_Interval.TabIndex = 109;
             this.TB_R50_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1341,7 +1343,7 @@
             // 
             this.TB_R60_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R60_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R60_CLOCKTIME.Location = new System.Drawing.Point(241, 433);
+            this.TB_R60_CLOCKTIME.Location = new System.Drawing.Point(367, 433);
             this.TB_R60_CLOCKTIME.Name = "TB_R60_CLOCKTIME";
             this.TB_R60_CLOCKTIME.ReadOnly = true;
             this.TB_R60_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1355,7 +1357,7 @@
             this.TB_R60_Interval.Location = new System.Drawing.Point(124, 433);
             this.TB_R60_Interval.Name = "TB_R60_Interval";
             this.TB_R60_Interval.ReadOnly = true;
-            this.TB_R60_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R60_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R60_Interval.TabIndex = 106;
             this.TB_R60_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1375,7 +1377,7 @@
             // 
             this.TB_R70_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R70_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R70_CLOCKTIME.Location = new System.Drawing.Point(241, 413);
+            this.TB_R70_CLOCKTIME.Location = new System.Drawing.Point(367, 413);
             this.TB_R70_CLOCKTIME.Name = "TB_R70_CLOCKTIME";
             this.TB_R70_CLOCKTIME.ReadOnly = true;
             this.TB_R70_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1389,7 +1391,7 @@
             this.TB_R70_Interval.Location = new System.Drawing.Point(124, 413);
             this.TB_R70_Interval.Name = "TB_R70_Interval";
             this.TB_R70_Interval.ReadOnly = true;
-            this.TB_R70_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R70_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R70_Interval.TabIndex = 103;
             this.TB_R70_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1409,7 +1411,7 @@
             // 
             this.TB_R80_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R80_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R80_CLOCKTIME.Location = new System.Drawing.Point(241, 393);
+            this.TB_R80_CLOCKTIME.Location = new System.Drawing.Point(367, 393);
             this.TB_R80_CLOCKTIME.Name = "TB_R80_CLOCKTIME";
             this.TB_R80_CLOCKTIME.ReadOnly = true;
             this.TB_R80_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1423,7 +1425,7 @@
             this.TB_R80_Interval.Location = new System.Drawing.Point(124, 393);
             this.TB_R80_Interval.Name = "TB_R80_Interval";
             this.TB_R80_Interval.ReadOnly = true;
-            this.TB_R80_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R80_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R80_Interval.TabIndex = 100;
             this.TB_R80_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1443,7 +1445,7 @@
             // 
             this.TB_R90_CLOCKTIME.BackColor = System.Drawing.Color.White;
             this.TB_R90_CLOCKTIME.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_R90_CLOCKTIME.Location = new System.Drawing.Point(241, 373);
+            this.TB_R90_CLOCKTIME.Location = new System.Drawing.Point(367, 373);
             this.TB_R90_CLOCKTIME.Name = "TB_R90_CLOCKTIME";
             this.TB_R90_CLOCKTIME.ReadOnly = true;
             this.TB_R90_CLOCKTIME.Size = new System.Drawing.Size(109, 21);
@@ -1457,7 +1459,7 @@
             this.TB_R90_Interval.Location = new System.Drawing.Point(124, 373);
             this.TB_R90_Interval.Name = "TB_R90_Interval";
             this.TB_R90_Interval.ReadOnly = true;
-            this.TB_R90_Interval.Size = new System.Drawing.Size(118, 21);
+            this.TB_R90_Interval.Size = new System.Drawing.Size(244, 21);
             this.TB_R90_Interval.TabIndex = 97;
             this.TB_R90_Interval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1477,7 +1479,7 @@
             // 
             this.textBox107.BackColor = System.Drawing.Color.White;
             this.textBox107.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox107.Location = new System.Drawing.Point(241, 633);
+            this.textBox107.Location = new System.Drawing.Point(367, 633);
             this.textBox107.Name = "textBox107";
             this.textBox107.Size = new System.Drawing.Size(109, 21);
             this.textBox107.TabIndex = 137;
@@ -1489,7 +1491,7 @@
             this.textBox108.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox108.Location = new System.Drawing.Point(124, 633);
             this.textBox108.Name = "textBox108";
-            this.textBox108.Size = new System.Drawing.Size(118, 21);
+            this.textBox108.Size = new System.Drawing.Size(244, 21);
             this.textBox108.TabIndex = 136;
             this.textBox108.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1509,7 +1511,7 @@
             // 
             this.textBox110.BackColor = System.Drawing.Color.White;
             this.textBox110.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox110.Location = new System.Drawing.Point(241, 613);
+            this.textBox110.Location = new System.Drawing.Point(367, 613);
             this.textBox110.Name = "textBox110";
             this.textBox110.Size = new System.Drawing.Size(109, 21);
             this.textBox110.TabIndex = 134;
@@ -1521,7 +1523,7 @@
             this.textBox111.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox111.Location = new System.Drawing.Point(124, 613);
             this.textBox111.Name = "textBox111";
-            this.textBox111.Size = new System.Drawing.Size(118, 21);
+            this.textBox111.Size = new System.Drawing.Size(244, 21);
             this.textBox111.TabIndex = 133;
             this.textBox111.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1541,7 +1543,7 @@
             // 
             this.textBox113.BackColor = System.Drawing.Color.White;
             this.textBox113.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox113.Location = new System.Drawing.Point(241, 593);
+            this.textBox113.Location = new System.Drawing.Point(367, 593);
             this.textBox113.Name = "textBox113";
             this.textBox113.ReadOnly = true;
             this.textBox113.Size = new System.Drawing.Size(109, 21);
@@ -1555,7 +1557,7 @@
             this.textBox114.Location = new System.Drawing.Point(124, 593);
             this.textBox114.Name = "textBox114";
             this.textBox114.ReadOnly = true;
-            this.textBox114.Size = new System.Drawing.Size(118, 21);
+            this.textBox114.Size = new System.Drawing.Size(244, 21);
             this.textBox114.TabIndex = 130;
             this.textBox114.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1575,7 +1577,7 @@
             // 
             this.textBox116.BackColor = System.Drawing.Color.White;
             this.textBox116.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox116.Location = new System.Drawing.Point(241, 573);
+            this.textBox116.Location = new System.Drawing.Point(367, 573);
             this.textBox116.Name = "textBox116";
             this.textBox116.ReadOnly = true;
             this.textBox116.Size = new System.Drawing.Size(109, 21);
@@ -1589,7 +1591,7 @@
             this.textBox117.Location = new System.Drawing.Point(124, 573);
             this.textBox117.Name = "textBox117";
             this.textBox117.ReadOnly = true;
-            this.textBox117.Size = new System.Drawing.Size(118, 21);
+            this.textBox117.Size = new System.Drawing.Size(244, 21);
             this.textBox117.TabIndex = 127;
             this.textBox117.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1609,7 +1611,7 @@
             // 
             this.textBox119.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox119.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox119.Location = new System.Drawing.Point(349, 393);
+            this.textBox119.Location = new System.Drawing.Point(475, 393);
             this.textBox119.Name = "textBox119";
             this.textBox119.ReadOnly = true;
             this.textBox119.Size = new System.Drawing.Size(99, 21);
@@ -1621,7 +1623,7 @@
             // 
             this.textBox120.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox120.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox120.Location = new System.Drawing.Point(447, 393);
+            this.textBox120.Location = new System.Drawing.Point(573, 393);
             this.textBox120.Name = "textBox120";
             this.textBox120.ReadOnly = true;
             this.textBox120.Size = new System.Drawing.Size(274, 21);
@@ -1631,18 +1633,18 @@
             // 
             // TB_DELAY_Desc_Reason1
             // 
-            this.TB_DELAY_Desc_Reason1.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Reason1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Reason1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Reason1.Location = new System.Drawing.Point(447, 413);
+            this.TB_DELAY_Desc_Reason1.Location = new System.Drawing.Point(573, 413);
             this.TB_DELAY_Desc_Reason1.Name = "TB_DELAY_Desc_Reason1";
             this.TB_DELAY_Desc_Reason1.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Desc_Reason1.TabIndex = 141;
             // 
             // TB_DELAY_Desc_Depth1
             // 
-            this.TB_DELAY_Desc_Depth1.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Depth1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Depth1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Depth1.Location = new System.Drawing.Point(349, 413);
+            this.TB_DELAY_Desc_Depth1.Location = new System.Drawing.Point(475, 413);
             this.TB_DELAY_Desc_Depth1.Name = "TB_DELAY_Desc_Depth1";
             this.TB_DELAY_Desc_Depth1.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Desc_Depth1.TabIndex = 140;
@@ -1650,18 +1652,18 @@
             // 
             // TB_DELAY_Desc_Reason2
             // 
-            this.TB_DELAY_Desc_Reason2.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Reason2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Reason2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Reason2.Location = new System.Drawing.Point(447, 433);
+            this.TB_DELAY_Desc_Reason2.Location = new System.Drawing.Point(573, 433);
             this.TB_DELAY_Desc_Reason2.Name = "TB_DELAY_Desc_Reason2";
             this.TB_DELAY_Desc_Reason2.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Desc_Reason2.TabIndex = 143;
             // 
             // TB_DELAY_Desc_Depth2
             // 
-            this.TB_DELAY_Desc_Depth2.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Depth2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Depth2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Depth2.Location = new System.Drawing.Point(349, 433);
+            this.TB_DELAY_Desc_Depth2.Location = new System.Drawing.Point(475, 433);
             this.TB_DELAY_Desc_Depth2.Name = "TB_DELAY_Desc_Depth2";
             this.TB_DELAY_Desc_Depth2.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Desc_Depth2.TabIndex = 142;
@@ -1669,18 +1671,18 @@
             // 
             // TB_DELAY_Desc_Reason3
             // 
-            this.TB_DELAY_Desc_Reason3.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Reason3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Reason3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Reason3.Location = new System.Drawing.Point(447, 453);
+            this.TB_DELAY_Desc_Reason3.Location = new System.Drawing.Point(573, 453);
             this.TB_DELAY_Desc_Reason3.Name = "TB_DELAY_Desc_Reason3";
             this.TB_DELAY_Desc_Reason3.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Desc_Reason3.TabIndex = 145;
             // 
             // TB_DELAY_Desc_Depth3
             // 
-            this.TB_DELAY_Desc_Depth3.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Desc_Depth3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Desc_Depth3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Desc_Depth3.Location = new System.Drawing.Point(349, 453);
+            this.TB_DELAY_Desc_Depth3.Location = new System.Drawing.Point(475, 453);
             this.TB_DELAY_Desc_Depth3.Name = "TB_DELAY_Desc_Depth3";
             this.TB_DELAY_Desc_Depth3.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Desc_Depth3.TabIndex = 144;
@@ -1690,7 +1692,7 @@
             // 
             this.textBox127.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox127.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox127.Location = new System.Drawing.Point(447, 493);
+            this.textBox127.Location = new System.Drawing.Point(573, 493);
             this.textBox127.Name = "textBox127";
             this.textBox127.ReadOnly = true;
             this.textBox127.Size = new System.Drawing.Size(274, 21);
@@ -1702,7 +1704,7 @@
             // 
             this.textBox128.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox128.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox128.Location = new System.Drawing.Point(349, 493);
+            this.textBox128.Location = new System.Drawing.Point(475, 493);
             this.textBox128.Name = "textBox128";
             this.textBox128.ReadOnly = true;
             this.textBox128.Size = new System.Drawing.Size(99, 21);
@@ -1714,7 +1716,7 @@
             // 
             this.textBox129.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox129.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox129.Location = new System.Drawing.Point(349, 473);
+            this.textBox129.Location = new System.Drawing.Point(475, 473);
             this.textBox129.Name = "textBox129";
             this.textBox129.ReadOnly = true;
             this.textBox129.Size = new System.Drawing.Size(372, 21);
@@ -1724,18 +1726,18 @@
             // 
             // TB_DELAY_Asc_Reason3
             // 
-            this.TB_DELAY_Asc_Reason3.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Reason3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Reason3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Reason3.Location = new System.Drawing.Point(447, 553);
+            this.TB_DELAY_Asc_Reason3.Location = new System.Drawing.Point(573, 553);
             this.TB_DELAY_Asc_Reason3.Name = "TB_DELAY_Asc_Reason3";
             this.TB_DELAY_Asc_Reason3.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Asc_Reason3.TabIndex = 154;
             // 
             // TB_DELAY_Asc_Depth3
             // 
-            this.TB_DELAY_Asc_Depth3.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Depth3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Depth3.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Depth3.Location = new System.Drawing.Point(349, 553);
+            this.TB_DELAY_Asc_Depth3.Location = new System.Drawing.Point(475, 553);
             this.TB_DELAY_Asc_Depth3.Name = "TB_DELAY_Asc_Depth3";
             this.TB_DELAY_Asc_Depth3.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Asc_Depth3.TabIndex = 153;
@@ -1743,18 +1745,18 @@
             // 
             // TB_DELAY_Asc_Reason2
             // 
-            this.TB_DELAY_Asc_Reason2.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Reason2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Reason2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Reason2.Location = new System.Drawing.Point(447, 533);
+            this.TB_DELAY_Asc_Reason2.Location = new System.Drawing.Point(573, 533);
             this.TB_DELAY_Asc_Reason2.Name = "TB_DELAY_Asc_Reason2";
             this.TB_DELAY_Asc_Reason2.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Asc_Reason2.TabIndex = 152;
             // 
             // TB_DELAY_Asc_Depth2
             // 
-            this.TB_DELAY_Asc_Depth2.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Depth2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Depth2.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Depth2.Location = new System.Drawing.Point(349, 533);
+            this.TB_DELAY_Asc_Depth2.Location = new System.Drawing.Point(475, 533);
             this.TB_DELAY_Asc_Depth2.Name = "TB_DELAY_Asc_Depth2";
             this.TB_DELAY_Asc_Depth2.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Asc_Depth2.TabIndex = 151;
@@ -1762,18 +1764,18 @@
             // 
             // TB_DELAY_Asc_Reason1
             // 
-            this.TB_DELAY_Asc_Reason1.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Reason1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Reason1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Reason1.Location = new System.Drawing.Point(447, 513);
+            this.TB_DELAY_Asc_Reason1.Location = new System.Drawing.Point(573, 513);
             this.TB_DELAY_Asc_Reason1.Name = "TB_DELAY_Asc_Reason1";
             this.TB_DELAY_Asc_Reason1.Size = new System.Drawing.Size(274, 21);
             this.TB_DELAY_Asc_Reason1.TabIndex = 150;
             // 
             // TB_DELAY_Asc_Depth1
             // 
-            this.TB_DELAY_Asc_Depth1.BackColor = System.Drawing.Color.White;
+            this.TB_DELAY_Asc_Depth1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TB_DELAY_Asc_Depth1.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_DELAY_Asc_Depth1.Location = new System.Drawing.Point(349, 513);
+            this.TB_DELAY_Asc_Depth1.Location = new System.Drawing.Point(475, 513);
             this.TB_DELAY_Asc_Depth1.Name = "TB_DELAY_Asc_Depth1";
             this.TB_DELAY_Asc_Depth1.Size = new System.Drawing.Size(99, 21);
             this.TB_DELAY_Asc_Depth1.TabIndex = 149;
@@ -1783,7 +1785,7 @@
             // 
             this.textBox136.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.textBox136.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox136.Location = new System.Drawing.Point(349, 573);
+            this.textBox136.Location = new System.Drawing.Point(475, 573);
             this.textBox136.Name = "textBox136";
             this.textBox136.ReadOnly = true;
             this.textBox136.Size = new System.Drawing.Size(372, 21);
@@ -1810,7 +1812,7 @@
             this.textBox138.Location = new System.Drawing.Point(124, 653);
             this.textBox138.Name = "textBox138";
             this.textBox138.ReadOnly = true;
-            this.textBox138.Size = new System.Drawing.Size(226, 21);
+            this.textBox138.Size = new System.Drawing.Size(352, 21);
             this.textBox138.TabIndex = 157;
             this.textBox138.Text = "총 잠수시간";
             this.textBox138.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1818,30 +1820,32 @@
             // TB_TTD
             // 
             this.TB_TTD.BackColor = System.Drawing.Color.White;
-            this.TB_TTD.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_TTD.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_TTD.Location = new System.Drawing.Point(124, 673);
             this.TB_TTD.Multiline = true;
             this.TB_TTD.Name = "TB_TTD";
             this.TB_TTD.ReadOnly = true;
-            this.TB_TTD.Size = new System.Drawing.Size(226, 80);
+            this.TB_TTD.Size = new System.Drawing.Size(352, 80);
             this.TB_TTD.TabIndex = 159;
+            this.TB_TTD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_TDT
             // 
             this.TB_TDT.BackColor = System.Drawing.Color.White;
-            this.TB_TDT.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_TDT.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_TDT.Location = new System.Drawing.Point(10, 673);
             this.TB_TDT.Multiline = true;
             this.TB_TDT.Name = "TB_TDT";
             this.TB_TDT.ReadOnly = true;
             this.TB_TDT.Size = new System.Drawing.Size(115, 80);
             this.TB_TDT.TabIndex = 158;
+            this.TB_TDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox141
             // 
             this.textBox141.BackColor = System.Drawing.Color.White;
             this.textBox141.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox141.Location = new System.Drawing.Point(349, 593);
+            this.textBox141.Location = new System.Drawing.Point(475, 593);
             this.textBox141.Multiline = true;
             this.textBox141.Name = "textBox141";
             this.textBox141.ReadOnly = true;
@@ -1853,7 +1857,7 @@
             // 
             this.textBox142.BackColor = System.Drawing.Color.White;
             this.textBox142.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox142.Location = new System.Drawing.Point(349, 732);
+            this.textBox142.Location = new System.Drawing.Point(475, 732);
             this.textBox142.Name = "textBox142";
             this.textBox142.ReadOnly = true;
             this.textBox142.Size = new System.Drawing.Size(99, 21);
@@ -1862,10 +1866,10 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox5.Controls.Add(this.RB_HeO2_SurD);
             this.groupBox5.Controls.Add(this.RB_HeO2_HeO2);
-            this.groupBox5.Location = new System.Drawing.Point(537, 613);
+            this.groupBox5.Location = new System.Drawing.Point(663, 613);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(151, 100);
             this.groupBox5.TabIndex = 3;
@@ -1896,7 +1900,7 @@
             // 
             this.TB_Repeat_Group.BackColor = System.Drawing.Color.White;
             this.TB_Repeat_Group.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Repeat_Group.Location = new System.Drawing.Point(447, 732);
+            this.TB_Repeat_Group.Location = new System.Drawing.Point(573, 732);
             this.TB_Repeat_Group.Name = "TB_Repeat_Group";
             this.TB_Repeat_Group.ReadOnly = true;
             this.TB_Repeat_Group.Size = new System.Drawing.Size(274, 21);
@@ -1931,11 +1935,53 @@
             this.BT_Reload_Data_File.UseVisualStyleBackColor = true;
             this.BT_Reload_Data_File.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Reload_Data_File_MouseDown);
             // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox6.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox6.Location = new System.Drawing.Point(594, 13);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(56, 21);
+            this.textBox6.TabIndex = 167;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox8.Location = new System.Drawing.Point(594, 40);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(56, 21);
+            this.textBox8.TabIndex = 168;
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(657, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 169;
+            this.label2.Text = "입력";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(656, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 170;
+            this.label3.Text = "출력";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 761);
+            this.ClientSize = new System.Drawing.Size(870, 761);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.BT_Reload_Data_File);
             this.Controls.Add(this.L_Data_Loaded);
             this.Controls.Add(this.BT_Initialize);
@@ -2256,6 +2302,10 @@
         private System.Windows.Forms.Button BT_Initialize;
         private System.Windows.Forms.Label L_Data_Loaded;
         private System.Windows.Forms.Button BT_Reload_Data_File;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

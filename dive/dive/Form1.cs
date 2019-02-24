@@ -282,6 +282,7 @@ namespace dive
             }
 
         }
+        
         #region GlobalVariables
         static int g_stageDepth = -1;
         static int g_MaxDepth = -1;
@@ -302,19 +303,8 @@ namespace dive
         static List<TextBox> g_TB_Circum_READONLY;
         static List<TextBox> g_TB_Circum_WRITE;
         
-
         static DCompRow g_curDCompRow;
         static GasMix g_GasMix = GasMix.NONE;
-
-        public bool isResultReady() { return !((g_MaxDepth == -1) ||(g_BottomTime == -1)||(g_GasMix == GasMix.NONE)); }
-        void UpdateGasMix() {
-            if (this.RB_GAS_AIR.Checked)
-            { g_GasMix = GasMix.AIR; }
-            else if (this.RB_GAS_AIRO2.Checked)
-            { g_GasMix = GasMix.AIRO2; }
-            else
-            { g_GasMix = GasMix.NONE; }
-        }
 
         HSYSTimes hTimes;
         static List<int> g_depthList;
@@ -330,16 +320,26 @@ namespace dive
             public HSYS g_LS;
             public HSYS g_RB;
             public HSYS g_LB;
+            public HSYS g_RS;
+            public HSYS g_TTD;
+            public HSYS g_R1st_Stop;
             public HSYS g_EstRB;
             public HSYS g_TBT;
+            public SortedDictionary<int, HSYS> g_DCompStop_Leave;
+            public SortedDictionary<int, HSYS> g_DCompStop_Reach;
 
             public HSYSTimes()
             {
                 g_LS = new HSYS();
                 g_RB = new HSYS();
                 g_LB = new HSYS();
+                g_RS = new HSYS();
+                g_TTD = new HSYS();
                 g_EstRB = new HSYS();
                 g_TBT = new HSYS();
+                g_R1st_Stop = new HSYS();
+                g_DCompStop_Leave = new SortedDictionary<int, HSYS>();
+                g_DCompStop_Reach = new SortedDictionary<int, HSYS>();
             }
         }
         public class HSYS
@@ -356,6 +356,31 @@ namespace dive
                     return hour * 60 + minute;
                 }
                 return 0;
+            }
+
+            public void addMMSS(int MMSS)
+            {
+                if (MMSS <= 0)
+                {
+                    return;
+                }
+
+                int min = MMSS / 100;
+                int seconds = MMSS % 100 + min*60;
+
+                this.addSeconds(seconds);
+                
+            }
+
+            
+
+            public void addSeconds(int seconds)
+            {
+                if (seconds <= 0)
+                    return;
+                int min = (seconds-1) / 60;
+                min++;
+                this.addMin(min);
             }
 
             public bool isInitialized()
@@ -397,33 +422,35 @@ namespace dive
             {
                 this.hour = hour;
                 this.minute = minute;
+                UpdateMinHr();
+            }
+
+            private void UpdateMinHr()
+            {
+                while (this.minute >= 60)
+                {
+                    this.hour++;
+                    minute -= 60;
+                }
+
+                while ( this.minute < 0)
+                {
+                    this.hour--;
+                    minute += 60;
+                }
             }
 
             public HSYS addMin(int min)
             {
-                int totMin = this.minute + min;
-                int totHour = this.hour;
-                if (totMin >= 60)
-                {
-                    totHour++;
-                    totMin -= 60;
-                }
-                this.minute = totMin;
-                this.hour = totHour;
+                this.minute += min;
+                UpdateMinHr();
                 return this;
             }
 
             public HSYS subMin(int min)
             {
-                int totMin = this.minute - min;
-                int totHour = this.hour;
-                if (totMin < 0)
-                {
-                    totHour--;
-                    totMin += 60;
-                }
-                this.minute = totMin;
-                this.hour = totHour;
+                this.minute -= min;
+                UpdateMinHr();
                 return this;
             }
 
@@ -431,11 +458,7 @@ namespace dive
             {
                 int totMin = lhs.minute + rhs.minute;
                 int totHour = lhs.hour + rhs.hour;
-                if (totMin >= 60)
-                {
-                    totHour++;
-                    totMin -= 60;
-                }
+
                 HSYS result = new HSYS(totHour, totMin);
                 return result;
             }
@@ -444,11 +467,7 @@ namespace dive
             {
                 int totMin = lhs.minute - rhs.minute;
                 int totHour = lhs.hour - rhs.hour;
-                if (totMin < 0)
-                {
-                    totHour--;
-                    totMin += 60;
-                }
+
                 HSYS result = new HSYS(totHour, totMin);
                 return result;
             }
@@ -566,7 +585,15 @@ namespace dive
             public int m_AscentSecond = -1;
             public double m_ChamberO2Periods = -1;
             public char m_RepeatGroup = '0';
+            //Total Decompression Time
+            public int m_TDT = 0;
+            //ex) map[20] = 46, map [30] = 7, ...
             public SortedDictionary<int, int> m_DCompStops;
+            //ex) if DCompStops[20] = 46, DCompStops[30] = 7, ... :
+            //      map[30] = { 7 }, map[20] = { 23, 5, 23}
+            //      under condition of MaxDCompTime = 30, pauseInterval = 5
+            public SortedDictionary<int, List<int>> m_DComp_pauses_data;
+            public SortedDictionary<int, int> m_DCompStops_including_pause_time;
             public bool isInitialized = false;
             public string printDCompStops()
             {
@@ -586,18 +613,27 @@ namespace dive
             public DCompRow()
             {
                 m_DCompStops = new SortedDictionary<int, int>();
+                m_DComp_pauses_data = new SortedDictionary<int, List<int>>();
+                m_DCompStops_including_pause_time = new SortedDictionary<int, int>();
             }
-            public DCompRow(int bottomTime, int timeToFirstStop, GasMix gasMix, double chamberO2Periods, char repeatGroup, params int[] mapList)
+            public DCompRow(int bottomTime, int timeToFirstStop, GasMix gasMix, double chamberO2Periods, char repeatGroup, params int[] DCompTimeFromFile)
             {
                 m_DCompStops = new SortedDictionary<int, int>();
+                m_DComp_pauses_data = new SortedDictionary<int, List<int>>();
+                m_DCompStops_including_pause_time = new SortedDictionary<int, int>();
 
                 var keys = m_DCompStops.Keys.ToList();
 
-                for (int idx = 0; idx < mapList.Length; idx++)
+                for (int idx = 0; idx < DCompTimeFromFile.Length; idx++)
                 {
-                    m_DCompStops.Add((20 + idx * 10), mapList[idx]);
+                    m_DCompStops.Add((20 + idx * 10), DCompTimeFromFile[idx]);
+                    m_TDT += DCompTimeFromFile[idx];
                     //m_DCompStops[keys.ElementAt(idx)] = mapList[idx];
                 }
+
+                this.UpdatePauseData();
+                this.UpdateTimeIncludingPauses();
+
                 isInitialized = true;
 
                 m_BottomTime = bottomTime;
@@ -606,12 +642,115 @@ namespace dive
                 m_ChamberO2Periods = chamberO2Periods;
                 m_RepeatGroup = repeatGroup;
             }
+            private void UpdateTimeIncludingPauses()
+            {
+                
+                foreach (var pair in m_DComp_pauses_data)
+                {
+                    int depth = pair.Key;
+                    var data = pair.Value;
+
+                    int totalMinutes = 0;
+                    foreach(var min in data)
+                    {
+                        totalMinutes += min;
+                    }
+
+                    m_DCompStops_including_pause_time[depth] = totalMinutes;
+                }
+            }
+
+            private void UpdatePauseData()
+            {
+                int maxDcompTime = 30;
+                int pauseInterval = 5;
+                int intervalFromLastPause = 0;
+                
+                var reversed = m_DCompStops.OrderByDescending(i => i.Key);
+
+                foreach (var pair in reversed){
+                    int depth = pair.Key;
+                    int min = pair.Value;
+                    int av = maxDcompTime - intervalFromLastPause;
+
+                    //init
+                    m_DComp_pauses_data.Add(depth, new List<int>());
+                    
+                    /*
+                     *  while ( int + min > maxD ) :
+                     *      done = max - int
+                     *      dcomp (done)
+                     *      min -= done
+                     *      i = 0
+                     *  endWhile
+                     *  
+                     *  dcomp (min)
+                     *  int = min
+                     *  
+                     *  dcomp() { add_to_list(); add_pause(); }
+                     */
+
+                    while( intervalFromLastPause + min >= maxDcompTime)
+                    {
+                        int done = maxDcompTime - intervalFromLastPause;
+                        //dcomp (done)
+                        m_DComp_pauses_data[depth].Add(done);
+                        m_DComp_pauses_data[depth].Add(pauseInterval);
+                        min -= done;
+                        intervalFromLastPause = 0;
+                    }
+
+                    //dcomp (min)
+                    m_DComp_pauses_data[depth].Add(min);
+                    intervalFromLastPause += min;
+
+                    //m_DCompStops_pauses[depth] = 
+
+                }
+            }
         }
 
         #endregion
 
         #region Utils
-        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.LcurTime.Text = DateTime.Now.ToString();
+        }
+
+        string limitTextNchars(string text, int limit = 4)
+        {
+            if (text.Length >= limit)
+            {
+                return text.Substring(0, limit);
+            }
+            return text;
+        }
+
+        //true == succeeded, false == failed
+        bool numericConversion(string str)
+        {
+            if (containsChar(str))
+            {
+                string isError = "숫자만 입력해주세요";
+                MessageBox.Show(isError);
+                return false;
+            }
+            return true;
+        }
+
+        bool containsChar(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return true;
+            }
+
+            return false;
+        }
+
         enum ConvertTimeType { MMSS2SEC_ONLY, SEC_ONLY2MMSS }
         int convertTimeType(int input, ConvertTimeType cType)
         {
@@ -628,6 +767,10 @@ namespace dive
         }
 
         enum ColonType { MIN2HR, SEC4DIGITS, SEC_ONLY }
+        string colonizeTime(HSYS time)
+        {
+            return colonizeTime(time.TotalMinutes());
+        }
         string colonizeTime(int time, ColonType cType = ColonType.MIN2HR)
         {
             string result = "";
@@ -673,25 +816,6 @@ namespace dive
             return result;
         }
 
-        #endregion
-
-        public DCompRow searchDComp(int inDepth, int inMinutes, GasMix inGasType, ref int outTableDepth, ref int outTableBT )
-        {
-            DCompRow result;
-            int depth = inDepth;
-            int BT = inMinutes;
-            int tableDepth = intListLookup(depth, g_depthList);
-            if (tableDepth == -1) { return new DCompRow(); }
-            var tableBT = intListLookup(BT, g_BTLUT[tableDepth]);
-            if (tableBT == -1) { return new DCompRow(); }
-
-            outTableDepth = tableDepth;
-            outTableBT = tableBT;
-            result = g_DCompTable.getTable(inGasType)[tableDepth].m_DComps[tableBT];
-
-            return result;
-        }
-
         public int intListLookup(int dest, List<int> LUlist)
         {
             int result = -1;
@@ -710,10 +834,74 @@ namespace dive
             return result;
         }
 
+        #endregion
+
+        #region Crucial_Methods
+
+        int getMaximumDepth(int estDepth)
+        {
+            var map = new Dictionary<int, int>();
+            map.Add(200, 3);
+            map.Add(100, 2);
+            map.Add(0, 1);
+
+            List<int> limits = new List<int>();
+            foreach (var pair in map)
+            {
+                limits.Add(pair.Key);
+            }
+
+            foreach (var lim in limits)
+            {
+                if (estDepth > lim)
+                {
+                    return estDepth + map[lim];
+                }
+            }
+
+            return -1;
+        }
+
+        public DCompRow searchDComp(int inDepth, int inMinutes, GasMix inGasType, ref int outTableDepth, ref int outTableBT)
+        {
+            DCompRow result;
+            int depth = inDepth;
+            int BT = inMinutes;
+            int tableDepth = intListLookup(depth, g_depthList);
+            if (tableDepth == -1) { return new DCompRow(); }
+            var tableBT = intListLookup(BT, g_BTLUT[tableDepth]);
+            if (tableBT == -1) { return new DCompRow(); }
+
+            outTableDepth = tableDepth;
+            outTableBT = tableBT;
+            result = g_DCompTable.getTable(inGasType)[tableDepth].m_DComps[tableBT];
+
+            return result;
+        }
+
+        public bool isResultReady()
+        {
+            return !((g_MaxDepth == -1) || (g_BottomTime == -1) || (g_GasMix == GasMix.NONE));
+        }
+
+        
+        #endregion
+
+        #region Update
+
+        private void UpdateInput()
+        {
+            UpdateEstRB();
+            UpdateLB();
+            UpdateTBT();
+
+            UpdateResult();
+        }
+
         void UpdateTBT()
         {
             //for site
-            if(hTimes.g_LS.isInitialized() && (hTimes.g_TBT.TotalMinutes()>0))
+            if (hTimes.g_LS.isInitialized() && (hTimes.g_TBT.TotalMinutes() > 0))
             {
                 //this.TB_TBT.Text = hTimes.g_TBT.ToHS() + "( "+ colonizeTime(hTimes.g_TBT.TotalMinutes()) + ")";
                 g_BottomTime = hTimes.g_TBT.TotalMinutes();
@@ -726,13 +914,14 @@ namespace dive
 
         }
 
+
         void UpdateLB()
         {
             if (hTimes.g_LS.isInitialized() && hTimes.g_TBT.isInitialized())
             {
-                HSYS hLS = hTimes.g_LS + hTimes.g_TBT;
+                hTimes.g_LB = hTimes.g_LS + hTimes.g_TBT;
 
-                TB_LB.Text = hLS.ToString();
+                TB_LB.Text = hTimes.g_LB.ToString();
             }
             else
             {
@@ -758,7 +947,19 @@ namespace dive
             }
         }
 
-        //if ( depth, BT, gasMix ) { search_DCompRow(); show  } 
+        void UpdateGasMix()
+        {
+            if (this.RB_GAS_AIR.Checked)
+            { g_GasMix = GasMix.AIR; }
+            else if (this.RB_GAS_AIRO2.Checked)
+            { g_GasMix = GasMix.AIRO2; }
+            else
+            { g_GasMix = GasMix.NONE; }
+        }
+
+        //Update result and calls UI
+        //UpdateGasMix is called inside
+        //if ( depth, BT, gasMix ) { search_DCompRow(); show();  } 
         void UpdateResult()
         {
             UpdateGasMix();
@@ -774,7 +975,8 @@ namespace dive
             var row = g_curDCompRow;
 
             //update GUI
-            if(row.isInitialized){
+            if (row.isInitialized)
+            {
                 TB_DCompTable.Text = "[ " + tableDepth.ToString() + " FSW, " + tableBT.ToString() + " 분 ]";
 
                 TB_Time_To_R1st_Planned.Text = colonizeTime(row.m_TimeToFirstStop, ColonType.SEC4DIGITS);
@@ -782,16 +984,93 @@ namespace dive
 
                 TB_Repeat_Group.Text = ((row.m_RepeatGroup.ToString()) == "0") ? "분류 그룹 없음" : row.m_RepeatGroup.ToString();
 
-                foreach( var stop in row.m_DCompStops)
+                foreach (var elem in g_TB_FSW_Results) { elem.Text = "-"; }
+
+                foreach (var stop in row.m_DCompStops)
                 {
                     //specialize for No decompression
-                    if(stop.Key == 20 && stop.Value == 0)
+                    if (stop.Key == 20 && stop.Value == 0)
                     {
                         TB_DCompTable.Text = "[ 무감압 ]";
+                        TB_TDT.Text = "-";
                         break;
                     }
                     g_FSW2Interval[stop.Key].Text = colonizeTime(stop.Value);
                 }
+
+                //update pause time first
+                var reversed = row.m_DCompStops_including_pause_time.OrderByDescending(i => i.Key);
+                HSYS lastLeave = hTimes.g_R1st_Stop;
+                int R1stMinute = lastLeave.TotalMinutes();
+                hTimes.g_DCompStop_Leave = new SortedDictionary<int, HSYS>();
+                hTimes.g_DCompStop_Reach = new SortedDictionary<int, HSYS>();
+                foreach (var stop in reversed)
+                {
+                    int depth = stop.Key;
+                    int min = stop.Value;
+                    //init
+                    hTimes.g_DCompStop_Leave.Add(depth, new HSYS());
+                    hTimes.g_DCompStop_Reach.Add(depth, new HSYS());
+
+                    HSYS toStop = new HSYS(0, 0);
+                    toStop.addMin(min);
+
+                    // add 1 minute if not first stop
+                    if (lastLeave.TotalMinutes() != R1stMinute)
+                    {
+                        lastLeave.addMin(1);
+                    }
+
+                    hTimes.g_DCompStop_Reach[depth] = lastLeave;
+                    
+                    hTimes.g_DCompStop_Leave[depth] = lastLeave + toStop;
+
+                    lastLeave = hTimes.g_DCompStop_Reach[depth] + toStop;
+
+                }
+
+                if((hTimes.g_DCompStop_Leave).Count > 0)
+                {
+                    //gets called by reference...
+                    //hTimes.g_RS = hTimes.g_DCompStop_Leave[20];
+                    hTimes.g_RS = lastLeave;
+                    
+                    //up to surface
+                    hTimes.g_RS.addMin(1);
+
+                    hTimes.g_TTD = hTimes.g_RS - hTimes.g_LS;
+                }
+
+                {
+                    TB_RS.Text = hTimes.g_RS.ToString();
+
+                    TB_TTD.Text = colonizeTime(hTimes.g_TTD);
+                }
+                
+
+                //pauses related UI update
+
+                // interval
+                foreach ( var stop in row.m_DComp_pauses_data)
+                {
+                    var t = g_FSW2Interval[stop.Key].Text;
+                    g_FSW2Interval[stop.Key].Text = t + " { ";
+                    //decltype(stop.Value) = List<int>
+                    foreach ( var min in stop.Value)
+                    {
+                        g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + colonizeTime(min) + " ";
+                    }
+                    g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + "}";
+                }
+                // Clocktime
+                foreach (var stop in row.m_DCompStops_including_pause_time)
+                {
+                    int depth = stop.Key;
+                    g_FSW2Time[depth].Text = hTimes.g_DCompStop_Reach[depth].ToString() + " ~ " +hTimes.g_DCompStop_Leave[depth].ToString();
+                }
+
+
+                    TB_TDT.Text = "\n" + colonizeTime(row.m_TDT, ColonType.MIN2HR);
             }
             else
             {
@@ -807,7 +1086,7 @@ namespace dive
 
         private void UpdateTimeTo1stStop()
         {
-            if(g_curDCompRow == null)
+            if (g_curDCompRow == null)
             {
                 return;
             }
@@ -822,78 +1101,72 @@ namespace dive
                 delayTime = Convert.ToInt32(TB_Time_To_R1st_Delayed.Text);
             }
             int actualAscTime = convertTimeType(g_curDCompRow.m_TimeToFirstStop, ConvertTimeType.MMSS2SEC_ONLY) + delayTime;
-            
+
+            hTimes.g_R1st_Stop = hTimes.g_LB;
+            hTimes.g_R1st_Stop.addSeconds(actualAscTime);
+            TB_R1st.Text = hTimes.g_R1st_Stop.ToString();
+
             TB_Time_To_R1st_Actual.Text = colonizeTime(actualAscTime, ColonType.SEC_ONLY);
         }
 
-        int getMaximumDepth(int estDepth)
-        {
-            var map = new Dictionary<int, int>();
-            map.Add(200, 3);
-            map.Add(100, 2);
-            map.Add(0, 1);
+        #endregion
 
-            List<int> limits = new List<int>();
-            foreach ( var pair in map)
-            {
-                limits.Add(pair.Key);
-            }
+        #region Callbacks
 
-            foreach ( var lim in limits)
-            {
-                if(estDepth > lim)
-                {
-                    return estDepth + map[lim];
-                }
-            }
-
-            return -1;
-        }
-                
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.LcurTime.Text = DateTime.Now.ToString();
-        }
-        
+        // LS, Stage depth, TBT, Delay to 1st stop
+        #region Value_Input_Field
         private void TB_LS_TextChanged(object sender, EventArgs e)
         {
-            if(((TextBox)sender).Text == "")
+            TB_LS.Text = limitTextNchars(TB_LS.Text, 4);
+
+            if (!numericConversion(TB_LS.Text) )
+            {
+                TB_LS.Text = "";
+            }
+            if (TB_LS.Text.Length < 4)
             {
                 return;
             }
 
-            hTimes.g_LS.set4digit(((TextBox)sender).Text);
+            hTimes.g_LS.set4digit(TB_LS.Text);
 
             UpdateInput();
         }
 
-        private void UpdateInput()
+        private void TB_Stage_Depth_TextChanged(object sender, EventArgs e)
         {
-            UpdateEstRB();
-            UpdateLB();
-            UpdateTBT();
 
-            UpdateResult();
-        }
+            TB_StageDepth.Text = limitTextNchars(TB_StageDepth.Text, 4);
 
-        private void TB_RB_TextChanged(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
+            var t = TB_StageDepth.Text;
+            if (t == "" || !numericConversion(t))
             {
+                this.TB_MaxDepth.Text = "";
+                g_MaxDepth = -1;
+                g_stageDepth = -1;
                 return;
             }
-            hTimes.g_RB.set4digit(((TextBox)sender).Text);
+            int depth = Convert.ToInt32(t);
+            g_stageDepth = depth;
+            g_MaxDepth = getMaximumDepth(depth);
+
+            this.TB_MaxDepth.Text = getMaximumDepth(depth).ToString();
+
+            int DescTimeMin = (g_stageDepth - 1) / 75 + 1;
+
+            this.TB_Desc_Time.Text = colonizeTime(DescTimeMin);
+
+            UpdateInput();
         }
 
         private void TB_TBT_TextChanged(object sender, EventArgs e)
         {
-            if (((TextBox)sender).Text == "")
+            TB_TBT.Text = limitTextNchars(TB_TBT.Text, 4);
+
+            var t = TB_TBT.Text;
+            if (t == "" || !numericConversion(t))
             {
+                TB_TBT.Text = "";
                 return;
             }
 
@@ -901,14 +1174,26 @@ namespace dive
             UpdateInput();
         }
 
-        private void L_DCompResult_Click(object sender, EventArgs e)
+        private void TB_Time_To_R1st_Delayed_TextChanged(object sender, EventArgs e)
         {
-            int depth = 99;
-            int BT = 50;
-            int tableDepth = intListLookup(depth, g_depthList);
-            var tableBT = intListLookup(BT, g_BTLUT[tableDepth]);
-            var table = g_DCompTable.m_AirTable[tableDepth].m_DComps[tableBT];
+            TB_Time_To_R1st_Delayed.Text = limitTextNchars(TB_Time_To_R1st_Delayed.Text, 5);
+
+            var t = TB_Time_To_R1st_Delayed.Text;
+            if (!numericConversion(t))
+            {
+                TB_Time_To_R1st_Delayed.Text = "";
+                return;
+            }
+
+            UpdateInput();
         }
+        #endregion
+
+        // Values input field
+        
+
+
+
 
         private void RB_GAS_AIR_CheckedChanged(object sender, EventArgs e)
         {
@@ -920,48 +1205,21 @@ namespace dive
             UpdateInput();
         }
 
-        private void TB_Stage_Depth_TextChanged(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text == "")
-            {
-                this.TB_MaxDepth.Text = "";
-                //this.LRecAscTime.Text = "";
-                //this.L_EstRB.Text = "";
-                g_MaxDepth = -1;
-                g_stageDepth = -1;
-                return;
-            }
-            int depth = Convert.ToInt32(((TextBox)sender).Text);
-            g_stageDepth = depth;
-            g_MaxDepth = getMaximumDepth(depth);
-
-            this.TB_MaxDepth.Text = getMaximumDepth(depth).ToString();
-
-            int DescTimeMin = (g_stageDepth-1)/75 + 1;
-
-            this.TB_Desc_Time.Text = colonizeTime(DescTimeMin);
-
-            UpdateInput();
-        }
-
+        
         //clear field
         private void BT_Initialize_MouseDown(object sender, MouseEventArgs e)
         {
+            hTimes = new HSYSTimes();
             initAllFieldValues();
         }
 
-        private void TB_Time_To_R1st_Delayed_TextChanged(object sender, EventArgs e)
-        {
-            UpdateInput();
-            if (isResultReady())
-            {
-                UpdateTimeTo1stStop();
-            }
-        }
-
+        
         private void BT_Reload_Data_File_MouseDown(object sender, MouseEventArgs e)
         {
             initTableData();
         }
+
+        #endregion
+
     }
 }
