@@ -1334,6 +1334,7 @@ namespace dive
         
         private void BT_Reload_Data_File_MouseDown(object sender, MouseEventArgs e)
         {
+            g_LoadFromFile = true;
             initTableData();
         }
 
