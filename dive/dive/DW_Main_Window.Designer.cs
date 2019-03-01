@@ -36,11 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LcurTime = new System.Windows.Forms.Label();
             this.clockTimer = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CORNER_LT = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.CORNER_RT = new System.Windows.Forms.TextBox();
             this.TB_Desc_Time = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.TB_LS = new System.Windows.Forms.TextBox();
@@ -175,13 +175,13 @@
             this.textBox137 = new System.Windows.Forms.TextBox();
             this.textBox138 = new System.Windows.Forms.TextBox();
             this.TB_TTD = new System.Windows.Forms.TextBox();
-            this.TB_TDT = new System.Windows.Forms.TextBox();
+            this.CORNER_LB = new System.Windows.Forms.TextBox();
             this.textBox141 = new System.Windows.Forms.TextBox();
             this.textBox142 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.RB_HeO2_SurD = new System.Windows.Forms.RadioButton();
             this.RB_HeO2_HeO2 = new System.Windows.Forms.RadioButton();
-            this.TB_Repeat_Group = new System.Windows.Forms.TextBox();
+            this.CORNER_RB = new System.Windows.Forms.TextBox();
             this.BT_Initialize = new System.Windows.Forms.Button();
             this.L_Data_Loaded = new System.Windows.Forms.Label();
             this.BT_Reload_Data_File = new System.Windows.Forms.Button();
@@ -189,6 +189,8 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.BT_Save_Capture = new System.Windows.Forms.Button();
+            this.BT_Load_Capture = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -264,17 +266,17 @@
             this.clockTimer.Interval = 1000;
             this.clockTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textBox1
+            // CORNER_LT
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(10, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(115, 26);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "수심";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CORNER_LT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CORNER_LT.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CORNER_LT.Location = new System.Drawing.Point(10, 68);
+            this.CORNER_LT.Name = "CORNER_LT";
+            this.CORNER_LT.ReadOnly = true;
+            this.CORNER_LT.Size = new System.Drawing.Size(115, 26);
+            this.CORNER_LT.TabIndex = 20;
+            this.CORNER_LT.Text = "수심";
+            this.CORNER_LT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
@@ -312,17 +314,17 @@
             this.textBox4.Text = "상황";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // CORNER_RT
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox5.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(720, 68);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(127, 26);
-            this.textBox5.TabIndex = 24;
-            this.textBox5.Text = "수심/시간";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CORNER_RT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CORNER_RT.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CORNER_RT.Location = new System.Drawing.Point(720, 68);
+            this.CORNER_RT.Name = "CORNER_RT";
+            this.CORNER_RT.ReadOnly = true;
+            this.CORNER_RT.Size = new System.Drawing.Size(127, 26);
+            this.CORNER_RT.TabIndex = 24;
+            this.CORNER_RT.Text = "수심/시간";
+            this.CORNER_RT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_Desc_Time
             // 
@@ -1829,17 +1831,17 @@
             this.TB_TTD.TabIndex = 159;
             this.TB_TTD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TB_TDT
+            // CORNER_LB
             // 
-            this.TB_TDT.BackColor = System.Drawing.Color.White;
-            this.TB_TDT.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_TDT.Location = new System.Drawing.Point(10, 673);
-            this.TB_TDT.Multiline = true;
-            this.TB_TDT.Name = "TB_TDT";
-            this.TB_TDT.ReadOnly = true;
-            this.TB_TDT.Size = new System.Drawing.Size(115, 80);
-            this.TB_TDT.TabIndex = 158;
-            this.TB_TDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CORNER_LB.BackColor = System.Drawing.Color.White;
+            this.CORNER_LB.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CORNER_LB.Location = new System.Drawing.Point(10, 673);
+            this.CORNER_LB.Multiline = true;
+            this.CORNER_LB.Name = "CORNER_LB";
+            this.CORNER_LB.ReadOnly = true;
+            this.CORNER_LB.Size = new System.Drawing.Size(115, 80);
+            this.CORNER_LB.TabIndex = 158;
+            this.CORNER_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox141
             // 
@@ -1896,21 +1898,21 @@
             this.RB_HeO2_HeO2.Text = "수중 헬륨/산소 감압";
             this.RB_HeO2_HeO2.UseVisualStyleBackColor = true;
             // 
-            // TB_Repeat_Group
+            // CORNER_RB
             // 
-            this.TB_Repeat_Group.BackColor = System.Drawing.Color.White;
-            this.TB_Repeat_Group.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Repeat_Group.Location = new System.Drawing.Point(573, 732);
-            this.TB_Repeat_Group.Name = "TB_Repeat_Group";
-            this.TB_Repeat_Group.ReadOnly = true;
-            this.TB_Repeat_Group.Size = new System.Drawing.Size(274, 21);
-            this.TB_Repeat_Group.TabIndex = 162;
+            this.CORNER_RB.BackColor = System.Drawing.Color.White;
+            this.CORNER_RB.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CORNER_RB.Location = new System.Drawing.Point(573, 732);
+            this.CORNER_RB.Name = "CORNER_RB";
+            this.CORNER_RB.ReadOnly = true;
+            this.CORNER_RB.Size = new System.Drawing.Size(274, 21);
+            this.CORNER_RB.TabIndex = 162;
             // 
             // BT_Initialize
             // 
-            this.BT_Initialize.Location = new System.Drawing.Point(10, 40);
+            this.BT_Initialize.Location = new System.Drawing.Point(14, 40);
             this.BT_Initialize.Name = "BT_Initialize";
-            this.BT_Initialize.Size = new System.Drawing.Size(160, 23);
+            this.BT_Initialize.Size = new System.Drawing.Size(105, 23);
             this.BT_Initialize.TabIndex = 164;
             this.BT_Initialize.Text = "초기화";
             this.BT_Initialize.UseVisualStyleBackColor = true;
@@ -1927,11 +1929,11 @@
             // 
             // BT_Reload_Data_File
             // 
-            this.BT_Reload_Data_File.Location = new System.Drawing.Point(176, 40);
+            this.BT_Reload_Data_File.Location = new System.Drawing.Point(125, 40);
             this.BT_Reload_Data_File.Name = "BT_Reload_Data_File";
-            this.BT_Reload_Data_File.Size = new System.Drawing.Size(160, 23);
+            this.BT_Reload_Data_File.Size = new System.Drawing.Size(117, 23);
             this.BT_Reload_Data_File.TabIndex = 166;
-            this.BT_Reload_Data_File.Text = "데이터 다시 불러오기";
+            this.BT_Reload_Data_File.Text = "데이터 불러오기";
             this.BT_Reload_Data_File.UseVisualStyleBackColor = true;
             this.BT_Reload_Data_File.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Reload_Data_File_MouseDown);
             // 
@@ -1939,7 +1941,7 @@
             // 
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBox6.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.Location = new System.Drawing.Point(594, 13);
+            this.textBox6.Location = new System.Drawing.Point(730, 13);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(56, 21);
@@ -1950,7 +1952,7 @@
             // 
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(594, 40);
+            this.textBox8.Location = new System.Drawing.Point(730, 40);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(56, 21);
@@ -1960,7 +1962,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(657, 17);
+            this.label2.Location = new System.Drawing.Point(793, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 169;
@@ -1969,17 +1971,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(656, 45);
+            this.label3.Location = new System.Drawing.Point(792, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 170;
             this.label3.Text = "출력";
             // 
-            // Form1
+            // BT_Save_Capture
+            // 
+            this.BT_Save_Capture.Location = new System.Drawing.Point(248, 40);
+            this.BT_Save_Capture.Name = "BT_Save_Capture";
+            this.BT_Save_Capture.Size = new System.Drawing.Size(114, 23);
+            this.BT_Save_Capture.TabIndex = 171;
+            this.BT_Save_Capture.Text = "사진으로 저장하기";
+            this.BT_Save_Capture.UseVisualStyleBackColor = true;
+            this.BT_Save_Capture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Save_Capture_MouseDown);
+            // 
+            // BT_Load_Capture
+            // 
+            this.BT_Load_Capture.Location = new System.Drawing.Point(370, 40);
+            this.BT_Load_Capture.Name = "BT_Load_Capture";
+            this.BT_Load_Capture.Size = new System.Drawing.Size(102, 23);
+            this.BT_Load_Capture.TabIndex = 172;
+            this.BT_Load_Capture.Text = "사진 불러오기";
+            this.BT_Load_Capture.UseVisualStyleBackColor = true;
+            this.BT_Load_Capture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Load_Capture_MouseDown);
+            // 
+            // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 761);
+            this.Controls.Add(this.BT_Load_Capture);
+            this.Controls.Add(this.BT_Save_Capture);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox8);
@@ -1987,13 +2011,13 @@
             this.Controls.Add(this.BT_Reload_Data_File);
             this.Controls.Add(this.L_Data_Loaded);
             this.Controls.Add(this.BT_Initialize);
-            this.Controls.Add(this.TB_Repeat_Group);
+            this.Controls.Add(this.CORNER_RB);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox142);
             this.Controls.Add(this.textBox141);
             this.Controls.Add(this.TB_TTD);
-            this.Controls.Add(this.TB_TDT);
+            this.Controls.Add(this.CORNER_LB);
             this.Controls.Add(this.textBox138);
             this.Controls.Add(this.textBox137);
             this.Controls.Add(this.textBox136);
@@ -2127,16 +2151,16 @@
             this.Controls.Add(this.TB_LS);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.readonlyTB_1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.CORNER_RT);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CORNER_LT);
             this.Controls.Add(this.LcurTime);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "DW_Main_Window";
             this.Text = "Diver\'s World";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.DW_Main_Window_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2154,11 +2178,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LcurTime;
         private System.Windows.Forms.Timer clockTimer;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox CORNER_LT;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox CORNER_RT;
         private System.Windows.Forms.TextBox TB_Desc_Time;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox TB_LS;
@@ -2293,14 +2317,14 @@
         private System.Windows.Forms.TextBox textBox137;
         private System.Windows.Forms.TextBox textBox138;
         private System.Windows.Forms.TextBox TB_TTD;
-        private System.Windows.Forms.TextBox TB_TDT;
+        private System.Windows.Forms.TextBox CORNER_LB;
         private System.Windows.Forms.TextBox textBox141;
         private System.Windows.Forms.TextBox textBox142;
         private System.Windows.Forms.RadioButton RB_GAS_SurD;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton RB_HeO2_SurD;
         private System.Windows.Forms.RadioButton RB_HeO2_HeO2;
-        private System.Windows.Forms.TextBox TB_Repeat_Group;
+        private System.Windows.Forms.TextBox CORNER_RB;
         private System.Windows.Forms.Button BT_Initialize;
         private System.Windows.Forms.Label L_Data_Loaded;
         private System.Windows.Forms.Button BT_Reload_Data_File;
@@ -2308,6 +2332,8 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BT_Save_Capture;
+        private System.Windows.Forms.Button BT_Load_Capture;
     }
 }
 
