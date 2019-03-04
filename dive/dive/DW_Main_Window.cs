@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IronOcr;
+using System.Drawing.Imaging;
 
 namespace dive
 {
@@ -21,9 +21,29 @@ namespace dive
             InitializeComponent();
             initVars();
             initTBDesignators();
+            initMemberProperties();
             initTableData();
             initAllFieldValues();
         }
+
+        private void DW_Main_Window_Load(object sender, EventArgs e)
+        {
+            this.LcurTime.Text = getTime();
+        }
+
+        private void initMemberProperties()
+        {
+            foreach(var lists in g_TB_All_Fields)
+            {
+                foreach(var tb in lists)
+                {
+                    //tb.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+                    
+                }
+            }
+            
+        }
+
         private string getTime()
         {
             return DateTime.Now.ToString();
@@ -230,7 +250,7 @@ namespace dive
             if (g_LoadFromFile == false)
             //make nested table
             {
-                var noData = "데이터 파일이 없습니다. 내장된 데이터 파일을 이용합니다... ";
+                var noData = "내장된 데이터 파일을 이용합니다... ";
                 setNotification(noData, Color.Red, Color.White);
 
                 lines = makeNestedDataTable();
@@ -314,7 +334,8 @@ namespace dive
                     
                 }
 
-                L_Data_Loaded.Text = L_Data_Loaded.Text + "성공!";
+                var dataLoadResult = L_Data_Loaded.Text + "성공!";
+                setNotification(dataLoadResult, Color.LightGreen, Color.Black);
             }
 
             updateGlobalLUT();
@@ -1353,6 +1374,75 @@ namespace dive
             initTableData();
         }
 
+        private void BT_Save_Capture_MouseDown(object sender, MouseEventArgs e)
+        {
+            //get window and save image
+            Rectangle bounds = this.Bounds;
+            int padTop = 31;
+            int padLeft = 8;
+            int padBottom = 1;
+            int padRight = 1;
+            int left = bounds.Left + padLeft;
+            int top = bounds.Top + padTop;
+            Point LT = new Point(left + this.CORNER_LT.Location.X, top + this.CORNER_LT.Location.Y);
+            Point RB = new Point(left + this.CORNER_RB.Location.X + this.CORNER_RB.Size.Width, top + this.CORNER_RB.Location.Y + this.CORNER_RB.Size.Height);
+
+            //string defaultImgName = "감압테이블 " + DateTime.Now.ToString()+".png";
+            string defaultImgName = "감압테이블 " +
+                DateTime.Now.ToString("yyyy년MM월dd일HH시mm분");
+
+            Size captureSize = new Size(RB.X - LT.X + padRight, RB.Y - LT.Y + padBottom);
+
+            using (Bitmap bitmap = new Bitmap(captureSize.Width, captureSize.Height))
+            {
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    g.CopyFromScreen(LT, Point.Empty, captureSize);
+                }
+
+                //get save path
+                SaveFileDialog imgSaveDialog = new SaveFileDialog();
+                imgSaveDialog.FileName = defaultImgName;
+                imgSaveDialog.Filter = "Jpeg Image|*.jpg|PNG Image|*.png";
+                imgSaveDialog.Title = "Save an Image File";
+                imgSaveDialog.ShowDialog();
+
+                // If the file name is not an empty string open it for saving.  
+                if (imgSaveDialog.FileName != "")
+                {
+                    var encoder = ImageCodecInfo.GetImageEncoders()
+                            .First(c => c.FormatID == ImageFormat.Jpeg.Guid);
+                    var encParams = new EncoderParameters(1);
+                    encParams.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 90L);
+                    //image.Save(path, encoder, encParams);
+
+                    System.IO.FileStream fs = (System.IO.FileStream)imgSaveDialog.OpenFile();
+                    switch (imgSaveDialog.FilterIndex)
+                    {
+                        case 1:
+                            bitmap.Save(fs, encoder, encParams);
+                            //bitmap.Save(fs,
+                            //   System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
+
+                        case 2:
+                            bitmap.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Png);
+                            break;
+                    }
+
+                    fs.Close();
+
+                    var imageSave = "테이블을 사진으로 저장했습니다";
+                    setNotification(imageSave, Color.LightGreen, Color.Black);
+                }
+
+            }
+
+
+        }
+
+
         #endregion
 
 
@@ -1693,244 +1783,38 @@ namespace dive
 
         #endregion
 
-        private void BT_Save_Capture_MouseDown(object sender, MouseEventArgs e)
+        private void BT_Info_MouseDown(object sender, MouseEventArgs e)
         {
-            //get window and save image
-            Rectangle bounds = this.Bounds;
-            int padTop = 31;
-            int padLeft = 8;
-            int padBottom = 1;
-            int padRight = 1;
-            int left = bounds.Left + padLeft;
-            int top = bounds.Top + padTop;
-            Point LT = new Point(left + this.CORNER_LT.Location.X, top + this.CORNER_LT.Location.Y);
-            Point RB = new Point(left + this.CORNER_RB.Location.X + this.CORNER_RB.Size.Width, top + this.CORNER_RB.Location.Y + this.CORNER_RB.Size.Height);
+            MessageBox.Show(@"기획 : 최병진
+개발Dev : 황원준, Wonjun Hwang, iamjam4944@gmail.com
 
-            //string defaultImgName = "감압테이블 " + DateTime.Now.ToString()+".png";
-            string defaultImgName = "감압테이블 " +
-                DateTime.Now.ToString("yyyy년MM월dd일HH시mm분") + ".png";
-            
-            Size captureSize = new Size(RB.X - LT.X + padRight, RB.Y - LT.Y + padBottom);
+Currently under development. Intended for helping divers to easily make Air decompression tables. Now can be used as a prototype.
+No additional dependency except for the fact that this program is built & tested under .NET framework 4.6.1.
+Diver's World는 현재 개발 중이며 다이버/슈퍼바이저들의 감압 테이블 작성을 도와주는 프로그램입니다.
+본 프로그램은 별도의 Dependency가 없으며 .NET framwork 4.6.1버전에서 제작, 테스트, 빌드되었습니다.
 
-            using (Bitmap bitmap = new Bitmap(captureSize.Width, captureSize.Height))
-            {
-                using (Graphics g = Graphics.FromImage(bitmap))
-                {
-                    g.CopyFromScreen(LT, Point.Empty, captureSize);
-                }
+Diver's world is an open source program and can be found on the like below;
+본 프로그램은 오픈소스이며 해당 소스코드는 하단의 주소에 공개되어 있습니다.
+https://github.com/Maetel/DiversWorld
 
-                //get save path
-                SaveFileDialog imgSaveDialog = new SaveFileDialog();
-                imgSaveDialog.FileName = defaultImgName;
-                imgSaveDialog.Filter = "JPeg Image|*.jpg|PNG Image|*.png";
-                imgSaveDialog.Title = "Save an Image File";
-                imgSaveDialog.ShowDialog();
+* Warning *
+The data and the strategy used for making air decompression table we provide with are referred to U.S. Navy guide. The providers cannot accept responsibility for loss or damage and does not endorse the U.S. Navy, and is not liable for their policies nor guaranteed/verified from them.
+본 프로그램은 美 Navy 교범을 참고하였으나 해당 기관으로부터의 보증 혹은 어떠한 이해관계도 없으며, 제작자 및 제공자는 본 프로그램의 사용에 따른 인명 및 재산 피해에 대한 어떤 법적 책임도 지지 않습니다.
 
-                // If the file name is not an empty string open it for saving.  
-                if (imgSaveDialog.FileName != "")
-                {
-                    System.IO.FileStream fs = (System.IO.FileStream)imgSaveDialog.OpenFile();
-                    switch (imgSaveDialog.FilterIndex)
-                    {
-                        case 1:
-                            bitmap.Save(fs,
-                               System.Drawing.Imaging.ImageFormat.Jpeg);
-                            break;
-
-                        case 2:
-                            bitmap.Save(fs,
-                               System.Drawing.Imaging.ImageFormat.Png);
-                            break;
-                    }
-
-                    fs.Close();
-
-                    var imageSave = "테이블을 사진으로 저장했습니다";
-                    setNotification(imageSave,Color.LightGreen,Color.Black);
-                }
-
-            }
-            
-
+Last update/마지막 업데이트 날짜 : 2019. 03. 04 (yyyy.mm.dd)
+");
         }
 
-        private void BT_Load_Capture_MouseDown(object sender, MouseEventArgs e)
+        private void BT_License_MouseDown(object sender, MouseEventArgs e)
         {
-            var Ocr = new AutoOcr()
-            {
-                //Language = IronOcr.Languages.Korean.OcrLanguagePack
-            };
-            
+            MessageBox.Show(@"By downloading, copying, installing or using the software you agree to this license. If you do not agree to this license, do not download, install,
+copy or use the software.
 
-            // Wrap the creation of the OpenFileDialog instance in a using statement,
-            // rather than manually calling the Dispose method to ensure proper disposal
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.Title = "이미지에서 테이블 불러오기";
-                dlg.Filter = "PNG files|*.png|JPEG files|*.jpg";
+This work is licensed under a Creative Commons Attribution-NonCommercial - ShareAlike 4.0 International License.
+Please refer to INFO button above for more and contact.
 
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    int LSX = TB_LS.Location.X + (TB_LS.Size.Width/2);
-                    int LSY = TB_LS.Location.Y;
-                    int TBTX = TB_TBT.Location.X + (TB_TBT.Size.Width / 2);
-                    int TBTY = TB_TBT.Location.Y;
-                    int StageX = TB_StageDepth.Location.X + (TB_StageDepth.Size.Width/2);
-                    int StageY = TB_StageDepth.Location.Y;
-                    int DelayX = TB_Time_To_R1st_Delayed.Location.X + (TB_Time_To_R1st_Delayed.Size.Width / 2);
-                    int DelayY = TB_Time_To_R1st_Delayed.Location.Y;
-
-                    int padX;
-                    int padY;
-
-                    //Point pLS = new Point(LSX,LSY);
-                    //Point pTBT = new Point(TBTX,TBTY);
-                    //Point pStage= new Point(StageX,StageY);
-                    //Point pDelay = new Point(DelayX,DelayY);
-
-                    //go hard
-                    Point pLS = new Point(398,26);
-                    Point pTBT = new Point(760, 86);
-                    Point pStage = new Point(760, 46);
-                    Point pDelay = new Point(760, 166);
-
-                    Size boxSize = new Size(30, 15);
-                    Rectangle bLS = new Rectangle(pLS, boxSize);
-                    Rectangle bTBT = new Rectangle(pTBT, boxSize);
-                    Rectangle bStage = new Rectangle(pStage, boxSize);
-                    Rectangle bDelay = new Rectangle(pDelay, boxSize);
-                    List<Rectangle> rects = new List<Rectangle> { bLS, bTBT, bStage, bDelay };
-                    List<Bitmap> images = new List<Bitmap>();
-                    //List<int> data = new List<int>();
-                    List<string> data = new List<string>();
-
-                    Bitmap src = Image.FromFile(dlg.FileName) as Bitmap;
-
-                    Image loadedImage = Image.FromFile(dlg.FileName);
-
-                    if(loadedImage.Width != 838 || loadedImage.Height != 686)
-                    {
-                        MessageBox.Show("이미지 형식이 맞지 않습니다");
-                        var failedLoading = "사진 불러오기 실패! : " + dlg.FileName;
-                        setNotification(failedLoading, Color.Red, Color.White);
-                        //initAllFieldValues();
-                        return;
-                    }
-
-                    foreach(var rect in rects)
-                    {
-                        Rectangle cropRect = rect;
-                        Bitmap target = new Bitmap(cropRect.Width, cropRect.Height);
-
-                        using (Graphics g = Graphics.FromImage(target))
-                        {
-                            g.DrawImage(src, new Rectangle(0, 0, target.Width, target.Height),
-                                                cropRect,
-                                                GraphicsUnit.Pixel);
-                        }
-                        //images.Add(target);
-                        var result = Ocr.Read(target);
-                        data.Add(result.Text);
-                    }
-
-                    //convert i or l in data
-                    List<string> rData = new List<string>();
-                    foreach(var text in data)
-                    {
-                        if(text == "")
-                        {
-                            rData.Add("0");
-                            continue;
-                        }
-
-                        Dictionary<char, char> charToInt = new Dictionary<char, char> { ['i'] = '1', ['l'] = '1', ['o'] = '0', ['s'] = '5' };
-
-                        var t = text.ToLower();
-                        string result = "";
-                        bool processed = false;
-                        if (containsChar(t))
-                        {
-                            foreach(var pair in charToInt)
-                            {
-                                if (t.Contains(pair.Key))
-                                {
-                                    char[] arr = t.ToCharArray();
-                                    for (int idx = 0; idx < t.Length; idx++)
-                                    {
-                                        if (arr[idx] == pair.Key)
-                                        {
-                                            arr[idx] = pair.Value;
-                                        }
-                                    }
-                                    result = new string(arr);
-                                    processed = true;
-                                }
-                            }
-                            if (result != "")
-                            {
-                                rData.Add(result);
-                            }
-                        }
-                        else
-                        {
-                            rData.Add(text);
-                            processed = true;
-                        }
-
-                        if (containsChar(result))
-                        {
-                            Console.WriteLine("OCR contains unrecognized character. result : " + result);
-                            var failedLoading = "이미지 해독에 실패했습니다 : " + dlg.FileName;
-                            setNotification(failedLoading, Color.Red, Color.White);
-                            return;
-                        }
-
-                        if (!processed)
-                        {
-                            //failed to load image;
-                            Console.WriteLine("OCR contains unrecognized character. t : " + t);
-                            var failedLoading = "이미지 해독에 실패했습니다 : " + dlg.FileName;
-                            setNotification(failedLoading, Color.Red, Color.White);
-                            return;
-                        }
-                    }
-
-                    if(rData.Count != 4)
-                    {
-                        Console.WriteLine("rData count != 4");
-                        var failedLoading = "사진 불러오기 실패! : " + dlg.FileName;
-                        setNotification(failedLoading, Color.Red, Color.White);
-                        return;
-                    }
-                    else //Succeeded
-                    {
-                        initAllFieldValues();
-
-                        Console.WriteLine("Image OCR result : ");
-                        Console.WriteLine("LS : " + rData[0]);
-                        Console.WriteLine("TBT : " + rData[1]);
-                        Console.WriteLine("StageDepth : " + rData[2]);
-                        Console.WriteLine("Time to 1st delayed : " + rData[3]);
-                        
-                        TB_LS.Text = rData[0];
-                        TB_TBT.Text = rData[1];
-                        TB_StageDepth.Text = rData[2];
-                        TB_Time_To_R1st_Delayed.Text = rData[3] == "0" ? "" : rData[3];
-
-                        var loaded = "사진 불러오기 성공! : "+ dlg.FileName;
-                        setNotification(loaded, Color.LightGreen, Color.Black);
-                    }
-                    
-                    //Console.WriteLine(result.Text);
-                }
-            }
-
-            
-            
-        }
-
-        private void DW_Main_Window_Load(object sender, EventArgs e)
-        {
+본 프로그램은 Creative Commons 4.0 NC SA 라이센스로 제작되었습니다. 자세한 내용 및 문의는 INFO를 참조해주세요.
+");
         }
     }
 }

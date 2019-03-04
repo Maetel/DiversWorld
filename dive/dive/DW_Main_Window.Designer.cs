@@ -190,9 +190,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BT_Save_Capture = new System.Windows.Forms.Button();
-            this.BT_Load_Capture = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BT_Info = new System.Windows.Forms.Button();
+            this.BT_License = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -351,11 +354,16 @@
             // 
             // TB_LS
             // 
+            this.TB_LS.AcceptsTab = true;
+            this.TB_LS.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TB_LS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_LS.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_LS.Location = new System.Drawing.Point(367, 93);
+            this.TB_LS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_LS.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_LS.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.TB_LS.Location = new System.Drawing.Point(-1, 2);
+            this.TB_LS.MaxLength = 4;
             this.TB_LS.Name = "TB_LS";
-            this.TB_LS.Size = new System.Drawing.Size(109, 21);
+            this.TB_LS.Size = new System.Drawing.Size(109, 18);
             this.TB_LS.TabIndex = 27;
             this.TB_LS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_LS.TextChanged += new System.EventHandler(this.TB_LS_TextChanged);
@@ -386,10 +394,11 @@
             // TB_StageDepth
             // 
             this.TB_StageDepth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_StageDepth.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_StageDepth.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_StageDepth.Location = new System.Drawing.Point(720, 113);
+            this.TB_StageDepth.MaxLength = 4;
             this.TB_StageDepth.Name = "TB_StageDepth";
-            this.TB_StageDepth.Size = new System.Drawing.Size(127, 21);
+            this.TB_StageDepth.Size = new System.Drawing.Size(127, 25);
             this.TB_StageDepth.TabIndex = 34;
             this.TB_StageDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_StageDepth.TextChanged += new System.EventHandler(this.TB_Stage_Depth_TextChanged);
@@ -500,10 +509,11 @@
             // TB_TBT
             // 
             this.TB_TBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_TBT.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_TBT.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_TBT.Location = new System.Drawing.Point(720, 153);
+            this.TB_TBT.MaxLength = 4;
             this.TB_TBT.Name = "TB_TBT";
-            this.TB_TBT.Size = new System.Drawing.Size(127, 21);
+            this.TB_TBT.Size = new System.Drawing.Size(127, 25);
             this.TB_TBT.TabIndex = 44;
             this.TB_TBT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_TBT.TextChanged += new System.EventHandler(this.TB_TBT_TextChanged);
@@ -728,12 +738,12 @@
             // TB_Time_To_R1st_Delayed
             // 
             this.TB_Time_To_R1st_Delayed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_Time_To_R1st_Delayed.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Time_To_R1st_Delayed.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_Time_To_R1st_Delayed.Location = new System.Drawing.Point(720, 233);
+            this.TB_Time_To_R1st_Delayed.MaxLength = 4;
             this.TB_Time_To_R1st_Delayed.Name = "TB_Time_To_R1st_Delayed";
-            this.TB_Time_To_R1st_Delayed.Size = new System.Drawing.Size(127, 21);
+            this.TB_Time_To_R1st_Delayed.Size = new System.Drawing.Size(127, 25);
             this.TB_Time_To_R1st_Delayed.TabIndex = 64;
-            this.TB_Time_To_R1st_Delayed.Text = "0";
             this.TB_Time_To_R1st_Delayed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Time_To_R1st_Delayed.TextChanged += new System.EventHandler(this.TB_Time_To_R1st_Delayed_TextChanged);
             // 
@@ -1987,22 +1997,44 @@
             this.BT_Save_Capture.UseVisualStyleBackColor = true;
             this.BT_Save_Capture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Save_Capture_MouseDown);
             // 
-            // BT_Load_Capture
+            // panel1
             // 
-            this.BT_Load_Capture.Location = new System.Drawing.Point(370, 40);
-            this.BT_Load_Capture.Name = "BT_Load_Capture";
-            this.BT_Load_Capture.Size = new System.Drawing.Size(102, 23);
-            this.BT_Load_Capture.TabIndex = 172;
-            this.BT_Load_Capture.Text = "사진 불러오기";
-            this.BT_Load_Capture.UseVisualStyleBackColor = true;
-            this.BT_Load_Capture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Load_Capture_MouseDown);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TB_LS);
+            this.panel1.Location = new System.Drawing.Point(367, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(109, 21);
+            this.panel1.TabIndex = 173;
+            // 
+            // BT_Info
+            // 
+            this.BT_Info.Location = new System.Drawing.Point(641, 12);
+            this.BT_Info.Name = "BT_Info";
+            this.BT_Info.Size = new System.Drawing.Size(80, 23);
+            this.BT_Info.TabIndex = 174;
+            this.BT_Info.Text = "제작자 정보";
+            this.BT_Info.UseVisualStyleBackColor = true;
+            this.BT_Info.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Info_MouseDown);
+            // 
+            // BT_License
+            // 
+            this.BT_License.Location = new System.Drawing.Point(641, 39);
+            this.BT_License.Name = "BT_License";
+            this.BT_License.Size = new System.Drawing.Size(80, 23);
+            this.BT_License.TabIndex = 175;
+            this.BT_License.Text = "LICENSE";
+            this.BT_License.UseVisualStyleBackColor = true;
+            this.BT_License.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_License_MouseDown);
             // 
             // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 761);
-            this.Controls.Add(this.BT_Load_Capture);
+            this.Controls.Add(this.BT_License);
+            this.Controls.Add(this.BT_Info);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BT_Save_Capture);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -2148,7 +2180,6 @@
             this.Controls.Add(this.readonlyTB_2);
             this.Controls.Add(this.TB_Desc_Time);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.TB_LS);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.readonlyTB_1);
             this.Controls.Add(this.CORNER_RT);
@@ -2160,11 +2191,12 @@
             this.Controls.Add(this.label1);
             this.Name = "DW_Main_Window";
             this.Text = "Diver\'s World";
-            this.Load += new System.EventHandler(this.DW_Main_Window_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2333,7 +2365,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BT_Save_Capture;
-        private System.Windows.Forms.Button BT_Load_Capture;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BT_Info;
+        private System.Windows.Forms.Button BT_License;
     }
 }
 
