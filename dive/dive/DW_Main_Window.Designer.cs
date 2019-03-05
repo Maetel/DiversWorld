@@ -2013,7 +2013,7 @@
             this.BT_Info.Name = "BT_Info";
             this.BT_Info.Size = new System.Drawing.Size(80, 23);
             this.BT_Info.TabIndex = 174;
-            this.BT_Info.Text = "제작자 정보";
+            this.BT_Info.Text = "INFO";
             this.BT_Info.UseVisualStyleBackColor = true;
             this.BT_Info.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Info_MouseDown);
             // 
