@@ -875,7 +875,7 @@ namespace dive
             //update GUI
             if (row.isInitialized)
             {
-                TB_DCompTable.Text = "[ FSW : " + tableDepth.ToString() + ", BT : " + tableBT.ToString() + " ]";
+                TB_DCompTable.Text = "[ FSW: " + tableDepth.ToString() + ", BT: " + tableBT.ToString() + " ]";
 
                 TB_Time_To_R1st_Planned.Text = colonizeTime(row.m_TimeToFirstStop, ColonType.SEC4DIGITS);
                 UpdateTimeTo1stStop();

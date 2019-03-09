@@ -194,13 +194,13 @@
             this.BT_License = new System.Windows.Forms.Button();
             this.BT_LANGUAGE = new System.Windows.Forms.Button();
             this.PN_Title = new System.Windows.Forms.Panel();
-            this.TB_Title = new System.Windows.Forms.TextBox();
+            this.TB_Write_Time = new System.Windows.Forms.TextBox();
+            this.TB_Diver = new System.Windows.Forms.TextBox();
+            this.TB_Author = new System.Windows.Forms.TextBox();
+            this.TB_D_Diver = new System.Windows.Forms.TextBox();
             this.TB_D_Author = new System.Windows.Forms.TextBox();
             this.TB_D_Write_Time = new System.Windows.Forms.TextBox();
-            this.TB_D_Diver = new System.Windows.Forms.TextBox();
-            this.TB_Author = new System.Windows.Forms.TextBox();
-            this.TB_Diver = new System.Windows.Forms.TextBox();
-            this.TB_Write_Time = new System.Windows.Forms.TextBox();
+            this.TB_Title = new System.Windows.Forms.TextBox();
             this.PN_Tale = new System.Windows.Forms.Panel();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.TB_LS = new System.Windows.Forms.TextBox();
@@ -395,7 +395,7 @@
             this.TB_StageDepth.MaxLength = 4;
             this.TB_StageDepth.Name = "TB_StageDepth";
             this.TB_StageDepth.Size = new System.Drawing.Size(127, 25);
-            this.TB_StageDepth.TabIndex = 34;
+            this.TB_StageDepth.TabIndex = 4;
             this.TB_StageDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_StageDepth.TextChanged += new System.EventHandler(this.TB_Stage_Depth_TextChanged);
             // 
@@ -510,7 +510,7 @@
             this.TB_TBT.MaxLength = 4;
             this.TB_TBT.Name = "TB_TBT";
             this.TB_TBT.Size = new System.Drawing.Size(127, 25);
-            this.TB_TBT.TabIndex = 44;
+            this.TB_TBT.TabIndex = 5;
             this.TB_TBT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_TBT.TextChanged += new System.EventHandler(this.TB_TBT_TextChanged);
             // 
@@ -739,7 +739,7 @@
             this.TB_Time_To_R1st_Delayed.MaxLength = 4;
             this.TB_Time_To_R1st_Delayed.Name = "TB_Time_To_R1st_Delayed";
             this.TB_Time_To_R1st_Delayed.Size = new System.Drawing.Size(127, 25);
-            this.TB_Time_To_R1st_Delayed.TabIndex = 64;
+            this.TB_Time_To_R1st_Delayed.TabIndex = 6;
             this.TB_Time_To_R1st_Delayed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Time_To_R1st_Delayed.TextChanged += new System.EventHandler(this.TB_Time_To_R1st_Delayed_TextChanged);
             // 
@@ -1646,7 +1646,7 @@
             this.TB_DELAY_Desc_Reason1.Location = new System.Drawing.Point(574, 503);
             this.TB_DELAY_Desc_Reason1.Name = "TB_DELAY_Desc_Reason1";
             this.TB_DELAY_Desc_Reason1.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Desc_Reason1.TabIndex = 141;
+            this.TB_DELAY_Desc_Reason1.TabIndex = 8;
             // 
             // TB_DELAY_Desc_Depth1
             // 
@@ -1655,7 +1655,7 @@
             this.TB_DELAY_Desc_Depth1.Location = new System.Drawing.Point(476, 503);
             this.TB_DELAY_Desc_Depth1.Name = "TB_DELAY_Desc_Depth1";
             this.TB_DELAY_Desc_Depth1.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Desc_Depth1.TabIndex = 140;
+            this.TB_DELAY_Desc_Depth1.TabIndex = 7;
             this.TB_DELAY_Desc_Depth1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_DELAY_Desc_Reason2
@@ -1665,7 +1665,7 @@
             this.TB_DELAY_Desc_Reason2.Location = new System.Drawing.Point(574, 523);
             this.TB_DELAY_Desc_Reason2.Name = "TB_DELAY_Desc_Reason2";
             this.TB_DELAY_Desc_Reason2.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Desc_Reason2.TabIndex = 143;
+            this.TB_DELAY_Desc_Reason2.TabIndex = 10;
             // 
             // TB_DELAY_Desc_Depth2
             // 
@@ -1674,7 +1674,7 @@
             this.TB_DELAY_Desc_Depth2.Location = new System.Drawing.Point(476, 523);
             this.TB_DELAY_Desc_Depth2.Name = "TB_DELAY_Desc_Depth2";
             this.TB_DELAY_Desc_Depth2.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Desc_Depth2.TabIndex = 142;
+            this.TB_DELAY_Desc_Depth2.TabIndex = 9;
             this.TB_DELAY_Desc_Depth2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_DELAY_Desc_Reason3
@@ -1684,7 +1684,7 @@
             this.TB_DELAY_Desc_Reason3.Location = new System.Drawing.Point(574, 543);
             this.TB_DELAY_Desc_Reason3.Name = "TB_DELAY_Desc_Reason3";
             this.TB_DELAY_Desc_Reason3.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Desc_Reason3.TabIndex = 145;
+            this.TB_DELAY_Desc_Reason3.TabIndex = 12;
             // 
             // TB_DELAY_Desc_Depth3
             // 
@@ -1693,7 +1693,7 @@
             this.TB_DELAY_Desc_Depth3.Location = new System.Drawing.Point(476, 543);
             this.TB_DELAY_Desc_Depth3.Name = "TB_DELAY_Desc_Depth3";
             this.TB_DELAY_Desc_Depth3.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Desc_Depth3.TabIndex = 144;
+            this.TB_DELAY_Desc_Depth3.TabIndex = 11;
             this.TB_DELAY_Desc_Depth3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_D_Delay_Problem2
@@ -1739,7 +1739,7 @@
             this.TB_DELAY_Asc_Reason3.Location = new System.Drawing.Point(574, 643);
             this.TB_DELAY_Asc_Reason3.Name = "TB_DELAY_Asc_Reason3";
             this.TB_DELAY_Asc_Reason3.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Asc_Reason3.TabIndex = 154;
+            this.TB_DELAY_Asc_Reason3.TabIndex = 18;
             // 
             // TB_DELAY_Asc_Depth3
             // 
@@ -1748,7 +1748,7 @@
             this.TB_DELAY_Asc_Depth3.Location = new System.Drawing.Point(476, 643);
             this.TB_DELAY_Asc_Depth3.Name = "TB_DELAY_Asc_Depth3";
             this.TB_DELAY_Asc_Depth3.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Asc_Depth3.TabIndex = 153;
+            this.TB_DELAY_Asc_Depth3.TabIndex = 17;
             this.TB_DELAY_Asc_Depth3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_DELAY_Asc_Reason2
@@ -1758,7 +1758,7 @@
             this.TB_DELAY_Asc_Reason2.Location = new System.Drawing.Point(574, 623);
             this.TB_DELAY_Asc_Reason2.Name = "TB_DELAY_Asc_Reason2";
             this.TB_DELAY_Asc_Reason2.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Asc_Reason2.TabIndex = 152;
+            this.TB_DELAY_Asc_Reason2.TabIndex = 16;
             // 
             // TB_DELAY_Asc_Depth2
             // 
@@ -1767,7 +1767,7 @@
             this.TB_DELAY_Asc_Depth2.Location = new System.Drawing.Point(476, 623);
             this.TB_DELAY_Asc_Depth2.Name = "TB_DELAY_Asc_Depth2";
             this.TB_DELAY_Asc_Depth2.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Asc_Depth2.TabIndex = 151;
+            this.TB_DELAY_Asc_Depth2.TabIndex = 15;
             this.TB_DELAY_Asc_Depth2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_DELAY_Asc_Reason1
@@ -1777,7 +1777,7 @@
             this.TB_DELAY_Asc_Reason1.Location = new System.Drawing.Point(574, 603);
             this.TB_DELAY_Asc_Reason1.Name = "TB_DELAY_Asc_Reason1";
             this.TB_DELAY_Asc_Reason1.Size = new System.Drawing.Size(274, 21);
-            this.TB_DELAY_Asc_Reason1.TabIndex = 150;
+            this.TB_DELAY_Asc_Reason1.TabIndex = 14;
             // 
             // TB_DELAY_Asc_Depth1
             // 
@@ -1786,7 +1786,7 @@
             this.TB_DELAY_Asc_Depth1.Location = new System.Drawing.Point(476, 603);
             this.TB_DELAY_Asc_Depth1.Name = "TB_DELAY_Asc_Depth1";
             this.TB_DELAY_Asc_Depth1.Size = new System.Drawing.Size(99, 21);
-            this.TB_DELAY_Asc_Depth1.TabIndex = 149;
+            this.TB_DELAY_Asc_Depth1.TabIndex = 13;
             this.TB_DELAY_Asc_Depth1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TB_D_Decomp_proc_used
@@ -2041,29 +2041,62 @@
             this.PN_Title.Size = new System.Drawing.Size(837, 75);
             this.PN_Title.TabIndex = 177;
             // 
-            // TB_Title
+            // TB_Write_Time
             // 
-            this.TB_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.TB_Title.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Title.Font = new System.Drawing.Font("Malgun Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Title.Location = new System.Drawing.Point(223, 12);
-            this.TB_Title.Name = "TB_Title";
-            this.TB_Title.ReadOnly = true;
-            this.TB_Title.Size = new System.Drawing.Size(408, 47);
-            this.TB_Title.TabIndex = 0;
-            this.TB_Title.Text = "감압표";
-            this.TB_Title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_Write_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_Write_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Write_Time.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Write_Time.Location = new System.Drawing.Point(682, 3);
+            this.TB_Write_Time.Name = "TB_Write_Time";
+            this.TB_Write_Time.ReadOnly = true;
+            this.TB_Write_Time.Size = new System.Drawing.Size(148, 20);
+            this.TB_Write_Time.TabIndex = 123;
+            // 
+            // TB_Diver
+            // 
+            this.TB_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Diver.Location = new System.Drawing.Point(706, 49);
+            this.TB_Diver.MaxLength = 15;
+            this.TB_Diver.Name = "TB_Diver";
+            this.TB_Diver.Size = new System.Drawing.Size(125, 20);
+            this.TB_Diver.TabIndex = 2;
+            // 
+            // TB_Author
+            // 
+            this.TB_Author.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Author.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Author.Location = new System.Drawing.Point(706, 26);
+            this.TB_Author.MaxLength = 15;
+            this.TB_Author.Name = "TB_Author";
+            this.TB_Author.Size = new System.Drawing.Size(125, 20);
+            this.TB_Author.TabIndex = 1;
+            // 
+            // TB_D_Diver
+            // 
+            this.TB_D_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_D_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_D_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Diver.Location = new System.Drawing.Point(629, 49);
+            this.TB_D_Diver.Name = "TB_D_Diver";
+            this.TB_D_Diver.ReadOnly = true;
+            this.TB_D_Diver.Size = new System.Drawing.Size(72, 20);
+            this.TB_D_Diver.TabIndex = 123;
+            this.TB_D_Diver.Text = "잠수사 :";
+            this.TB_D_Diver.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TB_D_Author
             // 
             this.TB_D_Author.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.TB_D_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_D_Author.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_D_Author.Location = new System.Drawing.Point(639, 26);
+            this.TB_D_Author.Location = new System.Drawing.Point(629, 26);
             this.TB_D_Author.Name = "TB_D_Author";
             this.TB_D_Author.ReadOnly = true;
             this.TB_D_Author.Size = new System.Drawing.Size(72, 20);
-            this.TB_D_Author.TabIndex = 1;
+            this.TB_D_Author.TabIndex = 123;
             this.TB_D_Author.Text = "작성자 :";
             this.TB_D_Author.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -2076,53 +2109,22 @@
             this.TB_D_Write_Time.Name = "TB_D_Write_Time";
             this.TB_D_Write_Time.ReadOnly = true;
             this.TB_D_Write_Time.Size = new System.Drawing.Size(72, 20);
-            this.TB_D_Write_Time.TabIndex = 2;
+            this.TB_D_Write_Time.TabIndex = 123;
             this.TB_D_Write_Time.Text = "작성일시 :";
             this.TB_D_Write_Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // TB_D_Diver
+            // TB_Title
             // 
-            this.TB_D_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.TB_D_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_D_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_D_Diver.Location = new System.Drawing.Point(639, 49);
-            this.TB_D_Diver.Name = "TB_D_Diver";
-            this.TB_D_Diver.ReadOnly = true;
-            this.TB_D_Diver.Size = new System.Drawing.Size(72, 20);
-            this.TB_D_Diver.TabIndex = 3;
-            this.TB_D_Diver.Text = "잠수사 :";
-            this.TB_D_Diver.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // TB_Author
-            // 
-            this.TB_Author.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Author.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Author.Location = new System.Drawing.Point(716, 26);
-            this.TB_Author.Name = "TB_Author";
-            this.TB_Author.Size = new System.Drawing.Size(112, 20);
-            this.TB_Author.TabIndex = 4;
-            // 
-            // TB_Diver
-            // 
-            this.TB_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Diver.Location = new System.Drawing.Point(716, 49);
-            this.TB_Diver.Name = "TB_Diver";
-            this.TB_Diver.Size = new System.Drawing.Size(112, 20);
-            this.TB_Diver.TabIndex = 5;
-            // 
-            // TB_Write_Time
-            // 
-            this.TB_Write_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.TB_Write_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Write_Time.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Write_Time.Location = new System.Drawing.Point(682, 3);
-            this.TB_Write_Time.Name = "TB_Write_Time";
-            this.TB_Write_Time.ReadOnly = true;
-            this.TB_Write_Time.Size = new System.Drawing.Size(148, 20);
-            this.TB_Write_Time.TabIndex = 6;
+            this.TB_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_Title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Title.Font = new System.Drawing.Font("Malgun Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Title.Location = new System.Drawing.Point(223, 12);
+            this.TB_Title.Name = "TB_Title";
+            this.TB_Title.ReadOnly = true;
+            this.TB_Title.Size = new System.Drawing.Size(408, 47);
+            this.TB_Title.TabIndex = 0;
+            this.TB_Title.Text = "감압표";
+            this.TB_Title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PN_Tale
             // 
@@ -2141,6 +2143,7 @@
             this.textBox16.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox16.Location = new System.Drawing.Point(587, 4);
             this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(244, 22);
             this.textBox16.TabIndex = 2;
             this.textBox16.Text = "Diver\'s World prototype";
@@ -2154,11 +2157,11 @@
             this.TB_LS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_LS.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_LS.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.TB_LS.Location = new System.Drawing.Point(368, 185);
+            this.TB_LS.Location = new System.Drawing.Point(368, 186);
             this.TB_LS.MaxLength = 4;
             this.TB_LS.Name = "TB_LS";
             this.TB_LS.Size = new System.Drawing.Size(109, 18);
-            this.TB_LS.TabIndex = 27;
+            this.TB_LS.TabIndex = 3;
             this.TB_LS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_LS.TextChanged += new System.EventHandler(this.TB_LS_TextChanged);
             // 
