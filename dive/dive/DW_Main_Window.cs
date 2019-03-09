@@ -36,8 +36,6 @@ namespace dive
         {
             if (decolor)
             {
-                
-
                 foreach (var tb in g_TB_WRITE_field)
                 {
                     tb.BackColor = Color.White;
@@ -51,6 +49,8 @@ namespace dive
                     //Application.DoEvents();
                 }
 
+                PN_Additional_Record.BackColor = Color.White;
+
                 GB_DComp_Proc_Air.BackColor = Color.White;
                 GB_DComp_Proc_AirHe.BackColor = Color.White;
 
@@ -62,6 +62,8 @@ namespace dive
             }
             else
             {
+                PN_Additional_Record.BackColor = Color.FromArgb(255, 255, 192);
+
                 GB_DComp_Proc_Air.BackColor = Color.FromArgb(255, 255, 192);
                 GB_DComp_Proc_AirHe.BackColor = Color.FromArgb(255, 255, 192);
 
@@ -137,6 +139,8 @@ namespace dive
             scr.textBoxes.Add(nameof(TB_D_Repeat_Group), TB_D_Repeat_Group);
             scr.textBoxes.Add(nameof(TB_D_TDT), TB_D_TDT);
             scr.textBoxes.Add(nameof(TB_D_TTD), TB_D_TTD);
+            scr.textBoxes.Add(nameof(TB_D_Additional_Record), TB_D_Additional_Record);
+            //scr.textBoxes.Add(nameof(), );
 
             //GroupBoxes
             scr.groupBoxes.Add(nameof(GB_DComp_Proc_Air), GB_DComp_Proc_Air);
@@ -323,6 +327,8 @@ namespace dive
                 g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason1);
                 g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason2);
                 g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason3);
+
+                g_TB_WRITE_field.Add(TB_Additional_Record);
             }
         }
 

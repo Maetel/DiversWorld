@@ -249,6 +249,7 @@ TB_D_Decomp_proc_used|사용 감압 절차|DECOMPRESSION PROCEDURES USED
 TB_D_Repeat_Group|반복그룹 기호  |REPETITIVE GROUP 
 TB_D_TTD|총 감압시간|TTD
 TB_D_TDT|총 잠수시간|TDT
+TB_D_Additional_Record|추가사항|Record
 
 GB_DComp_Proc_Air|공기|Air
 GB_DComp_Proc_AirHe|헬륨/산소|HeO2

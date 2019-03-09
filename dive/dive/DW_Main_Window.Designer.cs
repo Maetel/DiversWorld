@@ -185,8 +185,8 @@
             this.BT_Initialize = new System.Windows.Forms.Button();
             this.LB_Status = new System.Windows.Forms.Label();
             this.BT_Reload_Data_File = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TB_D_Input_Color = new System.Windows.Forms.TextBox();
+            this.TB_D_Output_Color = new System.Windows.Forms.TextBox();
             this.LB_input = new System.Windows.Forms.Label();
             this.LB_output = new System.Windows.Forms.Label();
             this.BT_Save_Capture = new System.Windows.Forms.Button();
@@ -202,12 +202,18 @@
             this.TB_D_Write_Time = new System.Windows.Forms.TextBox();
             this.TB_Title = new System.Windows.Forms.TextBox();
             this.PN_Tale = new System.Windows.Forms.Panel();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.TB_Version = new System.Windows.Forms.TextBox();
             this.TB_LS = new System.Windows.Forms.TextBox();
+            this.PN_D_Additional_Record = new System.Windows.Forms.Panel();
+            this.TB_D_Additional_Record = new System.Windows.Forms.TextBox();
+            this.TB_Additional_Record = new System.Windows.Forms.TextBox();
+            this.PN_Additional_Record = new System.Windows.Forms.Panel();
             this.GB_DComp_Proc_Air.SuspendLayout();
             this.GB_DComp_Proc_AirHe.SuspendLayout();
             this.PN_Title.SuspendLayout();
             this.PN_Tale.SuspendLayout();
+            this.PN_D_Additional_Record.SuspendLayout();
+            this.PN_Additional_Record.SuspendLayout();
             this.SuspendLayout();
             // 
             // GB_DComp_Proc_Air
@@ -1804,7 +1810,7 @@
             // TB_D_TTD
             // 
             this.TB_D_TTD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.TB_D_TTD.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_TTD.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_D_TTD.Location = new System.Drawing.Point(11, 743);
             this.TB_D_TTD.Name = "TB_D_TTD";
             this.TB_D_TTD.ReadOnly = true;
@@ -1816,7 +1822,7 @@
             // TB_D_TDT
             // 
             this.TB_D_TDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.TB_D_TDT.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_TDT.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TB_D_TDT.Location = new System.Drawing.Point(125, 743);
             this.TB_D_TDT.Name = "TB_D_TDT";
             this.TB_D_TDT.ReadOnly = true;
@@ -1945,27 +1951,27 @@
             this.BT_Reload_Data_File.UseVisualStyleBackColor = true;
             this.BT_Reload_Data_File.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Reload_Data_File_MouseDown);
             // 
-            // textBox6
+            // TB_D_Input_Color
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox6.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.Location = new System.Drawing.Point(730, 13);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(56, 21);
-            this.textBox6.TabIndex = 167;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_D_Input_Color.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_D_Input_Color.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Input_Color.Location = new System.Drawing.Point(730, 13);
+            this.TB_D_Input_Color.Name = "TB_D_Input_Color";
+            this.TB_D_Input_Color.ReadOnly = true;
+            this.TB_D_Input_Color.Size = new System.Drawing.Size(56, 21);
+            this.TB_D_Input_Color.TabIndex = 167;
+            this.TB_D_Input_Color.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox8
+            // TB_D_Output_Color
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(730, 40);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(56, 21);
-            this.textBox8.TabIndex = 168;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_D_Output_Color.BackColor = System.Drawing.Color.White;
+            this.TB_D_Output_Color.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Output_Color.Location = new System.Drawing.Point(730, 40);
+            this.TB_D_Output_Color.Name = "TB_D_Output_Color";
+            this.TB_D_Output_Color.ReadOnly = true;
+            this.TB_D_Output_Color.Size = new System.Drawing.Size(56, 21);
+            this.TB_D_Output_Color.TabIndex = 168;
+            this.TB_D_Output_Color.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LB_input
             // 
@@ -2130,24 +2136,24 @@
             // 
             this.PN_Tale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PN_Tale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PN_Tale.Controls.Add(this.textBox16);
-            this.PN_Tale.Location = new System.Drawing.Point(11, 821);
+            this.PN_Tale.Controls.Add(this.TB_Version);
+            this.PN_Tale.Location = new System.Drawing.Point(11, 898);
             this.PN_Tale.Name = "PN_Tale";
             this.PN_Tale.Size = new System.Drawing.Size(837, 32);
             this.PN_Tale.TabIndex = 178;
             // 
-            // textBox16
+            // TB_Version
             // 
-            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox16.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox16.Location = new System.Drawing.Point(587, 4);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(244, 22);
-            this.textBox16.TabIndex = 2;
-            this.textBox16.Text = "Diver\'s World prototype";
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TB_Version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_Version.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Version.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Version.Location = new System.Drawing.Point(587, 4);
+            this.TB_Version.Name = "TB_Version";
+            this.TB_Version.ReadOnly = true;
+            this.TB_Version.Size = new System.Drawing.Size(244, 22);
+            this.TB_Version.TabIndex = 2;
+            this.TB_Version.Text = "Diver\'s World prototype";
+            this.TB_Version.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TB_LS
             // 
@@ -2165,11 +2171,56 @@
             this.TB_LS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_LS.TextChanged += new System.EventHandler(this.TB_LS_TextChanged);
             // 
+            // PN_D_Additional_Record
+            // 
+            this.PN_D_Additional_Record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PN_D_Additional_Record.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PN_D_Additional_Record.Controls.Add(this.TB_D_Additional_Record);
+            this.PN_D_Additional_Record.Location = new System.Drawing.Point(11, 819);
+            this.PN_D_Additional_Record.Name = "PN_D_Additional_Record";
+            this.PN_D_Additional_Record.Size = new System.Drawing.Size(115, 80);
+            this.PN_D_Additional_Record.TabIndex = 179;
+            // 
+            // TB_D_Additional_Record
+            // 
+            this.TB_D_Additional_Record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_D_Additional_Record.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_D_Additional_Record.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Additional_Record.Location = new System.Drawing.Point(-1, 34);
+            this.TB_D_Additional_Record.Name = "TB_D_Additional_Record";
+            this.TB_D_Additional_Record.ReadOnly = true;
+            this.TB_D_Additional_Record.Size = new System.Drawing.Size(115, 19);
+            this.TB_D_Additional_Record.TabIndex = 180;
+            this.TB_D_Additional_Record.Text = "추가사항";
+            this.TB_D_Additional_Record.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_Additional_Record
+            // 
+            this.TB_Additional_Record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_Additional_Record.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Additional_Record.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Additional_Record.Location = new System.Drawing.Point(9, 7);
+            this.TB_Additional_Record.Multiline = true;
+            this.TB_Additional_Record.Name = "TB_Additional_Record";
+            this.TB_Additional_Record.Size = new System.Drawing.Size(703, 64);
+            this.TB_Additional_Record.TabIndex = 180;
+            // 
+            // PN_Additional_Record
+            // 
+            this.PN_Additional_Record.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.PN_Additional_Record.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PN_Additional_Record.Controls.Add(this.TB_Additional_Record);
+            this.PN_Additional_Record.Location = new System.Drawing.Point(125, 819);
+            this.PN_Additional_Record.Name = "PN_Additional_Record";
+            this.PN_Additional_Record.Size = new System.Drawing.Size(723, 80);
+            this.PN_Additional_Record.TabIndex = 181;
+            // 
             // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 864);
+            this.ClientSize = new System.Drawing.Size(859, 946);
+            this.Controls.Add(this.PN_D_Additional_Record);
             this.Controls.Add(this.PN_Tale);
             this.Controls.Add(this.PN_Title);
             this.Controls.Add(this.BT_LANGUAGE);
@@ -2178,8 +2229,8 @@
             this.Controls.Add(this.BT_Save_Capture);
             this.Controls.Add(this.LB_output);
             this.Controls.Add(this.LB_input);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TB_D_Output_Color);
+            this.Controls.Add(this.TB_D_Input_Color);
             this.Controls.Add(this.BT_Reload_Data_File);
             this.Controls.Add(this.LB_Status);
             this.Controls.Add(this.BT_Initialize);
@@ -2330,8 +2381,10 @@
             this.Controls.Add(this.LB_CurTime);
             this.Controls.Add(this.LB_D_CurTime);
             this.Controls.Add(this.TB_LS);
+            this.Controls.Add(this.PN_Additional_Record);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DW_Main_Window";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Diver\'s World";
             this.GB_DComp_Proc_Air.ResumeLayout(false);
             this.GB_DComp_Proc_Air.PerformLayout();
@@ -2341,6 +2394,10 @@
             this.PN_Title.PerformLayout();
             this.PN_Tale.ResumeLayout(false);
             this.PN_Tale.PerformLayout();
+            this.PN_D_Additional_Record.ResumeLayout(false);
+            this.PN_D_Additional_Record.PerformLayout();
+            this.PN_Additional_Record.ResumeLayout(false);
+            this.PN_Additional_Record.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2503,8 +2560,8 @@
         private System.Windows.Forms.Button BT_Initialize;
         private System.Windows.Forms.Label LB_Status;
         private System.Windows.Forms.Button BT_Reload_Data_File;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TB_D_Input_Color;
+        private System.Windows.Forms.TextBox TB_D_Output_Color;
         private System.Windows.Forms.Label LB_input;
         private System.Windows.Forms.Label LB_output;
         private System.Windows.Forms.Button BT_Save_Capture;
@@ -2520,8 +2577,12 @@
         private System.Windows.Forms.TextBox TB_Write_Time;
         private System.Windows.Forms.TextBox TB_Diver;
         private System.Windows.Forms.Panel PN_Tale;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox TB_Version;
         private System.Windows.Forms.TextBox TB_LS;
+        private System.Windows.Forms.Panel PN_D_Additional_Record;
+        private System.Windows.Forms.TextBox TB_D_Additional_Record;
+        private System.Windows.Forms.TextBox TB_Additional_Record;
+        private System.Windows.Forms.Panel PN_Additional_Record;
     }
 }
 
