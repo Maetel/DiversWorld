@@ -15,6 +15,7 @@ namespace dive
         public Dictionary<string, Button> buttons;
         public Dictionary<string, RadioButton> radioButtons;
         public Dictionary<string, TextBox> textBoxes;
+        public Dictionary<string, GroupBox> groupBoxes;
         public Dictionary<string, string> alias;
         Dictionary<string, string> alias_KOR;
         Dictionary<string, string> alias_ENG;
@@ -26,6 +27,8 @@ namespace dive
             buttons = new Dictionary<string, Button>();
             radioButtons = new Dictionary<string, RadioButton>();
             textBoxes = new Dictionary<string, TextBox>();
+            groupBoxes = new Dictionary<string, GroupBox>();
+
             alias = new Dictionary<string, string>();
             alias_KOR = new Dictionary<string, string>();
             alias_ENG = new Dictionary<string, string>();
@@ -105,7 +108,7 @@ namespace dive
             setDictionary();
 
             alias_KOR["info"] = this.getInfo();
-            alias_KOR["license"] = this.getlicense();
+            alias_KOR["license"] = this.getLicense();
 
             //Textboxes
         }
@@ -162,7 +165,7 @@ Last update : 2019. 03. 09 (yyyy.mm.dd)";
         }
 
         
-        public string getlicense()
+        public string getLicense()
         {
             string license = "";
             switch (this.GUI_language)
@@ -189,17 +192,26 @@ Please refer to INFO button above for more and contact.";
         //Order = KOR / ENG
         private string totalScripts =
             @"
+TB_Title|감압테이블|Decompression Table
+TB_D_Author|작성자 :|Author :
+TB_D_Diver|잠수사 :|Diver :
+TB_D_Write_Time|작성일시 :|Date :
+
 LB_input|입력|Input
 LB_output|출력|Output
+LB_D_CurTime|현재 시각 :|Current Time:
+
 BT_LANGUAGE|ENGLISH|한국어
 BT_Initialize|초기화|Initialize
 BT_Reload_Data_File|데이터 불러오기|Load Table DB
 BT_Save_Capture|사진으로 저장하기|Save as Image
+
 RB_GAS_AIR|수중 공기 감압|In-water Air
 RB_GAS_AIRO2|수중 공기/산소 감압|In-water Air/O2
 RB_GAS_SurD|표면 산소 감압|SurDO2
 RB_HeO2_HeO2|수중 헬륨/산소 감압|In-water HeO2/O2
 RB_HeO2_SurD|표면 감압|SurDO2
+
 TB_D_Depth|수심|EVENT
 TB_D_Dcomp_Time|감압시간|STOP TIME
 TB_D_Clocktime|시각|CLOCK TIME
@@ -231,7 +243,12 @@ TB_D_DelayOnAsc|상승 중 지연|DELAYS ON ASCENT
 TB_D_Delay_Depth2|수심|DEPTH
 TB_D_Delay_Problem2|원인|PROBLEM
 TB_D_Decomp_proc_used|사용 감압 절차|DECOMPRESSION PROCEDURES USED
-TB_D_Repeat_Group|반복그룹 기호 :|REPETITIVE GROUP :
+TB_D_Repeat_Group|반복그룹 기호 |REPETITIVE GROUP
+TB_D_TTD|총 감압시간|TTD
+TB_D_TDT|총 잠수시간|TDT
+
+GB_DComp_Proc_Air|공기|Air
+GB_DComp_Proc_AirHe|헬륨/산소|HeO2
 ";
     }
     

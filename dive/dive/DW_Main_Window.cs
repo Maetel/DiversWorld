@@ -32,11 +32,55 @@ namespace dive
             initFieldValues();
         }
 
+        void colorInputField(bool decolor = false)
+        {
+            if (decolor)
+            {
+                
+
+                foreach (var tb in g_TB_WRITE_field)
+                {
+                    tb.BackColor = Color.White;
+                    if(tb == TB_Author || tb==TB_Diver || tb == TB_Write_Time)
+                    {
+                        tb.BackColor = Color.FromArgb(192, 192, 255);
+                    }
+                    //tb.Invalidate();
+                    //tb.Update();
+                    //tb.Refresh();
+                    //Application.DoEvents();
+                }
+
+                GB_DComp_Proc_Air.BackColor = Color.White;
+                GB_DComp_Proc_AirHe.BackColor = Color.White;
+
+                //update UI
+                GB_DComp_Proc_AirHe.Invalidate();
+                GB_DComp_Proc_AirHe.Update();
+                GB_DComp_Proc_AirHe.Refresh();
+                Application.DoEvents();
+            }
+            else
+            {
+                GB_DComp_Proc_Air.BackColor = Color.FromArgb(255, 255, 192);
+                GB_DComp_Proc_AirHe.BackColor = Color.FromArgb(255, 255, 192);
+
+                foreach (var tb in g_TB_WRITE_field)
+                {
+                    tb.BackColor = Color.FromArgb(255,255,192);
+                }
+                
+            }
+            
+        }
+
         private void setLanguageDependentValues()
         {
             //Label
             scr.labels.Add(nameof(LB_input), LB_input);
             scr.labels.Add(nameof(LB_output), LB_output);
+            scr.labels.Add(nameof(LB_D_CurTime), LB_D_CurTime);
+
 
             //Button
             scr.buttons.Add(nameof(BT_LANGUAGE), BT_LANGUAGE);
@@ -52,6 +96,10 @@ namespace dive
             scr.radioButtons.Add(nameof(RB_HeO2_SurD), RB_HeO2_SurD);
 
             //TextBox
+            scr.textBoxes.Add(nameof(TB_Title), TB_Title);
+            scr.textBoxes.Add(nameof(TB_D_Author), TB_D_Author);
+            scr.textBoxes.Add(nameof(TB_D_Diver), TB_D_Diver);
+            scr.textBoxes.Add(nameof(TB_D_Write_Time), TB_D_Write_Time);
             scr.textBoxes.Add(nameof(TB_D_Depth), TB_D_Depth);
             scr.textBoxes.Add(nameof(TB_D_Dcomp_Time), TB_D_Dcomp_Time);
             scr.textBoxes.Add(nameof(TB_D_Clocktime), TB_D_Clocktime);
@@ -84,6 +132,13 @@ namespace dive
             scr.textBoxes.Add(nameof(TB_D_Delay_Problem2), TB_D_Delay_Problem2);
             scr.textBoxes.Add(nameof(TB_D_Decomp_proc_used), TB_D_Decomp_proc_used);
             scr.textBoxes.Add(nameof(TB_D_Repeat_Group), TB_D_Repeat_Group);
+            scr.textBoxes.Add(nameof(TB_D_TDT), TB_D_TDT);
+            scr.textBoxes.Add(nameof(TB_D_TTD), TB_D_TTD);
+
+            //GroupBoxes
+            scr.groupBoxes.Add(nameof(GB_DComp_Proc_Air), GB_DComp_Proc_Air);
+            scr.groupBoxes.Add(nameof(GB_DComp_Proc_AirHe), GB_DComp_Proc_AirHe);
+
         }
 
         private void initLanguageDependentValues()
@@ -111,11 +166,17 @@ namespace dive
             {
                 box.Value.Text = scr.alias[box.Key];
             }
+
+            //GroupBox
+            foreach (var gb in scr.groupBoxes)
+            {
+                gb.Value.Text = scr.alias[gb.Key];
+            }
         }
 
         private void DW_Main_Window_Load(object sender, EventArgs e)
         {
-            this.LcurTime.Text = getTime();
+            this.LB_CurTime.Text = getTime();
         }
 
         private void switchLanguage()
@@ -139,7 +200,7 @@ namespace dive
 
         private string getTime()
         {
-            return DateTime.Now.ToString();
+            return DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss (tt)", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         public void initTBDesignators()
@@ -236,6 +297,30 @@ namespace dive
                 g_TB_All_Fields.Add(g_TB_Delays_Desc);
 
             }
+
+            //all input fields
+            {
+                g_TB_WRITE_field.Add(TB_Author);
+                g_TB_WRITE_field.Add(TB_Diver);
+
+                g_TB_WRITE_field.Add(TB_LS);
+                g_TB_WRITE_field.Add(TB_StageDepth);
+                g_TB_WRITE_field.Add(TB_TBT);
+                g_TB_WRITE_field.Add(TB_Time_To_R1st_Delayed);
+
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth1);
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth2);
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth3);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth1);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth2);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth3);
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason1);
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason2);
+                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason3);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason1);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason2);
+                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason3);
+            }
         }
 
         public void initFieldValues() {
@@ -253,7 +338,7 @@ namespace dive
                     tb.Text = "";
                 }
             }
-            this.LcurTime.Text = getTime();
+            this.LB_CurTime.Text = getTime();
         }
 
         //memory allocation
@@ -332,8 +417,19 @@ namespace dive
                 if (File.Exists(dataFile))
                 {
                     lines = System.IO.File.ReadAllLines(dataFile);
-                    var loading = "데이터 파일을 불러옵니다... ";
-                    setNotification(loading, Color.LightGreen, Color.Black);
+                    var loading = "";
+                    switch (scr.GUI_language)
+                    {
+                        default:
+                        case Language.KOR:
+                            loading = "데이터 파일을 불러옵니다... ";
+                            break;
+                        case Language.ENG:
+                            loading = "Loading data file... ";
+                            break;
+                    }
+                    
+                    setStatus(loading, Color.LightGreen, Color.Black);
                 }
                 else
                 {
@@ -345,8 +441,18 @@ namespace dive
             if (g_LoadFromFile == false)
             //make nested table
             {
-                var noData = "내장된 데이터 파일을 이용합니다... ";
-                setNotification(noData, Color.Red, Color.White);
+                var noData = "";
+                switch (scr.GUI_language)
+                {
+                    default:
+                    case Language.KOR:
+                        noData = "내장된 데이터 파일을 이용합니다... ";
+                        break;
+                    case Language.ENG:
+                        noData = "Using nested data file... ";
+                        break;
+                }
+                setStatus(noData, Color.Red, Color.White);
 
                 lines = DataTable.makeNestedDataTable();
             }
@@ -429,8 +535,18 @@ namespace dive
                     
                 }
 
-                var dataLoadResult = L_Data_Loaded.Text + "성공!";
-                setNotification(dataLoadResult, Color.LightGreen, Color.Black);
+                var dataLoadResult = LB_Status.Text;
+                switch (scr.GUI_language)
+                {
+                    default:
+                    case Language.KOR:
+                        dataLoadResult += "성공!";
+                        break;
+                    case Language.ENG:
+                        dataLoadResult += "Done!";
+                        break;
+                }
+                setStatus(dataLoadResult, Color.LightGreen, Color.Black);
             }
 
             updateGlobalLUT();
@@ -487,15 +603,16 @@ namespace dive
         #endregion
 
         #region Utils
-        private void setNotification(string text, Color bg, Color textColor)
+        private void setStatus(string text, Color bg, Color textColor)
         {
-            L_Data_Loaded.Text = text;
-            L_Data_Loaded.BackColor = bg;
-            L_Data_Loaded.ForeColor = textColor;
+            LB_Status.Text = text;
+            LB_Status.BackColor = bg;
+            LB_Status.ForeColor = textColor;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.LcurTime.Text = getTime();
+            this.LB_CurTime.Text = getTime();
+            this.TB_Write_Time.Text = DateTime.Now.ToString("yyyy.MM.dd HH:mm (tt)", System.Globalization.CultureInfo.InvariantCulture);
         }
 
         string limitTextNchars(string text, int limit = 4)
@@ -1026,6 +1143,8 @@ namespace dive
 
         private void BT_Save_Capture_MouseDown(object sender, MouseEventArgs e)
         {
+            colorInputField(true);
+
             //get window and save image
             Rectangle bounds = this.Bounds;
             int padTop = 31;
@@ -1034,12 +1153,12 @@ namespace dive
             int padRight = 1;
             int left = bounds.Left + padLeft;
             int top = bounds.Top + padTop;
-            Point LT = new Point(left + this.TB_D_Depth.Location.X, top + this.TB_D_Depth.Location.Y);
-            Point RB = new Point(left + this.TB_Repeat_Group.Location.X + this.TB_Repeat_Group.Size.Width, top + this.TB_Repeat_Group.Location.Y + this.TB_Repeat_Group.Size.Height);
+            Point LT = new Point(left + this.PN_Title.Location.X, top + this.PN_Title.Location.Y);
+            Point RB = new Point(left + this.PN_Title.Location.X + this.PN_Title.Size.Width, top + this.PN_Tale.Location.Y + this.PN_Tale.Size.Height);
 
             //string defaultImgName = "감압테이블 " + DateTime.Now.ToString()+".png";
             string defaultImgName = "감압테이블 " +
-                DateTime.Now.ToString("yyyy년MM월dd일HH시mm분");
+                DateTime.Now.ToString("yyyy-MM-dd tt HHmm", System.Globalization.CultureInfo.InvariantCulture);
 
             Size captureSize = new Size(RB.X - LT.X + padRight, RB.Y - LT.Y + padBottom);
 
@@ -1083,13 +1202,25 @@ namespace dive
 
                     fs.Close();
 
-                    var imageSave = "테이블을 사진으로 저장했습니다";
-                    setNotification(imageSave, Color.LightGreen, Color.Black);
+                    var imageSave = "";
+                    switch (scr.GUI_language)
+                    {
+                        default:
+                        case Language.KOR:
+                            imageSave = "테이블을 사진으로 저장했습니다";
+                            break;
+                        case Language.ENG:
+                            imageSave = "The table saved as an image";
+                            break;
+                    }
+                    setStatus(imageSave, Color.LightGreen, Color.Black);
+
+                    
                 }
 
             }
 
-
+            colorInputField();
         }
 
 
@@ -1113,12 +1244,12 @@ namespace dive
 
         private void BT_Info_MouseDown(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(getScr("info"), "INFO");
+            MessageBox.Show(scr.getInfo(), "INFO");
         }
 
         private void BT_License_MouseDown(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(getScr("license"), "LICENSE");
+            MessageBox.Show(scr.getLicense(), "LICENSE");
         }
 
         private void BT_LANGUAGE_Click(object sender, EventArgs e)

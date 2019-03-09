@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GB_DComp_Proc_Air = new System.Windows.Forms.GroupBox();
             this.RB_GAS_SurD = new System.Windows.Forms.RadioButton();
             this.RB_GAS_AIRO2 = new System.Windows.Forms.RadioButton();
             this.RB_GAS_AIR = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.LcurTime = new System.Windows.Forms.Label();
+            this.LB_D_CurTime = new System.Windows.Forms.Label();
+            this.LB_CurTime = new System.Windows.Forms.Label();
             this.clockTimer = new System.Windows.Forms.Timer(this.components);
             this.TB_D_Depth = new System.Windows.Forms.TextBox();
             this.TB_D_Dcomp_Time = new System.Windows.Forms.TextBox();
@@ -43,7 +43,6 @@
             this.TB_D_Depth_Time = new System.Windows.Forms.TextBox();
             this.TB_Desc_Time = new System.Windows.Forms.TextBox();
             this.TB_D_Desc_Time = new System.Windows.Forms.TextBox();
-            this.TB_LS = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.TB_D_LS = new System.Windows.Forms.TextBox();
             this.TB_StageDepth = new System.Windows.Forms.TextBox();
@@ -178,39 +177,50 @@
             this.CORNER_LB = new System.Windows.Forms.TextBox();
             this.textBox141 = new System.Windows.Forms.TextBox();
             this.TB_D_Repeat_Group = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.GB_DComp_Proc_AirHe = new System.Windows.Forms.GroupBox();
             this.RB_HeO2_SurD = new System.Windows.Forms.RadioButton();
             this.RB_HeO2_HeO2 = new System.Windows.Forms.RadioButton();
             this.TB_Repeat_Group = new System.Windows.Forms.TextBox();
             this.BT_Initialize = new System.Windows.Forms.Button();
-            this.L_Data_Loaded = new System.Windows.Forms.Label();
+            this.LB_Status = new System.Windows.Forms.Label();
             this.BT_Reload_Data_File = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.LB_input = new System.Windows.Forms.Label();
             this.LB_output = new System.Windows.Forms.Label();
             this.BT_Save_Capture = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.BT_Info = new System.Windows.Forms.Button();
             this.BT_License = new System.Windows.Forms.Button();
             this.BT_LANGUAGE = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PN_Title = new System.Windows.Forms.Panel();
+            this.TB_Title = new System.Windows.Forms.TextBox();
+            this.TB_D_Author = new System.Windows.Forms.TextBox();
+            this.TB_D_Write_Time = new System.Windows.Forms.TextBox();
+            this.TB_D_Diver = new System.Windows.Forms.TextBox();
+            this.TB_Author = new System.Windows.Forms.TextBox();
+            this.TB_Diver = new System.Windows.Forms.TextBox();
+            this.TB_Write_Time = new System.Windows.Forms.TextBox();
+            this.PN_Tale = new System.Windows.Forms.Panel();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.TB_LS = new System.Windows.Forms.TextBox();
+            this.GB_DComp_Proc_Air.SuspendLayout();
+            this.GB_DComp_Proc_AirHe.SuspendLayout();
+            this.PN_Title.SuspendLayout();
+            this.PN_Tale.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // GB_DComp_Proc_Air
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.RB_GAS_SurD);
-            this.groupBox1.Controls.Add(this.RB_GAS_AIRO2);
-            this.groupBox1.Controls.Add(this.RB_GAS_AIR);
-            this.groupBox1.Location = new System.Drawing.Point(482, 703);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(183, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "공기";
+            this.GB_DComp_Proc_Air.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.GB_DComp_Proc_Air.Controls.Add(this.RB_GAS_SurD);
+            this.GB_DComp_Proc_Air.Controls.Add(this.RB_GAS_AIRO2);
+            this.GB_DComp_Proc_Air.Controls.Add(this.RB_GAS_AIR);
+            this.GB_DComp_Proc_Air.Location = new System.Drawing.Point(483, 690);
+            this.GB_DComp_Proc_Air.Name = "GB_DComp_Proc_Air";
+            this.GB_DComp_Proc_Air.Size = new System.Drawing.Size(183, 100);
+            this.GB_DComp_Proc_Air.TabIndex = 1;
+            this.GB_DComp_Proc_Air.TabStop = false;
+            this.GB_DComp_Proc_Air.Text = "공기";
             // 
             // RB_GAS_SurD
             // 
@@ -246,23 +256,23 @@
             this.RB_GAS_AIR.UseVisualStyleBackColor = true;
             this.RB_GAS_AIR.CheckedChanged += new System.EventHandler(this.RB_GAS_AIR_CheckedChanged);
             // 
-            // label1
+            // LB_D_CurTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "현재 시각 :";
+            this.LB_D_CurTime.AutoSize = true;
+            this.LB_D_CurTime.Location = new System.Drawing.Point(12, 7);
+            this.LB_D_CurTime.Name = "LB_D_CurTime";
+            this.LB_D_CurTime.Size = new System.Drawing.Size(65, 12);
+            this.LB_D_CurTime.TabIndex = 3;
+            this.LB_D_CurTime.Text = "현재 시각 :";
             // 
-            // LcurTime
+            // LB_CurTime
             // 
-            this.LcurTime.AutoSize = true;
-            this.LcurTime.Location = new System.Drawing.Point(81, 7);
-            this.LcurTime.Name = "LcurTime";
-            this.LcurTime.Size = new System.Drawing.Size(34, 12);
-            this.LcurTime.TabIndex = 4;
-            this.LcurTime.Text = "Time";
+            this.LB_CurTime.AutoSize = true;
+            this.LB_CurTime.Location = new System.Drawing.Point(95, 7);
+            this.LB_CurTime.Name = "LB_CurTime";
+            this.LB_CurTime.Size = new System.Drawing.Size(34, 12);
+            this.LB_CurTime.TabIndex = 4;
+            this.LB_CurTime.Text = "Time";
             // 
             // clockTimer
             // 
@@ -352,22 +362,6 @@
             this.TB_D_Desc_Time.Size = new System.Drawing.Size(246, 21);
             this.TB_D_Desc_Time.TabIndex = 28;
             this.TB_D_Desc_Time.Text = "하잠 시간 (수중)";
-            // 
-            // TB_LS
-            // 
-            this.TB_LS.AcceptsTab = true;
-            this.TB_LS.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TB_LS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TB_LS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_LS.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_LS.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.TB_LS.Location = new System.Drawing.Point(-1, 2);
-            this.TB_LS.MaxLength = 4;
-            this.TB_LS.Name = "TB_LS";
-            this.TB_LS.Size = new System.Drawing.Size(109, 18);
-            this.TB_LS.TabIndex = 27;
-            this.TB_LS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TB_LS.TextChanged += new System.EventHandler(this.TB_LS_TextChanged);
             // 
             // textBox9
             // 
@@ -1838,7 +1832,7 @@
             this.TB_TTD.Multiline = true;
             this.TB_TTD.Name = "TB_TTD";
             this.TB_TTD.ReadOnly = true;
-            this.TB_TTD.Size = new System.Drawing.Size(352, 80);
+            this.TB_TTD.Size = new System.Drawing.Size(352, 57);
             this.TB_TTD.TabIndex = 159;
             this.TB_TTD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1850,7 +1844,7 @@
             this.CORNER_LB.Multiline = true;
             this.CORNER_LB.Name = "CORNER_LB";
             this.CORNER_LB.ReadOnly = true;
-            this.CORNER_LB.Size = new System.Drawing.Size(115, 80);
+            this.CORNER_LB.Size = new System.Drawing.Size(115, 57);
             this.CORNER_LB.TabIndex = 158;
             this.CORNER_LB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1862,7 +1856,7 @@
             this.textBox141.Multiline = true;
             this.textBox141.Name = "textBox141";
             this.textBox141.ReadOnly = true;
-            this.textBox141.Size = new System.Drawing.Size(372, 140);
+            this.textBox141.Size = new System.Drawing.Size(372, 117);
             this.textBox141.TabIndex = 160;
             this.textBox141.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1870,24 +1864,25 @@
             // 
             this.TB_D_Repeat_Group.BackColor = System.Drawing.Color.White;
             this.TB_D_Repeat_Group.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_D_Repeat_Group.Location = new System.Drawing.Point(476, 822);
+            this.TB_D_Repeat_Group.Location = new System.Drawing.Point(476, 799);
             this.TB_D_Repeat_Group.Name = "TB_D_Repeat_Group";
             this.TB_D_Repeat_Group.ReadOnly = true;
-            this.TB_D_Repeat_Group.Size = new System.Drawing.Size(99, 21);
+            this.TB_D_Repeat_Group.Size = new System.Drawing.Size(134, 21);
             this.TB_D_Repeat_Group.TabIndex = 161;
-            this.TB_D_Repeat_Group.Text = " 반복그룹 기호 : ";
+            this.TB_D_Repeat_Group.Text = " 반복그룹 기호";
+            this.TB_D_Repeat_Group.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // groupBox5
+            // GB_DComp_Proc_AirHe
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox5.Controls.Add(this.RB_HeO2_SurD);
-            this.groupBox5.Controls.Add(this.RB_HeO2_HeO2);
-            this.groupBox5.Location = new System.Drawing.Point(670, 703);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(171, 100);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "헬륨/산소";
+            this.GB_DComp_Proc_AirHe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.GB_DComp_Proc_AirHe.Controls.Add(this.RB_HeO2_SurD);
+            this.GB_DComp_Proc_AirHe.Controls.Add(this.RB_HeO2_HeO2);
+            this.GB_DComp_Proc_AirHe.Location = new System.Drawing.Point(671, 690);
+            this.GB_DComp_Proc_AirHe.Name = "GB_DComp_Proc_AirHe";
+            this.GB_DComp_Proc_AirHe.Size = new System.Drawing.Size(171, 100);
+            this.GB_DComp_Proc_AirHe.TabIndex = 3;
+            this.GB_DComp_Proc_AirHe.TabStop = false;
+            this.GB_DComp_Proc_AirHe.Text = "헬륨/산소";
             // 
             // RB_HeO2_SurD
             // 
@@ -1913,10 +1908,10 @@
             // 
             this.TB_Repeat_Group.BackColor = System.Drawing.Color.White;
             this.TB_Repeat_Group.Font = new System.Drawing.Font("Gulim", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TB_Repeat_Group.Location = new System.Drawing.Point(574, 822);
+            this.TB_Repeat_Group.Location = new System.Drawing.Point(607, 799);
             this.TB_Repeat_Group.Name = "TB_Repeat_Group";
             this.TB_Repeat_Group.ReadOnly = true;
-            this.TB_Repeat_Group.Size = new System.Drawing.Size(274, 21);
+            this.TB_Repeat_Group.Size = new System.Drawing.Size(241, 21);
             this.TB_Repeat_Group.TabIndex = 162;
             // 
             // BT_Initialize
@@ -1929,14 +1924,14 @@
             this.BT_Initialize.UseVisualStyleBackColor = true;
             this.BT_Initialize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Initialize_MouseDown);
             // 
-            // L_Data_Loaded
+            // LB_Status
             // 
-            this.L_Data_Loaded.AutoSize = true;
-            this.L_Data_Loaded.Location = new System.Drawing.Point(12, 23);
-            this.L_Data_Loaded.Name = "L_Data_Loaded";
-            this.L_Data_Loaded.Size = new System.Drawing.Size(30, 12);
-            this.L_Data_Loaded.TabIndex = 165;
-            this.L_Data_Loaded.Text = "Data";
+            this.LB_Status.AutoSize = true;
+            this.LB_Status.Location = new System.Drawing.Point(12, 23);
+            this.LB_Status.Name = "LB_Status";
+            this.LB_Status.Size = new System.Drawing.Size(30, 12);
+            this.LB_Status.TabIndex = 165;
+            this.LB_Status.Text = "Data";
             // 
             // BT_Reload_Data_File
             // 
@@ -1998,16 +1993,6 @@
             this.BT_Save_Capture.UseVisualStyleBackColor = true;
             this.BT_Save_Capture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Save_Capture_MouseDown);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.TB_LS);
-            this.panel1.Location = new System.Drawing.Point(368, 183);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 21);
-            this.panel1.TabIndex = 173;
-            // 
             // BT_Info
             // 
             this.BT_Info.Location = new System.Drawing.Point(641, 12);
@@ -2038,26 +2023,162 @@
             this.BT_LANGUAGE.UseVisualStyleBackColor = true;
             this.BT_LANGUAGE.Click += new System.EventHandler(this.BT_LANGUAGE_Click);
             // 
+            // PN_Title
+            // 
+            this.PN_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PN_Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PN_Title.Controls.Add(this.TB_Write_Time);
+            this.PN_Title.Controls.Add(this.TB_Diver);
+            this.PN_Title.Controls.Add(this.TB_Author);
+            this.PN_Title.Controls.Add(this.TB_D_Diver);
+            this.PN_Title.Controls.Add(this.TB_D_Write_Time);
+            this.PN_Title.Controls.Add(this.TB_D_Author);
+            this.PN_Title.Controls.Add(this.TB_Title);
+            this.PN_Title.Location = new System.Drawing.Point(11, 82);
+            this.PN_Title.Name = "PN_Title";
+            this.PN_Title.Size = new System.Drawing.Size(837, 75);
+            this.PN_Title.TabIndex = 177;
+            // 
+            // TB_Title
+            // 
+            this.TB_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_Title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Title.Font = new System.Drawing.Font("Malgun Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Title.Location = new System.Drawing.Point(223, 12);
+            this.TB_Title.Name = "TB_Title";
+            this.TB_Title.Size = new System.Drawing.Size(408, 47);
+            this.TB_Title.TabIndex = 0;
+            this.TB_Title.Text = "감압테이블";
+            this.TB_Title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TB_D_Author
+            // 
+            this.TB_D_Author.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_D_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_D_Author.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Author.Location = new System.Drawing.Point(606, 1);
+            this.TB_D_Author.Name = "TB_D_Author";
+            this.TB_D_Author.ReadOnly = true;
+            this.TB_D_Author.Size = new System.Drawing.Size(72, 20);
+            this.TB_D_Author.TabIndex = 1;
+            this.TB_D_Author.Text = "작성자 :";
+            this.TB_D_Author.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TB_D_Write_Time
+            // 
+            this.TB_D_Write_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_D_Write_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_D_Write_Time.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Write_Time.Location = new System.Drawing.Point(606, 48);
+            this.TB_D_Write_Time.Name = "TB_D_Write_Time";
+            this.TB_D_Write_Time.ReadOnly = true;
+            this.TB_D_Write_Time.Size = new System.Drawing.Size(72, 20);
+            this.TB_D_Write_Time.TabIndex = 2;
+            this.TB_D_Write_Time.Text = "작성일시 :";
+            this.TB_D_Write_Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TB_D_Diver
+            // 
+            this.TB_D_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_D_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_D_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_D_Diver.Location = new System.Drawing.Point(606, 24);
+            this.TB_D_Diver.Name = "TB_D_Diver";
+            this.TB_D_Diver.ReadOnly = true;
+            this.TB_D_Diver.Size = new System.Drawing.Size(72, 20);
+            this.TB_D_Diver.TabIndex = 3;
+            this.TB_D_Diver.Text = "잠수사 :";
+            this.TB_D_Diver.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TB_Author
+            // 
+            this.TB_Author.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Author.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Author.Location = new System.Drawing.Point(684, 3);
+            this.TB_Author.Name = "TB_Author";
+            this.TB_Author.Size = new System.Drawing.Size(148, 20);
+            this.TB_Author.TabIndex = 4;
+            // 
+            // TB_Diver
+            // 
+            this.TB_Diver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_Diver.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Diver.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Diver.Location = new System.Drawing.Point(684, 26);
+            this.TB_Diver.Name = "TB_Diver";
+            this.TB_Diver.Size = new System.Drawing.Size(148, 20);
+            this.TB_Diver.TabIndex = 5;
+            // 
+            // TB_Write_Time
+            // 
+            this.TB_Write_Time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_Write_Time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Write_Time.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_Write_Time.Location = new System.Drawing.Point(684, 48);
+            this.TB_Write_Time.Name = "TB_Write_Time";
+            this.TB_Write_Time.Size = new System.Drawing.Size(148, 20);
+            this.TB_Write_Time.TabIndex = 6;
+            // 
+            // PN_Tale
+            // 
+            this.PN_Tale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PN_Tale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PN_Tale.Controls.Add(this.textBox16);
+            this.PN_Tale.Location = new System.Drawing.Point(11, 821);
+            this.PN_Tale.Name = "PN_Tale";
+            this.PN_Tale.Size = new System.Drawing.Size(837, 32);
+            this.PN_Tale.TabIndex = 178;
+            // 
+            // textBox16
+            // 
+            this.textBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox16.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox16.Location = new System.Drawing.Point(587, 4);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(244, 22);
+            this.textBox16.TabIndex = 2;
+            this.textBox16.Text = "Diver\'s World prototype";
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TB_LS
+            // 
+            this.TB_LS.AcceptsTab = true;
+            this.TB_LS.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TB_LS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TB_LS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_LS.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TB_LS.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.TB_LS.Location = new System.Drawing.Point(368, 184);
+            this.TB_LS.MaxLength = 4;
+            this.TB_LS.Name = "TB_LS";
+            this.TB_LS.Size = new System.Drawing.Size(109, 18);
+            this.TB_LS.TabIndex = 27;
+            this.TB_LS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TB_LS.TextChanged += new System.EventHandler(this.TB_LS_TextChanged);
+            // 
             // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 899);
+            this.ClientSize = new System.Drawing.Size(856, 864);
+            this.Controls.Add(this.PN_Tale);
+            this.Controls.Add(this.PN_Title);
             this.Controls.Add(this.BT_LANGUAGE);
             this.Controls.Add(this.BT_License);
             this.Controls.Add(this.BT_Info);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BT_Save_Capture);
             this.Controls.Add(this.LB_output);
             this.Controls.Add(this.LB_input);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.BT_Reload_Data_File);
-            this.Controls.Add(this.L_Data_Loaded);
+            this.Controls.Add(this.LB_Status);
             this.Controls.Add(this.BT_Initialize);
             this.Controls.Add(this.TB_Repeat_Group);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GB_DComp_Proc_AirHe);
+            this.Controls.Add(this.GB_DComp_Proc_Air);
             this.Controls.Add(this.TB_D_Repeat_Group);
             this.Controls.Add(this.textBox141);
             this.Controls.Add(this.TB_TTD);
@@ -2199,16 +2320,19 @@
             this.Controls.Add(this.TB_D_Clocktime);
             this.Controls.Add(this.TB_D_Dcomp_Time);
             this.Controls.Add(this.TB_D_Depth);
-            this.Controls.Add(this.LcurTime);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LB_CurTime);
+            this.Controls.Add(this.LB_D_CurTime);
+            this.Controls.Add(this.TB_LS);
             this.Name = "DW_Main_Window";
             this.Text = "Diver\'s World";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.GB_DComp_Proc_Air.ResumeLayout(false);
+            this.GB_DComp_Proc_Air.PerformLayout();
+            this.GB_DComp_Proc_AirHe.ResumeLayout(false);
+            this.GB_DComp_Proc_AirHe.PerformLayout();
+            this.PN_Title.ResumeLayout(false);
+            this.PN_Title.PerformLayout();
+            this.PN_Tale.ResumeLayout(false);
+            this.PN_Tale.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2216,11 +2340,11 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GB_DComp_Proc_Air;
         private System.Windows.Forms.RadioButton RB_GAS_AIRO2;
         private System.Windows.Forms.RadioButton RB_GAS_AIR;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LcurTime;
+        private System.Windows.Forms.Label LB_D_CurTime;
+        private System.Windows.Forms.Label LB_CurTime;
         private System.Windows.Forms.Timer clockTimer;
         private System.Windows.Forms.TextBox TB_D_Depth;
         private System.Windows.Forms.TextBox TB_D_Dcomp_Time;
@@ -2229,7 +2353,6 @@
         private System.Windows.Forms.TextBox TB_D_Depth_Time;
         private System.Windows.Forms.TextBox TB_Desc_Time;
         private System.Windows.Forms.TextBox TB_D_Desc_Time;
-        private System.Windows.Forms.TextBox TB_LS;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox TB_D_LS;
         private System.Windows.Forms.TextBox TB_StageDepth;
@@ -2365,22 +2488,32 @@
         private System.Windows.Forms.TextBox textBox141;
         private System.Windows.Forms.TextBox TB_D_Repeat_Group;
         private System.Windows.Forms.RadioButton RB_GAS_SurD;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox GB_DComp_Proc_AirHe;
         private System.Windows.Forms.RadioButton RB_HeO2_SurD;
         private System.Windows.Forms.RadioButton RB_HeO2_HeO2;
         private System.Windows.Forms.TextBox TB_Repeat_Group;
         private System.Windows.Forms.Button BT_Initialize;
-        private System.Windows.Forms.Label L_Data_Loaded;
+        private System.Windows.Forms.Label LB_Status;
         private System.Windows.Forms.Button BT_Reload_Data_File;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label LB_input;
         private System.Windows.Forms.Label LB_output;
         private System.Windows.Forms.Button BT_Save_Capture;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BT_Info;
         private System.Windows.Forms.Button BT_License;
         private System.Windows.Forms.Button BT_LANGUAGE;
+        private System.Windows.Forms.Panel PN_Title;
+        private System.Windows.Forms.TextBox TB_Title;
+        private System.Windows.Forms.TextBox TB_D_Write_Time;
+        private System.Windows.Forms.TextBox TB_D_Author;
+        private System.Windows.Forms.TextBox TB_D_Diver;
+        private System.Windows.Forms.TextBox TB_Author;
+        private System.Windows.Forms.TextBox TB_Write_Time;
+        private System.Windows.Forms.TextBox TB_Diver;
+        private System.Windows.Forms.Panel PN_Tale;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox TB_LS;
     }
 }
 
