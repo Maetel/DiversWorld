@@ -1169,10 +1169,11 @@ namespace dive
                 imgSaveDialog.FileName = defaultImgName;
                 imgSaveDialog.Filter = "Jpeg Image|*.jpg|PNG Image|*.png";
                 imgSaveDialog.Title = "Save an Image File";
-                imgSaveDialog.ShowDialog();
+                DialogResult res = imgSaveDialog.ShowDialog();
 
                 // If the file name is not an empty string open it for saving.  
-                if (imgSaveDialog.FileName != "")
+                //if (imgSaveDialog.FileName != "")
+                if (res == DialogResult.OK)
                 {
                     System.IO.FileStream fs = (System.IO.FileStream)imgSaveDialog.OpenFile();
                     switch (imgSaveDialog.FilterIndex)
