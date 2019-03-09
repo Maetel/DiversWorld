@@ -730,7 +730,8 @@ namespace dive
         int getMaximumDepth(int estDepth)
         {
             var map = new Dictionary<int, int>();
-            map.Add(200, 3);
+            map.Add(300, 7);
+            map.Add(200, 4);
             map.Add(100, 2);
             map.Add(0, 1);
 
