@@ -26,15 +26,15 @@ Tested under .NET Framework 4.6.1
 ```
 * SurD (Using a chamber)
 * He/O2 Decompression
-* Export to a PDF/image file
-* Language
+* Export to a PDF file
 ```
 
 * DONE
 ```
 * Export to an image file
+* Language (KOR / ENG)
 ```
 
-Last update/마지막 업데이트 날짜 : 2019. 03. 04 (yyyy.mm.dd)
+Last update/마지막 업데이트 날짜 : 2019. 03. 10 (yyyy.mm.dd)
 
 ------------------------------------------------------------------------------------------

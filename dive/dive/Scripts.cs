@@ -141,7 +141,7 @@ https://github.com/Maetel/DiversWorld
 
 * 주의사항 *
 본 프로그램은 美 Navy 교범을 참고하였으나 해당 기관으로부터의 보증과 해당 기관과의 이해관계가 없으며, 제작자 및 제공자는 본 프로그램의 사용에 따른 인명 및 재산 피해에 대한 어떤 법적 책임도 지지 않습니다.
-마지막 업데이트 날짜 : 2019. 03. 09 (yyyy.mm.dd)";
+마지막 업데이트 날짜 : 2019. 03. 10 (yyyy.mm.dd)";
                     break;
                 case Language.ENG:
                     info =
@@ -154,7 +154,7 @@ https://github.com/Maetel/DiversWorld
 
 * Warning *
 The data and the strategy used for making air decompression table we provide with are referred to U.S. Navy guide. The providers cannot accept responsibility for loss or damage and does not endorse the U.S. Navy, and is not liable for their policies nor guaranteed/verified from them.
-Last update : 2019. 03. 09 (yyyy.mm.dd)";
+Last update : 2019. 03. 10 (yyyy.mm.dd)";
                     break;
                 default:
                     info = "no data";
@@ -172,7 +172,8 @@ Last update : 2019. 03. 09 (yyyy.mm.dd)";
             {
                 case Language.KOR:
                     license =
-                        @"본 프로그램은 Creative Commons 4.0 NC SA 라이센스로 제작되었습니다. 다음 행동들은 해당 라이센스에 동의하는 것으로 간주됩니다 : 다운로드, 설치, 복사. 자세한 내용 및 문의는 INFO를 참조해주세요.";
+                        @"본 프로그램은 Creative Commons 4.0 NC SA 라이센스로 제작되었습니다. 다음 행동들은 해당 라이센스에 동의하는 것으로 간주됩니다 : 다운로드, 설치, 복사.
+자세한 내용 및 문의는 '제작 및 정보'를 참조해주세요.";
                     break;
                 case Language.ENG:
                     license =
@@ -192,7 +193,7 @@ Please refer to INFO button above for more and contact.";
         //Order = KOR / ENG
         private string totalScripts =
             @"
-TB_Title|감압테이블|Decompression Table
+TB_Title|감압표|Decompression Table
 TB_D_Author|작성자 :|Author :
 TB_D_Diver|잠수사 :|Diver :
 TB_D_Write_Time|작성일시 :|Date :
@@ -205,6 +206,8 @@ BT_LANGUAGE|ENGLISH|한국어
 BT_Initialize|초기화|Initialize
 BT_Reload_Data_File|데이터 불러오기|Load Table DB
 BT_Save_Capture|사진으로 저장하기|Save as Image
+BT_Info|제작 및 정보|INFO
+BT_License|라이센스|LICENSE
 
 RB_GAS_AIR|수중 공기 감압|In-water Air
 RB_GAS_AIRO2|수중 공기/산소 감압|In-water Air/O2
@@ -243,12 +246,25 @@ TB_D_DelayOnAsc|상승 중 지연|DELAYS ON ASCENT
 TB_D_Delay_Depth2|수심|DEPTH
 TB_D_Delay_Problem2|원인|PROBLEM
 TB_D_Decomp_proc_used|사용 감압 절차|DECOMPRESSION PROCEDURES USED
-TB_D_Repeat_Group|반복그룹 기호 |REPETITIVE GROUP
+TB_D_Repeat_Group|반복그룹 기호  |REPETITIVE GROUP 
 TB_D_TTD|총 감압시간|TTD
 TB_D_TDT|총 잠수시간|TDT
 
 GB_DComp_Proc_Air|공기|Air
 GB_DComp_Proc_AirHe|헬륨/산소|HeO2
+
+ST_Lang_Changed|한국어로 변경되었습니다|Changed to English
+ST_Image_Saved|성공적으로 저장되었습니다|Saved as an image
+ST_Data_Nested|내장데이터를 로드합니다|Using nested table data
+ST_Initialized|감압표를 초기화합니다|Table initialized
+
+WORD_No_Decomp|무감압|No decomp
+WORD_No_Repeat_Group|분류 그룹 없음|No repeatitive group
+WORD_No_Data|데이터 없음|No data
+WORD_DComp_Table|감압표|Decomp Table
+WORD_Put_Number|숫자만 입력해주세요|Put numbers only
+WORD_INFO|제작 및 정보|INFO
+WORD_LICENSE|라이센스|LICENSE
 ";
     }
     
