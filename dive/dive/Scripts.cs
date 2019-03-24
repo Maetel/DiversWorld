@@ -194,7 +194,7 @@ Please refer to INFO button above for more and contact.";
         private string totalScripts =
             @"
 TB_Title|감압표|Decompression Table
-TB_D_Author|작성자 :|Author :
+TB_D_Author|슈퍼바이저 :|Supervisor :
 TB_D_Diver|잠수사 :|Diver :
 TB_D_Write_Time|작성일시 :|Date :
 
@@ -259,6 +259,7 @@ ST_Image_Saved|성공적으로 저장되었습니다|Saved as an image
 ST_Data_Nested|내장데이터를 로드합니다|Using nested table data
 ST_Initialized|감압표를 초기화합니다|Table initialized
 
+WORD_Minute|분|minute
 WORD_No_Decomp|무감압|No decomp
 WORD_No_Repeat_Group|분류 그룹 없음|No repeatitive group
 WORD_No_Data|데이터 없음|No data

@@ -184,7 +184,6 @@
             this.TB_Repeat_Group = new System.Windows.Forms.TextBox();
             this.BT_Initialize = new System.Windows.Forms.Button();
             this.LB_Status = new System.Windows.Forms.Label();
-            this.BT_Reload_Data_File = new System.Windows.Forms.Button();
             this.TB_D_Input_Color = new System.Windows.Forms.TextBox();
             this.TB_D_Output_Color = new System.Windows.Forms.TextBox();
             this.LB_input = new System.Windows.Forms.Label();
@@ -1940,17 +1939,6 @@
             this.LB_Status.TabIndex = 165;
             this.LB_Status.Text = "Data";
             // 
-            // BT_Reload_Data_File
-            // 
-            this.BT_Reload_Data_File.Enabled = false;
-            this.BT_Reload_Data_File.Location = new System.Drawing.Point(241, 40);
-            this.BT_Reload_Data_File.Name = "BT_Reload_Data_File";
-            this.BT_Reload_Data_File.Size = new System.Drawing.Size(117, 23);
-            this.BT_Reload_Data_File.TabIndex = 166;
-            this.BT_Reload_Data_File.Text = "데이터 불러오기";
-            this.BT_Reload_Data_File.UseVisualStyleBackColor = true;
-            this.BT_Reload_Data_File.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BT_Reload_Data_File_MouseDown);
-            // 
             // TB_D_Input_Color
             // 
             this.TB_D_Input_Color.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -2231,7 +2219,6 @@
             this.Controls.Add(this.LB_input);
             this.Controls.Add(this.TB_D_Output_Color);
             this.Controls.Add(this.TB_D_Input_Color);
-            this.Controls.Add(this.BT_Reload_Data_File);
             this.Controls.Add(this.LB_Status);
             this.Controls.Add(this.BT_Initialize);
             this.Controls.Add(this.TB_Repeat_Group);
@@ -2559,7 +2546,6 @@
         private System.Windows.Forms.TextBox TB_Repeat_Group;
         private System.Windows.Forms.Button BT_Initialize;
         private System.Windows.Forms.Label LB_Status;
-        private System.Windows.Forms.Button BT_Reload_Data_File;
         private System.Windows.Forms.TextBox TB_D_Input_Color;
         private System.Windows.Forms.TextBox TB_D_Output_Color;
         private System.Windows.Forms.Label LB_input;

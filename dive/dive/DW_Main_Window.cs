@@ -87,7 +87,6 @@ namespace dive
             //Button
             scr.buttons.Add(nameof(BT_LANGUAGE), BT_LANGUAGE);
             scr.buttons.Add(nameof(BT_Initialize), BT_Initialize);
-            scr.buttons.Add(nameof(BT_Reload_Data_File), BT_Reload_Data_File);
             scr.buttons.Add(nameof(BT_Save_Capture), BT_Save_Capture);
             scr.buttons.Add(nameof(BT_Info), BT_Info);
             scr.buttons.Add(nameof(BT_License), BT_License);
@@ -966,9 +965,13 @@ namespace dive
                         var t = g_FSW2Interval[stop.Key].Text;
                         g_FSW2Interval[stop.Key].Text = t + " { ";
                         //decltype(stop.Value) = List<int>
-                        foreach (var min in stop.Value)
+                        for(int idx = 0; idx < stop.Value.Count; idx++)
                         {
-                            g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + colonizeTime(min) + " ";
+                            g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + colonizeTime(stop.Value[idx]);
+                            if (idx != stop.Value.Count - 1)
+                            {
+                                g_FSW2Interval[stop.Key].Text += " + ";
+                            }
                         }
                         g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + "}";
                     }
@@ -983,7 +986,8 @@ namespace dive
 
                 //TDT
                 hTimes.g_TDT = hTimes.g_RS - hTimes.g_LB;
-                CORNER_LB.Text = colonizeTime(hTimes.g_TDT);
+                var str_minute = scr.alias["WORD_Minute"];
+                CORNER_LB.Text = colonizeTime(hTimes.g_TDT) + str_minute;
                 
             }
             else
