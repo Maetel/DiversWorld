@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Net;
+using System.Net.Sockets;
 
 namespace dive
 {
@@ -1257,6 +1259,30 @@ namespace dive
             UpdateInput();
 
             setStatus(Status.ST_Lang_Changed, Color.LightGreen, Color.Black);
+        }
+
+        private void BT_ask_response_Click(object sender, EventArgs e)
+        {
+            ExecuteClient();
+        }
+
+        void ExecuteClient()
+        {
+
+            System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();
+
+            clientSocket.Connect("127.0.0.1", 12345);
+
+            NetworkStream serverStream = clientSocket.GetStream();
+            byte[] outStream = System.Text.Encoding.ASCII.GetBytes("to server");
+            serverStream.Write(outStream, 0, outStream.Length);
+            serverStream.Flush();
+
+            byte[] inStream = new byte[65565];
+            serverStream.Read(inStream, 0, (int)clientSocket.ReceiveBufferSize);
+            string returndata = System.Text.Encoding.ASCII.GetString(inStream);
+
+            LB_response.Text = returndata;
         }
     }
 }

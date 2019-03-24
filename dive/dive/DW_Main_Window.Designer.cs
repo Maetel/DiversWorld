@@ -208,6 +208,8 @@
             this.TB_D_Additional_Record = new System.Windows.Forms.TextBox();
             this.TB_Additional_Record = new System.Windows.Forms.TextBox();
             this.PN_Additional_Record = new System.Windows.Forms.Panel();
+            this.LB_response = new System.Windows.Forms.Label();
+            this.BT_ask_response = new System.Windows.Forms.Button();
             this.GB_DComp_Proc_Air.SuspendLayout();
             this.GB_DComp_Proc_AirHe.SuspendLayout();
             this.PN_Title.SuspendLayout();
@@ -2215,11 +2217,32 @@
             this.PN_Additional_Record.Size = new System.Drawing.Size(723, 80);
             this.PN_Additional_Record.TabIndex = 181;
             // 
+            // LB_response
+            // 
+            this.LB_response.AutoSize = true;
+            this.LB_response.Location = new System.Drawing.Point(855, 186);
+            this.LB_response.Name = "LB_response";
+            this.LB_response.Size = new System.Drawing.Size(97, 12);
+            this.LB_response.TabIndex = 182;
+            this.LB_response.Text = "server response";
+            // 
+            // BT_ask_response
+            // 
+            this.BT_ask_response.Location = new System.Drawing.Point(857, 158);
+            this.BT_ask_response.Name = "BT_ask_response";
+            this.BT_ask_response.Size = new System.Drawing.Size(95, 23);
+            this.BT_ask_response.TabIndex = 183;
+            this.BT_ask_response.Text = "ask response";
+            this.BT_ask_response.UseVisualStyleBackColor = true;
+            this.BT_ask_response.Click += new System.EventHandler(this.BT_ask_response_Click);
+            // 
             // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 946);
+            this.ClientSize = new System.Drawing.Size(1072, 946);
+            this.Controls.Add(this.BT_ask_response);
+            this.Controls.Add(this.LB_response);
             this.Controls.Add(this.PN_D_Additional_Record);
             this.Controls.Add(this.PN_Tale);
             this.Controls.Add(this.PN_Title);
@@ -2583,6 +2606,8 @@
         private System.Windows.Forms.TextBox TB_D_Additional_Record;
         private System.Windows.Forms.TextBox TB_Additional_Record;
         private System.Windows.Forms.Panel PN_Additional_Record;
+        private System.Windows.Forms.Label LB_response;
+        private System.Windows.Forms.Button BT_ask_response;
     }
 }
 
