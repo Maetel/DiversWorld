@@ -52,12 +52,11 @@ namespace dive
                 PN_Additional_Record.BackColor = Color.White;
 
                 GB_DComp_Proc_Air.BackColor = Color.White;
-                GB_DComp_Proc_AirHe.BackColor = Color.White;
 
                 //update UI
-                GB_DComp_Proc_AirHe.Invalidate();
-                GB_DComp_Proc_AirHe.Update();
-                GB_DComp_Proc_AirHe.Refresh();
+                GB_DComp_Proc_Air.Invalidate();
+                GB_DComp_Proc_Air.Update();
+                GB_DComp_Proc_Air.Refresh();
                 Application.DoEvents();
             }
             else
@@ -65,7 +64,6 @@ namespace dive
                 PN_Additional_Record.BackColor = Color.FromArgb(255, 255, 192);
 
                 GB_DComp_Proc_Air.BackColor = Color.FromArgb(255, 255, 192);
-                GB_DComp_Proc_AirHe.BackColor = Color.FromArgb(255, 255, 192);
 
                 foreach (var tb in g_TB_WRITE_field)
                 {
@@ -96,8 +94,6 @@ namespace dive
             scr.radioButtons.Add(nameof(RB_GAS_AIR), RB_GAS_AIR);
             scr.radioButtons.Add(nameof(RB_GAS_AIRO2), RB_GAS_AIRO2);
             scr.radioButtons.Add(nameof(RB_GAS_SurD), RB_GAS_SurD);
-            scr.radioButtons.Add(nameof(RB_HeO2_HeO2), RB_HeO2_HeO2);
-            scr.radioButtons.Add(nameof(RB_HeO2_SurD), RB_HeO2_SurD);
 
             //TextBox
             scr.textBoxes.Add(nameof(TB_Title), TB_Title);
@@ -128,12 +124,6 @@ namespace dive
             scr.textBoxes.Add(nameof(TB_D_Desc_Chamber_SurD), TB_D_Desc_Chamber_SurD);
             scr.textBoxes.Add(nameof(TB_D_Total_SurD_Interval), TB_D_Total_SurD_Interval);
             scr.textBoxes.Add(nameof(TB_D_Ascent_Time_Chamber), TB_D_Ascent_Time_Chamber);
-            scr.textBoxes.Add(nameof(TB_D_HoldsOnDesc), TB_D_HoldsOnDesc);
-            scr.textBoxes.Add(nameof(TB_D_Delay_Depth), TB_D_Delay_Depth);
-            scr.textBoxes.Add(nameof(TB_D_Delay_Problem), TB_D_Delay_Problem);
-            scr.textBoxes.Add(nameof(TB_D_DelayOnAsc), TB_D_DelayOnAsc);
-            scr.textBoxes.Add(nameof(TB_D_Delay_Depth2), TB_D_Delay_Depth2);
-            scr.textBoxes.Add(nameof(TB_D_Delay_Problem2), TB_D_Delay_Problem2);
             scr.textBoxes.Add(nameof(TB_D_Decomp_proc_used), TB_D_Decomp_proc_used);
             scr.textBoxes.Add(nameof(TB_D_Repeat_Group), TB_D_Repeat_Group);
             scr.textBoxes.Add(nameof(TB_D_TDT), TB_D_TDT);
@@ -143,7 +133,7 @@ namespace dive
 
             //GroupBoxes
             scr.groupBoxes.Add(nameof(GB_DComp_Proc_Air), GB_DComp_Proc_Air);
-            scr.groupBoxes.Add(nameof(GB_DComp_Proc_AirHe), GB_DComp_Proc_AirHe);
+
 
         }
 
@@ -276,23 +266,7 @@ namespace dive
                 g_TB_Totals.Add(CORNER_LB);
             }
 
-            //memo field
-            {
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Depth1);
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Depth2);
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Depth3);
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Reason1);
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Reason2);
-                g_TB_Delays_Asc.Add(TB_DELAY_Asc_Reason3);
-
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Depth1);
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Depth2);
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Depth3);
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Reason1);
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Reason2);
-                g_TB_Delays_Desc.Add(TB_DELAY_Desc_Reason3);
-            }
-
+            
             //sum up everything
             {
                 g_TB_All_Fields.Add(g_TB_FSW_Results);
@@ -313,21 +287,14 @@ namespace dive
                 g_TB_WRITE_field.Add(TB_StageDepth);
                 g_TB_WRITE_field.Add(TB_TBT);
                 g_TB_WRITE_field.Add(TB_Time_To_R1st_Delayed);
-
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth1);
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth2);
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Depth3);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth1);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth2);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Depth3);
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason1);
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason2);
-                g_TB_WRITE_field.Add(TB_DELAY_Desc_Reason3);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason1);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason2);
-                g_TB_WRITE_field.Add(TB_DELAY_Asc_Reason3);
-
+                
                 g_TB_WRITE_field.Add(TB_Additional_Record);
+            }
+
+            //rich textbox
+            {
+                g_RT_All_Fields.Add(RT_FSW20);
+                g_RT_All_Fields.Add(RT_FSW30);
             }
         }
 
@@ -346,6 +313,12 @@ namespace dive
                     tb.Text = "";
                 }
             }
+
+            foreach(var rb in g_RT_All_Fields)
+            {
+                rb.Text = "";
+            }
+
             this.LB_CurTime.Text = getTime();
         }
 
@@ -359,6 +332,7 @@ namespace dive
             g_BTLUT = new Dictionary<int, List<int>>();
             g_DCompTable = new DCompTable();
 
+            g_RT_All_Fields = new List<RichTextBox>();
             g_TB_All_Fields = new List<List<TextBox>>();
             g_TB_WRITE_field = new List<TextBox>();
             g_TB_FSW_Results = new List<TextBox>();
@@ -385,15 +359,6 @@ namespace dive
                 g_FSW2Interval[80] = this.TB_R80_Interval;
                 g_FSW2Interval[90] = this.TB_R90_Interval;
                 g_FSW2Interval[100] = this.TB_R100_Interval;
-                g_FSW2Interval[110] = this.TB_R110_Interval;
-                g_FSW2Interval[120] = this.TB_R120_Interval;
-                g_FSW2Interval[130] = this.TB_R130_Interval;
-                g_FSW2Interval[140] = this.TB_R140_Interval;
-                g_FSW2Interval[150] = this.TB_R150_Interval;
-                g_FSW2Interval[160] = this.TB_R160_Interval;
-                g_FSW2Interval[170] = this.TB_R170_Interval;
-                g_FSW2Interval[180] = this.TB_R180_Interval;
-                g_FSW2Interval[190] = this.TB_R190_Interval;
 
                 g_FSW2Time[20] = this.TB_R20_CLOCKTIME;
                 g_FSW2Time[30] = this.TB_R30_CLOCKTIME;
@@ -404,15 +369,6 @@ namespace dive
                 g_FSW2Time[80] = this.TB_R80_CLOCKTIME;
                 g_FSW2Time[90] = this.TB_R90_CLOCKTIME;
                 g_FSW2Time[100] = this.TB_R100_CLOCKTIME;
-                g_FSW2Time[110] = this.TB_R110_CLOCKTIME;
-                g_FSW2Time[120] = this.TB_R120_CLOCKTIME;
-                g_FSW2Time[130] = this.TB_R130_CLOCKTIME;
-                g_FSW2Time[140] = this.TB_R140_CLOCKTIME;
-                g_FSW2Time[150] = this.TB_R150_CLOCKTIME;
-                g_FSW2Time[160] = this.TB_R160_CLOCKTIME;
-                g_FSW2Time[170] = this.TB_R170_CLOCKTIME;
-                g_FSW2Time[180] = this.TB_R180_CLOCKTIME;
-                g_FSW2Time[190] = this.TB_R190_CLOCKTIME;
             }
         }
 
@@ -565,6 +521,8 @@ namespace dive
         static List<TextBox> g_TB_Circum_WRITE;
 
         static List<TextBox> g_TB_WRITE_field;
+
+        static List<RichTextBox> g_RT_All_Fields;
 
         static DCompRow g_curDCompRow;
         static GasMix g_GasMix = GasMix.NONE;
@@ -950,30 +908,43 @@ namespace dive
 
                     TB_TTD.Text = colonizeTime(hTimes.g_TTD);
                 }
-                
+
 
                 //pauses related UI update
 
                 // interval
+                Color breakColor = Color.DarkGreen;
+                Color dcompColor = Color.Black;
                 foreach ( var stop in row.m_DComp_pauses_data)
                 {
                     int dataLength = stop.Value.Count;
+                    int FSW = stop.Key;
 
                     //for AIR/O2 Decompression
-                    if ( stop.Value.Count != 1 )
+                    if (dataLength != 1 )
                     {
-                        var t = g_FSW2Interval[stop.Key].Text;
-                        g_FSW2Interval[stop.Key].Text = t + " { ";
-                        //decltype(stop.Value) = List<int>
-                        for(int idx = 0; idx < stop.Value.Count; idx++)
+                        RichTextBox rt = RT_FSW20;
+                        if (FSW == 30) { rt = RT_FSW30; }
+                        List<RichColoredText> texts = new List<RichColoredText>();
+
+                        for (int idx = 0; idx < dataLength; idx++)
                         {
-                            g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + colonizeTime(stop.Value[idx]);
-                            if (idx != stop.Value.Count - 1)
+                            bool startWithGreen = !(!(row.m_DComp_pauses_data.Count > 1 ) || FSW == 30);
+                            Color odd = startWithGreen ? breakColor : dcompColor;
+                            Color even = startWithGreen ? dcompColor : breakColor;
+                            
+                            texts.Add(new RichColoredText(colonizeTime(stop.Value[idx])+" ", (idx%2==0) ? even : odd));
+                            if(idx%10 == 9)
                             {
-                                g_FSW2Interval[stop.Key].Text += " + ";
+                                texts.Add(new RichColoredText("\n", Color.Black));
                             }
+
+                            //if (idx != dataLength - 1)
+                            //{
+                            //    texts.Add(new RichColoredText(" + ", Color.Red));
+                            //}
                         }
-                        g_FSW2Interval[stop.Key].Text = g_FSW2Interval[stop.Key].Text + "}";
+                        setRTtext(rt, texts);
                     }
                 }
                 // Clocktime
@@ -986,8 +957,8 @@ namespace dive
 
                 //TDT
                 hTimes.g_TDT = hTimes.g_RS - hTimes.g_LB;
-                var str_minute = scr.alias["WORD_Minute"];
-                CORNER_LB.Text = colonizeTime(hTimes.g_TDT) + str_minute;
+                //var str_minute = scr.alias["WORD_Minute"];
+                CORNER_LB.Text = colonizeTime(hTimes.g_TDT);
                 
             }
             else
@@ -1000,6 +971,27 @@ namespace dive
                 TB_Time_To_R1st_Actual.Text = noData;
 
             }
+        }
+
+        public void setRTtext(RichTextBox box, List<RichColoredText> list)
+        {
+            box.Text = "";
+            foreach(var data in list)
+            {
+                appendText(box, data.text, data.color);
+            }
+            box.SelectAll();
+            box.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        public void appendText(RichTextBox box, string text, Color color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+
+            box.SelectionColor = color;
+            box.AppendText(text);
+            box.SelectionColor = box.ForeColor;
         }
 
         private void UpdateTimeTo1stStop()

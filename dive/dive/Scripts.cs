@@ -195,6 +195,7 @@ Please refer to INFO button above for more and contact.";
             @"
 TB_Title|감압표|Decompression Table
 TB_D_Author|슈퍼바이저 :|Supervisor :
+TB_D_Tender|텐더 :|Tender :
 TB_D_Diver|잠수사 :|Diver :
 TB_D_Write_Time|작성일시 :|Date :
 
@@ -228,11 +229,11 @@ TB_D_RS|해면 도착|RS
 TB_D_Desc_Time|하잠 시간 (수중)|Descent Time (Water)
 TB_D_StageDepth|측정 수심 (ft)|Stage Depth (fsw)
 TB_D_MaxDepth|보정 수심 (ft)|Maximum Depth (fsw)
-TB_D_TBT|총 해저 체류 시간|Total Bottom Time
+TB_D_TBT|총 해저 체류 시간 (분)|Total Bottom Time (min.)
 TB_D_DCompTable|사용 감압표 [수심, TBT]|Table/Schedule
 TB_D_TB_Time_To_R1st_Actual|첫 정지점까지 상승시간 (실제)|Time to 1st Stop (Actual)
 TB_D_Time_To_R1st_Planned|첫 정지점까지 상승시간 (계획)|Time to 1st Stop (Planned)
-TB_D_Time_To_R1st_Delayed|첫 정지점까지 지연시간 (단위 : 초)|Delay to 1st Stop
+TB_D_Time_To_R1st_Delayed|첫 정지점까지 지연시간 (초)|Delay to 1st Stop (sec.)
 TB_D_Travel_Shift_Vent_Time|상승/기체전환/환기 시간|Travel/Shift/Vent Time
 TB_D_Ascent_Time_Water|상승시간|Ascent Time-Water/SurD (Actual)
 TB_D_Undress_Time|장비 해체 시간|Undress Time-SurD (Actual)

@@ -234,15 +234,21 @@ namespace dive
                                 {
                                     int done = maxDcompTime - intervalFromLastPause;
                                     //dcomp (done)
-                                    m_DComp_pauses_data[depth].Add(done);
-                                    m_DComp_pauses_data[depth].Add(pauseInterval);
-                                    m_TotalPauseTime += pauseInterval;
-                                    min -= done;
+                                    if(done != 0)
+                                    {
+                                        m_DComp_pauses_data[depth].Add(done);
+                                        m_DComp_pauses_data[depth].Add(pauseInterval);
+                                        m_TotalPauseTime += pauseInterval;
+                                        min -= done;
+                                    }
                                     intervalFromLastPause = 0;
                                 }
 
                                 //dcomp (min)
-                                m_DComp_pauses_data[depth].Add(min);
+                                if (min != 0)
+                                {
+                                    m_DComp_pauses_data[depth].Add(min);
+                                }
                                 intervalFromLastPause += min;
                             }
                             else
