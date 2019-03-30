@@ -1100,11 +1100,23 @@ namespace dive
         }
         #endregion
 
-        // Values input field
-        
+        private void BT_Info_MouseDown(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(scr.getInfo(), scr.alias["WORD_INFO"]);
+        }
 
+        private void BT_License_MouseDown(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(scr.getLicense(), scr.alias["WORD_LICENSE"]);
+        }
 
+        private void BT_LANGUAGE_Click(object sender, EventArgs e)
+        {
+            switchLanguage();
+            UpdateInput();
 
+            setStatus(Status.ST_Lang_Changed, Color.LightGreen, Color.Black);
+        }
 
         private void RB_GAS_AIR_CheckedChanged(object sender, EventArgs e)
         {
@@ -1229,30 +1241,9 @@ namespace dive
                 return scr.alias[alias.ToLower()];
             }
 
-            return "no data";
+            return scr.alias["WORD_No_Data"];
         }
-
-        #region Make_Nested_Data_Table
 
         
-        #endregion
-
-        private void BT_Info_MouseDown(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(scr.getInfo(), scr.alias["WORD_INFO"]);
-        }
-
-        private void BT_License_MouseDown(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(scr.getLicense(), scr.alias["WORD_LICENSE"]);
-        }
-
-        private void BT_LANGUAGE_Click(object sender, EventArgs e)
-        {
-            switchLanguage();
-            UpdateInput();
-
-            setStatus(Status.ST_Lang_Changed, Color.LightGreen, Color.Black);
-        }
     }
 }
