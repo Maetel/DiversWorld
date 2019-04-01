@@ -175,6 +175,11 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.BT_Call_URL = new System.Windows.Forms.Button();
+            this.TB_URL_ADDR = new System.Windows.Forms.TextBox();
+            this.LB_D_URL = new System.Windows.Forms.Label();
+            this.TB_URL_Loaded = new System.Windows.Forms.TextBox();
+            this.BT_Post_Data = new System.Windows.Forms.Button();
             this.GB_DComp_Proc_Air.SuspendLayout();
             this.PN_Title.SuspendLayout();
             this.PN_Tale.SuspendLayout();
@@ -1826,11 +1831,62 @@
             this.textBox8.TabIndex = 201;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // BT_Call_URL
+            // 
+            this.BT_Call_URL.Location = new System.Drawing.Point(868, 132);
+            this.BT_Call_URL.Name = "BT_Call_URL";
+            this.BT_Call_URL.Size = new System.Drawing.Size(117, 23);
+            this.BT_Call_URL.TabIndex = 202;
+            this.BT_Call_URL.Text = "Call URL";
+            this.BT_Call_URL.UseVisualStyleBackColor = true;
+            this.BT_Call_URL.Click += new System.EventHandler(this.BT_Call_URL_Click);
+            // 
+            // TB_URL_ADDR
+            // 
+            this.TB_URL_ADDR.Location = new System.Drawing.Point(868, 107);
+            this.TB_URL_ADDR.MaxLength = 256;
+            this.TB_URL_ADDR.Name = "TB_URL_ADDR";
+            this.TB_URL_ADDR.Size = new System.Drawing.Size(295, 21);
+            this.TB_URL_ADDR.TabIndex = 203;
+            this.TB_URL_ADDR.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_URL_ADDR_KeyDown);
+            // 
+            // LB_D_URL
+            // 
+            this.LB_D_URL.AutoSize = true;
+            this.LB_D_URL.Location = new System.Drawing.Point(868, 89);
+            this.LB_D_URL.Name = "LB_D_URL";
+            this.LB_D_URL.Size = new System.Drawing.Size(28, 12);
+            this.LB_D_URL.TabIndex = 204;
+            this.LB_D_URL.Text = "URL";
+            // 
+            // TB_URL_Loaded
+            // 
+            this.TB_URL_Loaded.Location = new System.Drawing.Point(868, 162);
+            this.TB_URL_Loaded.Multiline = true;
+            this.TB_URL_Loaded.Name = "TB_URL_Loaded";
+            this.TB_URL_Loaded.Size = new System.Drawing.Size(295, 616);
+            this.TB_URL_Loaded.TabIndex = 205;
+            // 
+            // BT_Post_Data
+            // 
+            this.BT_Post_Data.Location = new System.Drawing.Point(992, 132);
+            this.BT_Post_Data.Name = "BT_Post_Data";
+            this.BT_Post_Data.Size = new System.Drawing.Size(128, 23);
+            this.BT_Post_Data.TabIndex = 206;
+            this.BT_Post_Data.Text = "Post Data";
+            this.BT_Post_Data.UseVisualStyleBackColor = true;
+            this.BT_Post_Data.Click += new System.EventHandler(this.BT_Post_Data_ClickAsync);
+            // 
             // DW_Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 861);
+            this.ClientSize = new System.Drawing.Size(1209, 861);
+            this.Controls.Add(this.BT_Post_Data);
+            this.Controls.Add(this.TB_URL_Loaded);
+            this.Controls.Add(this.LB_D_URL);
+            this.Controls.Add(this.TB_URL_ADDR);
+            this.Controls.Add(this.BT_Call_URL);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox16);
@@ -2128,6 +2184,11 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button BT_Call_URL;
+        private System.Windows.Forms.TextBox TB_URL_ADDR;
+        private System.Windows.Forms.Label LB_D_URL;
+        private System.Windows.Forms.TextBox TB_URL_Loaded;
+        private System.Windows.Forms.Button BT_Post_Data;
     }
 }
 

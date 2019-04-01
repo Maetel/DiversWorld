@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Net;
+using System.Net.Http;
 
 namespace dive
 {
@@ -1244,6 +1246,83 @@ namespace dive
             return scr.alias["WORD_No_Data"];
         }
 
+        private void BT_Call_URL_Click(object sender, EventArgs e)
+        {
+            WebClient client = new WebClient();
+
+            // Add a user agent header in case the 
+            // requested URI contains a query.
+
+            //client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+
+            string url = TB_URL_ADDR.Text;
+            if (url == "") { return; }
+
+            try
+            {
+                Stream data = client.OpenRead(url);
+                StreamReader reader = new StreamReader(data);
+                string s = reader.ReadToEnd();
+
+                TB_URL_Loaded.Text = s;
+
+                data.Close();
+                reader.Close();
+            }
+            catch (FileNotFoundException fileE)
+            {
+                TB_URL_Loaded.Text = fileE.Message;
+            }
+            catch (Exception totalE)
+            {
+                TB_URL_Loaded.Text = totalE.Message;
+            }
+        }
         
+        private void TB_URL_ADDR_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BT_Call_URL_Click(sender, e);
+                BT_Post_Data_ClickAsync(sender, e);
+            }
+        }
+
+        private void BT_Post_Data_ClickAsync(object sender, EventArgs e)
+        {
+            var value = @"{""k1"":""v1"", ""k2"":""v2""}";
+            string url = TB_URL_ADDR.Text;
+            if (url == "") { return; }
+            try
+            {
+                var request = HttpWebRequest.Create(url);
+                var byteData = Encoding.ASCII.GetBytes(value);
+                request.ContentType = "application/json";
+                request.Method = "POST";
+
+                try
+                {
+                    using (var stream = request.GetRequestStream())
+                    {
+                        stream.Write(byteData, 0, byteData.Length);
+                    }
+                    var response = (HttpWebResponse)request.GetResponse();
+                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                    MessageBox.Show(responseString);
+                }
+                catch (WebException we)
+                {
+                    MessageBox.Show("error : " + we.Message);
+                }
+            }
+            catch (UriFormatException ue)
+            {
+                MessageBox.Show("uri error : " + ue.Message);
+            }
+
+
+
+        }
     }
 }
